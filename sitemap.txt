@@ -1,3 +1,4 @@
+http://example.com/commenting/index.html
 http://example.com/2022/05/02/hello-world/
 http://example.com/schedule/index.html
 http://example.com/resources/index.html
