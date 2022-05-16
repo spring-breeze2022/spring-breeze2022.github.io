@@ -22,25 +22,25 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="例题一从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。 例如:给定二叉树: [3,9,20,null,null,15,7], 12345  3 &#x2F; \9  20  &#x2F;  \ 15   7 返回： 1[3,9,20,15,7]  提示：  节点总数 &lt;&#x3D; 1000">
+  <meta name="description" content="例题一输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构) B是A的子结构， 即 A中有出现和B相同的结构和节点值。 例如:给定的树 A: 12345    3   &#x2F; \  4   5 &#x2F; \1   2  给定的树 B： 123  4  &#x2F;1  返回 true，因为 B 与 A 的一个子树拥有相同的结构和节点值。 示例 1： 12输入：A &#x3D; [1,2,3], B &#x3D;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搜索与回溯算法">
-<meta property="og:url" content="http://example.com/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/index.html">
+<meta property="og:title" content="搜索与回溯算法二">
+<meta property="og:url" content="http://example.com/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/index.html">
 <meta property="og:site_name" content="春风过木">
-<meta property="og:description" content="例题一从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。 例如:给定二叉树: [3,9,20,null,null,15,7], 12345  3 &#x2F; \9  20  &#x2F;  \ 15   7 返回： 1[3,9,20,15,7]  提示：  节点总数 &lt;&#x3D; 1000">
+<meta property="og:description" content="例题一输入两棵二叉树A和B，判断B是不是A的子结构。(约定空树不是任意一个树的子结构) B是A的子结构， 即 A中有出现和B相同的结构和节点值。 例如:给定的树 A: 12345    3   &#x2F; \  4   5 &#x2F; \1   2  给定的树 B： 123  4  &#x2F;1  返回 true，因为 B 与 A 的一个子树拥有相同的结构和节点值。 示例 1： 12输入：A &#x3D; [1,2,3], B &#x3D;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/1.png">
-<meta property="og:image" content="http://example.com/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/2.png">
-<meta property="article:published_time" content="2022-05-15T02:51:00.000Z">
-<meta property="article:modified_time" content="2022-05-16T09:21:02.583Z">
+<meta property="og:image" content="http://example.com/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/1.png">
+<meta property="og:image" content="http://example.com/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/2.png">
+<meta property="article:published_time" content="2022-05-16T08:26:00.000Z">
+<meta property="article:modified_time" content="2022-05-16T09:26:10.996Z">
 <meta property="article:author" content="木子">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="二叉树">
-<meta property="article:tag" content="广度优先搜索">
+<meta property="article:tag" content="深度优先搜索">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/1.png">
+<meta name="twitter:image" content="http://example.com/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/1.png">
 
-<link rel="canonical" href="http://example.com/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
+<link rel="canonical" href="http://example.com/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/">
 
 
 <script id="page-configurations">
@@ -53,7 +53,7 @@
   };
 </script>
 
-  <title>搜索与回溯算法 | 春风过木</title>
+  <title>搜索与回溯算法二 | 春风过木</title>
   
 
 
@@ -209,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -222,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          搜索与回溯算法
+          搜索与回溯算法二
         </h1>
 
         <div class="post-meta">
@@ -231,16 +231,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-05-15 10:51:00" itemprop="dateCreated datePublished" datetime="2022-05-15T10:51:00+08:00">2022-05-15</time>
+              <time title="创建时间：2022-05-16 16:26:00 / 修改时间：17:26:10" itemprop="dateCreated datePublished" datetime="2022-05-16T16:26:00+08:00">2022-05-16</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-16 17:21:02" itemprop="dateModified" datetime="2022-05-16T17:21:02+08:00">2022-05-16</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -271,8 +265,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -282,7 +276,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -301,84 +295,110 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="例题一"><a href="#例题一" class="headerlink" title="例题一"></a>例题一</h3><p>从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。</p>
-<p><strong>例如:</strong><br>给定二叉树: <code>[3,9,20,null,null,15,7]</code>,</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">3</span></span><br><span class="line"> / \</span><br><span class="line"><span class="number">9</span>  <span class="number">20</span></span><br><span class="line">  /  \</span><br><span class="line"> <span class="number">15</span>   <span class="number">7</span></span><br></pre></td></tr></table></figure>
-<p><strong>返回：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">3</span>,<span class="number">9</span>,<span class="number">20</span>,<span class="number">15</span>,<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
+        <h3 id="例题一"><a href="#例题一" class="headerlink" title="例题一"></a>例题一</h3><p>输入两棵二叉树<em>A</em>和<em>B</em>，判断<em>B</em>是不是<em>A</em>的子结构。(约定空树不是任意一个树的子结构)</p>
+<p><em>B</em>是<em>A</em>的子结构， 即 <em>A</em>中有出现和<em>B</em>相同的结构和节点值。</p>
+<p><strong>例如:</strong><br>给定的树 <em>A</em>:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    <span class="number">3</span></span><br><span class="line">   / \</span><br><span class="line">  <span class="number">4</span>   <span class="number">5</span></span><br><span class="line"> / \</span><br><span class="line"><span class="number">1</span>   <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>提示：</strong></p>
-<ul>
-<li>节点总数 &lt;&#x3D; 1000</li>
-</ul>
+<p>给定的树 <em>B</em>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">4</span> </span><br><span class="line"> /</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>返回 <code>true</code>，因为 <em>B</em> 与 <em>A</em> 的一个子树拥有相同的结构和节点值。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], B = [<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">输出：<span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：A = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">2</span>], B = [<span class="number">4</span>,<span class="number">1</span>]</span><br><span class="line">输出：<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>限制：</strong></p>
+<p><code>0 &lt;= 节点个数 &lt;= 10000</code></p>
 <span id="more"></span>
 
 
 
-<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><h5 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h5><ul>
-<li>题目要求的二叉树的 <strong>从上至下</strong> 打印（即按层打印），又称为二叉树的 <strong>广度优先搜索</strong>（BFS）。</li>
-<li>BFS 通常借助 <strong>队列</strong> 的先入先出特性来实现。</li>
-</ul>
-<img src="/img/loading.gif" data-original="/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/1.png" alt="Picture0.png" style="zoom:80%;">
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><h5 id="解题思路："><a href="#解题思路：" class="headerlink" title="解题思路："></a>解题思路：</h5><p>由题意可知，若树<em>B</em>是树<em>A</em>的子结构，则子结构的根节点可能是树<em>A</em>的任意一个节点。因此需要判断树<em>B</em>是不是树<em>A</em>的子结构，只需要判断树<em>B</em>是否为树<em>A</em>的子节点，通过以下两步完成工作：</p>
+<ol>
+<li>先序遍历树<em>A</em>中每个节点$n_A$;(对应函数<code>isSubStructure(A, B)</code>)</li>
+<li>判断树 <em>A</em>中 <strong>以 $n_A$为根节点的子树</strong> 是否包含树 <em>B</em> 。（对应函数 <code>recur(A, B)</code>）</li>
+</ol>
+<img src="/img/loading.gif" data-original="/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/1.png" alt="Picture1.png" style="zoom:80%;">
 
 
 
-<h5 id="算法流程"><a href="#算法流程" class="headerlink" title="算法流程"></a>算法流程</h5><ol>
-<li><strong>特例处理：</strong>当根节点为空时，直接返回空列表[]；</li>
-<li><strong>初始化：</strong>打印结果列表<code>list</code>，队列<code>queue[]</code>将<code>root</code>根节点放入队列；</li>
-<li><strong>BFS循环：</strong>当队列为空时退出循环<ul>
-<li><strong>出队：</strong>队首元素出队，记为<code>T</code>；</li>
-<li><strong>打印：</strong>将<code>T.val</code>添加至列表<code>list</code>尾部；</li>
-<li><strong>添加子节点：</strong>若<code>T</code>的左(右)节点不为空，则将左(右)节点加入队列<code>queue</code>；</li>
+<h5 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h5><p><strong><code>recur(A, B)</code> 函数：</strong></p>
+<ol>
+<li><strong>终止条件：</strong><ul>
+<li>当节点 <em>B</em> 为空：说明树 <em>B</em> 已匹配完成（越过叶子节点），因此返回 <code>true</code> ；</li>
+<li>当节点 <em>A</em> 为空：说明已经越过树 <em>A</em> 叶子节点，即匹配失败，返回 <code>false</code> ；</li>
+<li>当节点 <em>A</em> 和 <em>B</em>  的值不同：说明匹配失败，返回 <code>false</code> ；</li>
 </ul>
 </li>
-<li><strong>返回值：</strong>将打印列表转为数组<code>res</code>，返回数组<code>res</code>即可。</li>
+<li><strong>返回值：</strong><ul>
+<li>判断 <em>A</em> 和 <em>B</em>  的左子节点是否相等，即 <code>recur(A.left, B.left)</code> ；</li>
+<li>判断 <em>A</em> 和 <em>B</em>  的右子节点是否相等，即 <code>recur(A.right, B.right)</code> ；</li>
+</ul>
+</li>
 </ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] levelOrder(TreeNode root) &#123;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;TreeNode&gt;();</span><br><span class="line">        List&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;Integer&gt;();   </span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">0</span>];</span><br><span class="line">        queue.add(root);</span><br><span class="line">        <span class="keyword">while</span>(!queue.isEmpty())&#123;</span><br><span class="line">            <span class="type">TreeNode</span> <span class="variable">T</span> <span class="operator">=</span> queue.remove();</span><br><span class="line">            <span class="keyword">if</span>(T.left != <span class="literal">null</span>)&#123;</span><br><span class="line">                queue.add(T.left);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(T.right != <span class="literal">null</span>)&#123;</span><br><span class="line">                queue.add(T.right);</span><br><span class="line">            &#125;</span><br><span class="line">            list.add(T.val);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span>[] res = <span class="keyword">new</span> <span class="title class_">int</span>[list.size()];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; list.size(); i++)</span><br><span class="line">                res[i] = list.get(i);</span><br><span class="line">            <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong><code>isSubStructure(A, B)</code> 函数：</strong></p>
+<ol>
+<li><strong>特例处理：</strong> 当 树 <em>A</em> 为空 或 树 <em>B</em>为空 时，直接返回 <code>false</code> ；</li>
+<li><strong>返回值：</strong> 若树 <em>B</em>是树 <em>A</em>的子结构，则必满足以下三种情况之一，因此用或 <code>||</code> 连接；<ul>
+<li>以 节点 <em>A</em>为根节点的子树 包含树 <em>B</em>，对应 <code>recur(A, B)</code>；</li>
+<li>树 <em>B</em>是 树 <em>A</em>左子树 的子结构，对应 <code>isSubStructure(A.left, B)</code>；</li>
+<li>树 <em>B</em> 是 树 <em>A</em>右子树 的子结构，对应 <code>isSubStructure(A.right, B)</code>；</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSubStructure</span><span class="params">(TreeNode A, TreeNode B)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> (A != <span class="literal">null</span> &amp;&amp; B != <span class="literal">null</span>) &amp;&amp; (recur(A, B) || isSubStructure(A.left, B) || isSubStructure(A.right, B));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">recur</span><span class="params">(TreeNode A, TreeNode B)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(B == <span class="literal">null</span>) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(A == <span class="literal">null</span> || A.val != B.val) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> recur(A.left, B.left) &amp;&amp; recur(A.right, B.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <hr>
-<h3 id="例题二"><a href="#例题二" class="headerlink" title="例题二"></a>例题二</h3><p>请实现一个函数按照之字形顺序打印二叉树，即第一行按照从左到右的顺序打印，第二层按照从右到左的顺序打印，第三行再按照从左到右的顺序打印，其他行以此类推。</p>
-<p><strong>例如:</strong><br>给定二叉树: <code>[3,9,20,null,null,15,7]</code>,</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">3</span></span><br><span class="line"> / \</span><br><span class="line"><span class="number">9</span>  <span class="number">20</span></span><br><span class="line">  /  \</span><br><span class="line"> <span class="number">15</span>   <span class="number">7</span></span><br></pre></td></tr></table></figure>
+<h3 id="例题二"><a href="#例题二" class="headerlink" title="例题二"></a>例题二</h3><p>请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。</p>
+<p>例如，二叉树 <code>[1,2,2,3,4,4,3]</code> 是对称的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    <span class="number">1</span></span><br><span class="line">   / \</span><br><span class="line">  <span class="number">2</span>   <span class="number">2</span></span><br><span class="line"> / \ / \</span><br><span class="line"><span class="number">3</span>  <span class="number">4</span> <span class="number">4</span>  <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p>但是下面这个 <code>[1,2,2,null,3,null,3]</code> 则不是镜像对称的:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">1</span></span><br><span class="line"> / \</span><br><span class="line"><span class="number">2</span>   <span class="number">2</span></span><br><span class="line"> \   \</span><br><span class="line"> <span class="number">3</span>    <span class="number">3</span></span><br></pre></td></tr></table></figure>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：root = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">4</span>,<span class="number">3</span>]</span><br><span class="line">输出：<span class="literal">true</span></span><br></pre></td></tr></table></figure>
 
-<p>返回其层次遍历结果：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [<span class="number">3</span>],</span><br><span class="line">  [<span class="number">20</span>,<span class="number">9</span>],</span><br><span class="line">  [<span class="number">15</span>,<span class="number">7</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：root = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="literal">null</span>,<span class="number">3</span>,<span class="literal">null</span>,<span class="number">3</span>]</span><br><span class="line">输出：<span class="literal">false</span></span><br></pre></td></tr></table></figure>
 
-
-<p>提示：</p>
+<p><strong>限制：</strong></p>
+<p><code>0 &lt;= 节点个数 &lt;= 1000</code></p>
+<h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><h5 id="解题思路：-1"><a href="#解题思路：-1" class="headerlink" title="解题思路："></a>解题思路：</h5><ul>
+<li><strong>对称二叉树定义：</strong> 对于树中 <strong>任意两个对称节点</strong>  <em>L</em> 和 <em>R</em> ，一定有：<ul>
+<li><code>L.val = R.val</code>：即此两对称节点值相等。</li>
+<li><code>L.left.val = R.right.val</code>：即 <em>L</em>的 左子节点 和 <em>R</em>的 右子节点 对称；</li>
+<li><code>L.right.val = R.left.val</code>：即 <em>L</em>的 右子节点 和 <em>R</em>的 左子节点 对称。</li>
+</ul>
+</li>
+<li>根据以上规律，考虑从顶至底递归，判断每对节点是否对称，从而判断树是否为对称二叉树。</li>
+</ul>
+<p><img src="/img/loading.gif" data-original="/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/2.png" alt="Picture1.png"></p>
+<h5 id="算法流程：-1"><a href="#算法流程：-1" class="headerlink" title="算法流程："></a>算法流程：</h5><p><code>isSymmetric(root)</code>：</p>
 <ul>
-<li>节点总数 &lt;&#x3D; 1000</li>
+<li><strong>特例处理：</strong> 若根节点 <code>root</code> 为空，则直接返回 <code>true</code> 。</li>
+<li><strong>返回值：</strong> 即 <code>recur(root.left, root.right)</code> ;</li>
 </ul>
-<h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><h5 id="解题思路：层序遍历-双端队列"><a href="#解题思路：层序遍历-双端队列" class="headerlink" title="解题思路：层序遍历 + 双端队列"></a>解题思路：层序遍历 + 双端队列</h5><ul>
-<li>利用双端队列的两端皆可添加元素的特性，设打印列表（双端队列)<code>tmp</code>，并规定：<ul>
-<li>奇数层 则添加至 <code>tmp</code> <strong>尾部</strong> ，</li>
-<li>偶数层 则添加至 <code>tmp</code> <strong>头部</strong> 。</li>
-</ul>
-</li>
-</ul>
-<img src="/img/loading.gif" data-original="/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/2.png" alt="Picture1.png" style="zoom:80%;">
-
-
-
-<h5 id="算法流程："><a href="#算法流程：" class="headerlink" title="算法流程："></a>算法流程：</h5><ol>
-<li><strong>特例处理：</strong> 当树的根节点为空，则直接返回空列表 <code>[]</code> ；</li>
-<li><strong>初始化：</strong> 打印结果空列表 <code>res</code> ，包含根节点的双端队列 <code>deque</code> ；</li>
-<li><strong>BFS 循环：</strong> 当 <code>deque</code> 为空时跳出；<ul>
-<li>新建列表 <code>tmp</code> ，用于临时存储当前层打印结果；</li>
-<li><strong>当前层打印循环：</strong> 循环次数为当前层节点数（即 <code>deque</code> 长度）；<ul>
-<li><strong>出队：</strong> 队首元素出队，记为 <code>node</code>；</li>
-<li><strong>打印：</strong> 若为奇数层，将 <code>node.val</code> 添加至 <code>tmp</code> 尾部；否则，添加至 <code>tmp</code>头部；</li>
-<li><strong>添加子节点：</strong> 若 <code>node</code> 的左（右）子节点不为空，则加入 <code>deque</code> ；</li>
+<p><code>recur(L, R)</code>：</p>
+<ul>
+<li><strong>终止条件：</strong><ul>
+<li>当 <em>L</em>和 <em>R</em>同时越过叶节点： 此树从顶至底的节点都对称，因此返回<code>true</code> ；</li>
+<li>当 <em>L</em>或 <em>R</em>中只有一个越过叶节点： 此树不对称，因此返回<code>false</code> ；</li>
+<li>当节点 <em>L</em>值 $\ne$ 节点 <em>R</em>值： 此树不对称，因此返回 <code>false</code>；</li>
 </ul>
 </li>
-<li>将当前层结果 <code>tmp</code> 转化为 <code>list</code> 并添加入 <code>res</code> ；</li>
+<li><strong>递推工作：</strong><ul>
+<li>判断两节点 <code>L.left</code> 和 <code>R.right</code> 是否对称，即 <code>recur(L.left, R.right)</code>；</li>
+<li>判断两节点 <code>L.right</code> 和 <code>R.left</code> 是否对称，即 <code>recur(L.right, R.left)</code>；</li>
 </ul>
 </li>
-<li><strong>返回值：</strong> 返回打印结果列表 <code>res</code> 即可；</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; <span class="title function_">levelOrder</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">        List&lt;List&lt;Integer&gt;&gt; res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span>(root != <span class="literal">null</span>) </span><br><span class="line">            queue.add(root);</span><br><span class="line">        <span class="keyword">while</span>(!queue.isEmpty()) &#123;</span><br><span class="line">            LinkedList&lt;Integer&gt; tmp = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> queue.size(); i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">                <span class="type">TreeNode</span> <span class="variable">node</span> <span class="operator">=</span> queue.poll();</span><br><span class="line">                <span class="keyword">if</span>(res.size() % <span class="number">2</span> == <span class="number">0</span>)</span><br><span class="line">                    tmp.addLast(node.val); <span class="comment">// 偶数层 -&gt; 队列头部</span></span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    tmp.addFirst(node.val); <span class="comment">// 奇数层 -&gt; 队列尾部</span></span><br><span class="line">                <span class="keyword">if</span>(node.left != <span class="literal">null</span>)</span><br><span class="line">                    queue.add(node.left);</span><br><span class="line">                <span class="keyword">if</span>(node.right != <span class="literal">null</span>) </span><br><span class="line">                    queue.add(node.right);</span><br><span class="line">            &#125;</span><br><span class="line">            res.add(tmp);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><strong>返回值：</strong> 两对节点都对称时，才是对称树，因此用与逻辑符 <code>&amp;&amp;</code> 连接。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isSymmetric</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">        <span class="type">return</span> <span class="variable">root</span> <span class="operator">=</span>= <span class="literal">null</span> ? <span class="literal">true</span> : recur(root.left, root.right);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">recur</span><span class="params">(TreeNode L, TreeNode R)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(L == <span class="literal">null</span> &amp;&amp; R == <span class="literal">null</span>) </span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(L == <span class="literal">null</span> || R == <span class="literal">null</span> || L.val != R.val)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> recur(L.left, R.right) &amp;&amp; recur(L.right, R.left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<hr>
+
+
 <blockquote>
 <p>参考来源：力扣（LeetCode）</p>
 <p>作者：jyd</p>
@@ -428,7 +448,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://example.com/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" title="搜索与回溯算法">http://example.com/2022/05/15/搜索与回溯算法/</a>
+    <a href="http://example.com/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/" title="搜索与回溯算法二">http://example.com/2022/05/16/搜索与回溯算法二/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -442,7 +462,7 @@
           <div class="post-tags">
               <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
               <a href="/tags/%E4%BA%8C%E5%8F%89%E6%A0%91/" rel="tag"><i class="fa fa-tag"></i> 二叉树</a>
-              <a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag"><i class="fa fa-tag"></i> 广度优先搜索</a>
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag"><i class="fa fa-tag"></i> 深度优先搜索</a>
           </div>
 
         
@@ -451,13 +471,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" rel="prev" title="查找算法">
-      <i class="fa fa-chevron-left"></i> 查找算法
+    <a href="/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" rel="prev" title="搜索与回溯算法">
+      <i class="fa fa-chevron-left"></i> 搜索与回溯算法
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/" rel="next" title="搜索与回溯算法二">
-      搜索与回溯算法二 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -517,7 +534,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">例题一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">1.1.1.</span> <span class="nav-text">解题思路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="nav-number">1.1.2.</span> <span class="nav-text">算法流程</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E4%BA%8C"><span class="nav-number">2.</span> <span class="nav-text">例题二</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-1"><span class="nav-number">2.1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%EF%BC%9A%E5%B1%82%E5%BA%8F%E9%81%8D%E5%8E%86-%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="nav-number">2.1.1.</span> <span class="nav-text">解题思路：层序遍历 + 双端队列</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="nav-number">2.1.2.</span> <span class="nav-text">算法流程：</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">例题一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="nav-number">1.1.1.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%EF%BC%9A"><span class="nav-number">1.1.2.</span> <span class="nav-text">算法流程：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E4%BA%8C"><span class="nav-number">2.</span> <span class="nav-text">例题二</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-1"><span class="nav-number">2.1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%EF%BC%9A-1"><span class="nav-number">2.1.1.</span> <span class="nav-text">解题思路：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B%EF%BC%9A-1"><span class="nav-number">2.1.2.</span> <span class="nav-text">算法流程：</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
