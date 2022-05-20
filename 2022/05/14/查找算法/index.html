@@ -35,7 +35,7 @@
 <meta property="og:image" content="http://li0424.com/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/3.png">
 <meta property="og:image" content="http://li0424.com/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/4.png">
 <meta property="article:published_time" content="2022-05-14T03:06:00.000Z">
-<meta property="article:modified_time" content="2022-05-16T09:21:45.348Z">
+<meta property="article:modified_time" content="2022-05-20T03:48:16.646Z">
 <meta property="article:author" content="木子">
 <meta property="article:tag" content="算法">
 <meta property="article:tag" content="数组">
@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -150,7 +150,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-guestbook">
@@ -243,7 +243,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-16 17:21:45" itemprop="dateModified" datetime="2022-05-16T17:21:45+08:00">2022-05-16</time>
+                <time title="修改时间：2022-05-20 11:48:16" itemprop="dateModified" datetime="2022-05-20T11:48:16+08:00">2022-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -364,12 +364,14 @@
 <li><code>numbers</code> 原来是一个升序排序的数组，并进行了 <code>1</code> 至 <code>n</code> 次旋转</li>
 </ul>
 <h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><h5 id="解题思路：二分查找"><a href="#解题思路：二分查找" class="headerlink" title="解题思路：二分查找"></a>解题思路：二分查找</h5><p>一个包含重复元素的升序数组在经过旋转之后，可以得到下面可视化的折线图：</p>
-<p><img src="/img/loading.gif" data-original="/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/1.png" alt="fig1"></p>
+<img src="/img/loading.gif" data-original="/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/1.png" alt="fig1">
+
 <p>其中横轴表示数组元素的下标，纵轴表示数组元素的值。图中标出了最小值的位置，是我们需要查找的目标。</p>
 <p>我们考虑数组中的最后一个元素 <code>x</code>：在最小值右侧的元素，它们的值一定都小于等于 <code>x</code>；而在最小值左侧的元素，它们的值一定都大于等于 <code>x</code>。因此，我们可以根据这一条性质，通过二分查找的方法找出最小值。</p>
 <p>在二分查找的每一步中，左边界为 <code>low</code>，右边界为 <code>high</code>，区间的中点为 <code>pivot</code>，最小值就在该区间内。我们将中轴元素 <code>numbers[pivot]</code> 与右边界元素 <code>numbers[high]</code> 进行比较，可能会有以下的三种情况：</p>
 <p>第一种情况是 <code>numbers[pivot]&lt;numbers[high]</code>。如下图所示，这说明 <code>numbers[pivot]</code> 是最小值右侧的元素，因此我们可以忽略二分查找区间的右半部分。</p>
-<p><img src="/img/loading.gif" data-original="/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/2.png" alt="fig2"></p>
+<img src="/img/loading.gif" data-original="/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/2.png" alt="fig2">
+
 <p>第二种情况是<code>numbers[pivot]&gt;numbers[high]</code>。如下图所示，这说明 <code>numbers[pivot]</code>是最小值左侧的元素，因此我们可以忽略二分查找区间的左半部分。</p>
 <p><img src="/img/loading.gif" data-original="/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/3.png" alt="fig3"></p>
 <p>第三种情况是 <code>numbers[pivot]==numbers[high]</code>。如下图所示，由于重复元素的存在，我们并不能确定<code>numbers[pivot]</code> 究竟在最小值的左侧还是右侧，因此我们不能莽撞地忽略某一部分的元素。我们唯一可以知道的是，由于它们的值相同，所以无论 <code>numbers[high]</code> 是不是最小值，都有一个它的「替代品」<code>numbers[pivot]</code>，因此我们可以忽略二分查找区间的右端点。</p>
@@ -532,7 +534,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -545,7 +547,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -598,13 +600,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">16k</span>
+    <span title="站点总字数">19k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">14 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div>
 
 <!--

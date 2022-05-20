@@ -130,7 +130,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a>
 
   </li>
         <li class="menu-item menu-item-guestbook">
@@ -202,6 +202,124 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/05/20/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%BA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风过木">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/20/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%BA%8C/" class="post-title-link" itemprop="url">动态规划二</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-05-20 10:40:00 / 修改时间：11:47:54" itemprop="dateCreated datePublished" datetime="2022-05-20T10:40:00+08:00">2022-05-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">LeetCode学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/05/20/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%BA%8C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/20/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%BA%8C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="例题一"><a href="#例题一" class="headerlink" title="例题一"></a>例题一</h3><p>给定一个数字，我们按照如下规则把它翻译为字符串：0 翻译成 “a” ，1 翻译成 “b”，……，11 翻译成 “l”，……，25 翻译成 “z”。一个数字可能有多个翻译。请编程实现一个函数，用来计算一个数字有多少种不同的翻译方法。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: <span class="number">12258</span></span><br><span class="line">输出: <span class="number">5</span></span><br><span class="line">解释: <span class="number">12258</span>有<span class="number">5</span>种不同的翻译，分别是<span class="string">&quot;bccfi&quot;</span>, <span class="string">&quot;bwfi&quot;</span>, <span class="string">&quot;bczi&quot;</span>, <span class="string">&quot;mcfi&quot;</span>和<span class="string">&quot;mzi&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>提示：</strong></p>
+<p><code>0 &lt;= num &lt; 231</code></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/05/20/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E4%BA%8C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/05/19/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -225,10 +343,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-05-19 10:03:00 / 修改时间：11:08:06" itemprop="dateCreated datePublished" datetime="2022-05-19T10:03:00+08:00">2022-05-19</time>
+              <time title="创建时间：2022-05-19 10:03:00" itemprop="dateCreated datePublished" datetime="2022-05-19T10:03:00+08:00">2022-05-19</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-20 11:48:26" itemprop="dateModified" datetime="2022-05-20T11:48:26+08:00">2022-05-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -263,7 +387,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -351,10 +475,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-05-16 16:26:00 / 修改时间：17:26:10" itemprop="dateCreated datePublished" datetime="2022-05-16T16:26:00+08:00">2022-05-16</time>
+              <time title="创建时间：2022-05-16 16:26:00" itemprop="dateCreated datePublished" datetime="2022-05-16T16:26:00+08:00">2022-05-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-20 11:49:05" itemprop="dateModified" datetime="2022-05-20T11:49:05+08:00">2022-05-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -486,7 +616,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-16 17:21:02" itemprop="dateModified" datetime="2022-05-16T17:21:02+08:00">2022-05-16</time>
+                <time title="修改时间：2022-05-20 11:48:53" itemprop="dateModified" datetime="2022-05-20T11:48:53+08:00">2022-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -612,7 +742,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-16 17:21:45" itemprop="dateModified" datetime="2022-05-16T17:21:45+08:00">2022-05-16</time>
+                <time title="修改时间：2022-05-20 11:48:16" itemprop="dateModified" datetime="2022-05-20T11:48:16+08:00">2022-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -739,7 +869,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-16 17:20:47" itemprop="dateModified" datetime="2022-05-16T17:20:47+08:00">2022-05-16</time>
+                <time title="修改时间：2022-05-20 11:48:42" itemprop="dateModified" datetime="2022-05-20T11:48:42+08:00">2022-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -980,7 +1110,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-04 15:51:42" itemprop="dateModified" datetime="2022-05-04T15:51:42+08:00">2022-05-04</time>
+                <time title="修改时间：2022-05-20 11:49:13" itemprop="dateModified" datetime="2022-05-20T11:49:13+08:00">2022-05-20</time>
               </span>
 
           
@@ -1117,7 +1247,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1130,7 +1260,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1183,13 +1313,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">16k</span>
+    <span title="站点总字数">19k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">14 分钟</span>
+    <span title="站点阅读时长">18 分钟</span>
 </div>
 
 <!--
