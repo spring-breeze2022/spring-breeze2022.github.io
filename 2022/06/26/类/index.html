@@ -31,7 +31,7 @@
 <meta property="og:description" content="面向对象编程什么是面向过程 面向过程（Procedure-Oriented Programming，简称POP）是一种编程模型，由一系列要执行的计算步骤组成，通常采用自上而下、顺序执行的方式。 什么是面向对象 面向对象编程（Object-oriented programming，简写：OOP）是一种计算机编程模型，它围绕数据或对象而不是功能和逻辑来组织软件设计，更专注于对象与对象之间的交互，对象涉">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-26T13:55:00.000Z">
-<meta property="article:modified_time" content="2022-06-26T13:55:52.035Z">
+<meta property="article:modified_time" content="2022-06-27T12:49:05.712Z">
 <meta property="article:author" content="木子">
 <meta property="article:tag" content="类">
 <meta property="article:tag" content="面向对象">
@@ -229,10 +229,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-06-26 21:55:00 / 修改时间：21:55:52" itemprop="dateCreated datePublished" datetime="2022-06-26T21:55:00+08:00">2022-06-26</time>
+              <time title="创建时间：2022-06-26 21:55:00" itemprop="dateCreated datePublished" datetime="2022-06-26T21:55:00+08:00">2022-06-26</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-06-27 20:49:05" itemprop="dateModified" datetime="2022-06-27T20:49:05+08:00">2022-06-27</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -274,7 +280,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>833</span>
+              <span>969</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -297,6 +303,10 @@
 <p>面向过程（Procedure-Oriented Programming，简称POP）是一种编程模型，由一系列要执行的计算步骤组成，通常采用自上而下、顺序执行的方式。</p>
 <p><strong>什么是面向对象</strong></p>
 <p>面向对象编程（Object-oriented programming，简写：OOP）是一种计算机编程模型，它围绕数据或对象而不是功能和逻辑来组织软件设计，更专注于对象与对象之间的交互，对象涉及的方法和属性都在对象内部。说的更底层一点就是面向对象是一种依赖于类和对象概念的编程方式。</p>
+<span id="more"></span>
+
+
+
 <h4 id="面向对象的三大特征"><a href="#面向对象的三大特征" class="headerlink" title="面向对象的三大特征"></a>面向对象的三大特征</h4><p><strong>封装</strong></p>
 <p>封装是面向对象方法的核心思想之一。它有两个含义：</p>
 <ul>
@@ -318,11 +328,22 @@
 <p><strong>修饰符 class 类名{</strong></p>
 <p>​		<strong>类体的内容</strong></p>
 <p><strong>}</strong></p>
-<h5 id="类的修饰符"><a href="#类的修饰符" class="headerlink" title="类的修饰符"></a>类的修饰符</h5><p><strong>final：常量修饰符</strong></p>
+<h5 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h5><p><strong>final：常量修饰符</strong></p>
 <p>如果一个成员变量修饰为final，就是常量，常量的名字习惯用大写字母</p>
-<p><strong>public：静态修饰符</strong></p>
+<p><strong>可修饰的对象：</strong></p>
+<ul>
+<li>属性：修饰属性后，属性为常量，只能赋值一次</li>
+<li>方法：修饰方法后，方法不能被重写</li>
+<li>类：修饰类后，类不能被继承</li>
+</ul>
+<p><strong>static：静态修饰符</strong></p>
 <p>方法声明中用关键字static修饰的称作类方法或静态方法，不用static修饰的</p>
 <p>称作实例方法。</p>
+<p><strong>可修饰的对象</strong></p>
+<ul>
+<li>属性：修饰属性后，属性为静态变量（也叫类变量），可以用对象调用，也可以用类调用</li>
+<li>方法：修饰方法后，方法为静态函数，只能调用静态变量，不能使用this调用</li>
+</ul>
 <p><strong>一个类中的方法可以互相调用：实例方法可以调用该类中实例方法或类方法；类方法只能调用该类的类方法，不能调用实例方法；</strong></p>
 <p>如：main函数为静态函数，只能调用静态函数。</p>
 
@@ -455,7 +476,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象的三大特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.3.1.</span> <span class="nav-text">类的修饰符</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象的三大特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.3.1.</span> <span class="nav-text">修饰符</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -543,7 +564,7 @@
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">27 分钟</span>
 </div>
 
 <!--
