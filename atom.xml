@@ -6,7 +6,7 @@
   <link href="http://li0424.com/atom.xml" rel="self"/>
   
   <link href="http://li0424.com/"/>
-  <updated>2022-06-27T12:49:05.712Z</updated>
+  <updated>2022-07-06T02:05:50.683Z</updated>
   <id>http://li0424.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库</title>
+    <link href="http://li0424.com/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    <id>http://li0424.com/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+    <published>2022-07-05T07:14:00.000Z</published>
+    <updated>2022-07-06T02:05:50.683Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><p>数据库结构采用关系型数据库</p><h3 id="什么是关系型数据库？"><a href="#什么是关系型数据库？" class="headerlink" title="什么是关系型数据库？"></a>什么是关系型数据库？</h3><p>​关系型数据库，是指采用了关系模型来组织数据的数据库，其以行和列的形式存储数据，以便于用户理解，关系型数据库这一系列的行和列被称为表，一组表组成了数据库。用户通过查询来检索数据库中的数据，而查询是一个用于限定数据库中某些区域的执行代码。关系模型可以简单理解为二维表格模型，而一个关系型数据库就是由二维表及其之间的关系组成的一个数据组织。</p><h4 id="关系型数据库设计原则"><a href="#关系型数据库设计原则" class="headerlink" title="关系型数据库设计原则"></a>关系型数据库设计原则</h4><p>遵循ER模型和三范式</p><p>ER模型：</p><ul><li>E    entity   代表实体的意思      对应到数据库当中的一张表          </li><li>R    relationship 代表关系的意思</li></ul><p>三范式：</p><ul><li>1NF：第一范式。要求每一属性列不可再分。主属性：是唯一属性</li><li>2NF：第二范式。在第一范式之上，所有的非主属性都依赖主属性。（隐含信息，一物一表）</li><li>3NF：第三范式。在第二范式基础上，不存在传递依赖。</li></ul><span id="more"></span><h5 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h5><p>在SQL SERVER中，对于基本表的约束分为列约束和表约束。</p><ul><li>列约束是对某一个特定列的约束，包含在列定义中，直接跟在该列的其他定义之后，用空格分隔，不必指定列名；</li><li>表约束与列定义相互独立，不包括在列定义中，通常用于对多个列一起进行约束，与列定义用’,’分隔，定义表约束时必须指出要约束的那些列的名称。完整性约束的基本语法格式为：</li></ul><p><strong>[ CONSTRAINT &lt;约束名&gt; ] &lt;约束类型&gt;</strong></p><p><strong>约束类型：</strong></p><ul><li><p>NULL&#x2F;NOT NULL（是否非空）</p></li><li><p>UNIQUE约束（唯一）</p></li><li><p>PRIMARY KEY约束（主键）</p></li><li><p>FOREIGN KEY约束（外键）</p></li><li><p>CHECK约束（检查字段所允许范围）</p></li></ul><p><strong>主键（主属性）</strong></p><p>作用：可以保证数据的实体完整性，如果主属性不完整，实体不会入库。</p><p><strong>外键（起关联作用）</strong></p><p>作用：连接两个表的非主属性。保证参照完整性。</p><p><img src="/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/3.png" alt="image-20220706091941299"></p><h5 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h5><p><strong>索引的分类</strong></p><ol><li>按照索引记录的存放位置可分为聚集索引与非聚集索引</li></ol><ul><li><strong>聚集索引</strong>：按照索引的字段排列记录，并且依照排好的顺序将记录存储在表中。</li><li><strong>非聚集索引</strong>：按照索引的字段排列记录，但是排列的结果并不会存储在表中，而是另外存储。</li></ul><ol start="2"><li>唯一索引的概念<ul><li><strong>唯一索引</strong>表示表中每一个索引值只对应唯一的数据记录，</li><li>这与表的PRIMARY KEY的特性类似，因此唯一性索引常用于PRIMARY KEY的字段上，以区别每一笔记录。</li><li>当表中有被设置为<strong>UNIQUE</strong>的字段时，SQL SERVER会自动建立一个<strong>非聚集的唯一性索引</strong>。</li><li>而当表中有<strong>PRIMARY KEY</strong>的字段时，SQL SERVER会在PRIMARY KEY字段建立<strong>一个聚集索引</strong>。</li></ul></li><li>复合索引的概念<ul><li>复合索引是将两个字段或多个字段组合起来建立的索引，而单独的字段允许有重复的值。</li></ul></li></ol><p><strong>建立索引：</strong></p><ul><li>建立索引的语句是CREATE INDEX，其语法格式为：<br>    CREATE [UNIQUE] [CLUSTER] INDEX &lt;索引名&gt; ON &lt;表名&gt; (&lt;列名&gt; [次序] [{,&lt;列名&gt;}] [次序]…)</li><li>改变表中的数据（如增加或删除记录）时，索引将自动更新。<br>索引建立后，在查询使用该列时，系统将自动使用索引进行查询。 </li><li>索引数目无限制，但索引越多，更新数据的速度越慢。对于仅用于查询的表可多建索引，对于数据更新频繁的表则应少建索引。</li></ul><p><strong>删除索引：</strong></p><ul><li>建立索引是为了提高查询速度，但随着索引的增多，数据更新时，系统会花费许多时间来维护索引。这时，应删除不必要的索引。</li><li>删除索引的语句是DROP INDEX，其语法格式为：<br>        DROP INDEX 数据表名.索引名</li></ul><p><strong>实体图</strong></p><p>由矩形（实体）、学号（属性）、菱形（关联：使用1与m表示对应关系）</p><p><strong>关键词</strong></p><p>RDBMS：关系型数据库管理系统（如：mysql sqlserver oreacl)</p><p>DBA:数据库管理者</p><p>C&#x2F;S模式：可视化界面通过网络协议（通常为TCP协议）连接server</p><p><strong>数据类型</strong></p><p><img src="/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/4.png" alt="image-20220706093141235"></p><p><img src="/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/5.png" alt="image-20220706093203941"></p><p><img src="/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/6.png" alt="image-20220706093224759"></p><p><img src="/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/7.png" alt="image-20220706093243616"></p><h3 id="SQL语言"><a href="#SQL语言" class="headerlink" title="SQL语言"></a>SQL语言</h3><p>SQL语言支持数据库的三级模式结构。其中外模式对应于视图和部分基本表，模式对应于基本表，内模式对应于存储文件。 </p><p><img src="/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/2.png" alt="image-20220705205933811"></p><h4 id="简单的SQL示例"><a href="#简单的SQL示例" class="headerlink" title="简单的SQL示例"></a>简单的SQL示例</h4><p>查看数据库：<code>SHOW DATABASES;</code></p><p>使用数据库：<code>USE &lt;数据库名&gt;</code></p><p>创建表： <code>CREATE TABLE &lt;表名&gt;(&lt;列定义&gt;[&#123;，&lt;列定义&gt;|&lt;表约束&gt;&#125;])</code></p><p>查看表结构：<code>DESC &lt;表名&gt;</code></p><p><strong>查看记录：</strong><code>SELECT〈列名〉[&#123;，〈列名〉&#125;] FROM〈表名或视图名〉[&#123;，〈表名或视图名〉&#125;] [WHERE〈检索条件〉] [GROUP BY &lt;列名1&gt;[HAVING &lt;条件表达式&gt;]] [ORDER BY &lt;列名2&gt;[ASC|DESC]];</code></p><p><strong>注意</strong></p><ul><li>查询的结果是仍是一个表。</li><li>SELECT语句的执行过程是:<ul><li>根据WHERE子句的检索条件，从FROM子句指定的基本表或视图中选取满足条件的元组，再按照SELECT子句中指定的列，投影得到结果表。</li><li>如果有GROUP子句，则将查询结果按照&lt;列名1&gt;相同的值进行分组。</li><li>如果GROUP子句后有HAVING短语，则只输出满足HAVING条件的元组。</li><li>如果有ORDER子句，查询结果还要按照&lt;列名2&gt;的值进行排序。</li></ul></li></ul><p><strong>WHERE中较常用的运算符：</strong></p><p><img src="/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/8.png" alt="image-20220706095309061"></p><p><strong>常用库函数：</strong></p><p><img src="/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/9.png" alt="image-20220706095613087"></p><p><strong>插入记录：</strong><code>INSERT INTO &lt;表名&gt;[(&lt;列名1&gt;[,&lt;列名2&gt;…])] VALUES(&lt;值&gt;)</code></p><p><strong>修改记录：</strong><code>UPDATE &lt;表名&gt; SET &lt;列名&gt;=&lt;表达式&gt; [,&lt;列名&gt;=&lt;表达式&gt;]… [WHERE &lt;条件&gt;]</code></p><p><strong>删除记录：</strong><code>DELETE  FROM&lt;表名&gt; [WHERE &lt;条件&gt;]</code>**</p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;数据库&quot;&gt;&lt;a href=&quot;#数据库&quot; class=&quot;headerlink&quot; title=&quot;数据库&quot;&gt;&lt;/a&gt;数据库&lt;/h1&gt;&lt;p&gt;数据库结构采用关系型数据库&lt;/p&gt;
+&lt;h3 id=&quot;什么是关系型数据库？&quot;&gt;&lt;a href=&quot;#什么是关系型数据库？&quot; class=&quot;headerlink&quot; title=&quot;什么是关系型数据库？&quot;&gt;&lt;/a&gt;什么是关系型数据库？&lt;/h3&gt;&lt;p&gt;​		关系型数据库，是指采用了关系模型来组织数据的数据库，其以行和列的形式存储数据，以便于用户理解，关系型数据库这一系列的行和列被称为表，一组表组成了数据库。用户通过查询来检索数据库中的数据，而查询是一个用于限定数据库中某些区域的执行代码。关系模型可以简单理解为二维表格模型，而一个关系型数据库就是由二维表及其之间的关系组成的一个数据组织。&lt;/p&gt;
+&lt;h4 id=&quot;关系型数据库设计原则&quot;&gt;&lt;a href=&quot;#关系型数据库设计原则&quot; class=&quot;headerlink&quot; title=&quot;关系型数据库设计原则&quot;&gt;&lt;/a&gt;关系型数据库设计原则&lt;/h4&gt;&lt;p&gt;遵循ER模型和三范式&lt;/p&gt;
+&lt;p&gt;ER模型：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;E    entity   代表实体的意思      对应到数据库当中的一张表          &lt;/li&gt;
+&lt;li&gt;R    relationship 代表关系的意思&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;三范式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1NF：第一范式。要求每一属性列不可再分。主属性：是唯一属性&lt;/li&gt;
+&lt;li&gt;2NF：第二范式。在第一范式之上，所有的非主属性都依赖主属性。（隐含信息，一物一表）&lt;/li&gt;
+&lt;li&gt;3NF：第三范式。在第二范式基础上，不存在传递依赖。&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="JAVA学习" scheme="http://li0424.com/categories/JAVA%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="数据库" scheme="http://li0424.com/categories/JAVA%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+    <category term="数据库" scheme="http://li0424.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    <category term="知识点" scheme="http://li0424.com/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+  </entry>
   
   <entry>
     <title>类的学习</title>
@@ -82,9 +120,9 @@
     
     <category term="数组" scheme="http://li0424.com/tags/%E6%95%B0%E7%BB%84/"/>
     
-    <category term="数" scheme="http://li0424.com/tags/%E6%95%B0/"/>
-    
     <category term="深度优先搜索" scheme="http://li0424.com/tags/%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/"/>
+    
+    <category term="数" scheme="http://li0424.com/tags/%E6%95%B0/"/>
     
   </entry>
   
@@ -158,9 +196,9 @@
     
     <category term="算法" scheme="http://li0424.com/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="字符串" scheme="http://li0424.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
-    
     <category term="动态规划" scheme="http://li0424.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+    <category term="字符串" scheme="http://li0424.com/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
     
   </entry>
   
@@ -200,9 +238,9 @@
     
     <category term="算法" scheme="http://li0424.com/tags/%E7%AE%97%E6%B3%95/"/>
     
-    <category term="动态规划" scheme="http://li0424.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    
     <category term="数组" scheme="http://li0424.com/tags/%E6%95%B0%E7%BB%84/"/>
+    
+    <category term="动态规划" scheme="http://li0424.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
     
   </entry>
   
