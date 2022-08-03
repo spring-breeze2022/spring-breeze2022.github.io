@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://li0424.com/2022/07/26/%E9%9B%86%E5%90%88/1.png">
 <meta property="og:image" content="http://li0424.com/2022/07/26/%E9%9B%86%E5%90%88/2.png">
 <meta property="article:published_time" content="2022-07-26T01:19:00.000Z">
-<meta property="article:modified_time" content="2022-07-29T01:23:25.584Z">
+<meta property="article:modified_time" content="2022-08-03T02:38:02.861Z">
 <meta property="article:author" content="木子">
 <meta property="article:tag" content="知识点">
 <meta property="article:tag" content="集合">
@@ -138,17 +138,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">16</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-guestbook">
@@ -241,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-29 09:23:25" itemprop="dateModified" datetime="2022-07-29T09:23:25+08:00">2022-07-29</time>
+                <time title="修改时间：2022-08-03 10:38:02" itemprop="dateModified" datetime="2022-08-03T10:38:02+08:00">2022-08-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,7 +253,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0/%E9%9B%86%E5%90%88/" itemprop="url" rel="index"><span itemprop="name">集合</span></a>
                 </span>
             </span>
 
@@ -284,14 +284,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>4.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -319,24 +319,24 @@
 <li>Collection接口是List、set和Queur接口的父接口，该接口里定义的方法既可用于操作Set集合 ，也可用于操作List和Queue集合。 </li>
 <li>Collection提供了大量添加、删除、访问的方法来访问集合元素。（其中也包含Collection类之间的互相增删查改）</li>
 </ul>
-<p><strong>Iterator接口：</strong>是java集合框架的成员，主要用于Collection集合的遍历，因此Iterator对象也被称为迭代器。主要有以下3个方法：</p>
+<h4 id="Iterator接口"><a href="#Iterator接口" class="headerlink" title="Iterator接口"></a>Iterator接口</h4><p>Iterator接口是java集合框架的成员，主要用于Collection集合的遍历，因此Iterator对象也被称为迭代器。主要有以下3个方法：</p>
 <ol>
 <li>**boolean hasNext()**：如果被迭代的集合还元素没有被遍历，则返回true。</li>
 <li>**Object next()**：返回集合里下一个元素。</li>
 <li><strong>void remove()</strong> ：删除集合里上一次next方法返回的元素</li>
 </ol>
 <h3 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h3><h4 id="HashSet类"><a href="#HashSet类" class="headerlink" title="HashSet类"></a>HashSet类</h4><p>HashSet是Set接口的典型实现，大多数时候使用Set集合就是使用这个实现类。HashSet按 Hash算法来存储集合中的元素，因此具有很好的存取和查找性能。</p>
-<p><strong>HashSet的比较机制：</strong>当向HashSet集合中存入一个元素时，HashSet会调用该对象的hashCode()方法来得到该对象 的hashCode值，然后根据该HashCode值来决定该对象在HashSet中存储位置。如果有两个元素通过equals方法比较返回true，但它们的hashCode()方法返回值不相等，HashSet将会把它们存储在不同位置，也就可以添加成功。</p>
+<p><strong>HashSet的比较机制：</strong>当向HashSet集合中存入一个元素时，HashSet会调用该对象的hashCode()方法来得到该对象 的hashCode值，然后根据该HashCode值取异或（^）获得hash值，由hash来决定该对象在HashSet中存储位置。如果有两个元素通过equals方法比较返回true，但它们的hashCode()方法返回值不相等，HashSet将会把它们存储在不同位置，也就可以添加成功。</p>
 <p><strong>HashSet的特征：</strong></p>
 <ul>
 <li>不能保证元素的排列顺序，顺序可能与元素的添加顺序不同，元素的顺序可能变化。</li>
-<li>HashSet不是同步的，如果多个线程同时访问一个HashSet，如果有2条或者2条以上线程同时修改了HashSet集合时，必须通过代码来保证其同步。（<strong>线程不安全的</strong>）</li>
+<li>HashSet不是同步的，如果多个线程同时访问一个HashSet，如果有2条或者2条以上线程同时修改了HashSet集合时，必须通过代码来保证其同步。（**&#x3D;&#x3D;线程不安全的&#x3D;&#x3D;**）</li>
 <li>集合元素值可以是null。</li>
 </ul>
-<p><strong>HashSet的底层实现是HashMap对象</strong>：对HashMap&lt;k, v&gt;的value值取固定Object对象，利用key值不可重复的特点进行存储。底层实现为拉链法与红黑树（数据量小时使用拉链法，数据量大时使用红黑树）</p>
+<p><strong>HashSet的底层实现是HashMap对象</strong>：对HashMap&lt;k, v&gt;的value值取固定Object对象，利用key值不可重复的特点进行存储。底层实现为拉链法与红黑树（<strong>数据量小时使用拉链法，数据量大时使用红黑树</strong>）</p>
 <h4 id="LinkedHashSet类"><a href="#LinkedHashSet类" class="headerlink" title="LinkedHashSet类"></a>LinkedHashSet类</h4><p>LinkedHashSet集合也是根据元素hashCode值来决定元素存储位置，但它同时使用链表维护元素的次序，这样使得元素看起来是以插入的顺序保存的。也就是说，当遍历LinkedHashSet集合里元素时，HashSet将会按元素的添加顺序来访问集合里的元素。</p>
-<p>LinkedHashSet需要维护元素的插入顺序，因此性能略低于HashSet的性能， 但在迭代访问Set里的全部元素时将有很好的性能，因为它以链表来维护内部 顺序。</p>
-<h4 id="TreeSet类"><a href="#TreeSet类" class="headerlink" title="TreeSet类"></a>TreeSet类</h4><p><strong>TreeSet是SortedSet接口的唯一实现，正如SortedSet名字所暗示的，TreeSet可以确保集合元素处于排序状态。与前面HashSet集合相比，TreeSet还提供了如下几个额外的方法：</strong></p>
+<p>LinkedHashSet需要维护元素的插入顺序，因此性能略低于HashSet的性能， 但在迭代访问Set里的全部元素时将有很好的性能，因为它以链表来维护内部顺序。</p>
+<h4 id="TreeSet类"><a href="#TreeSet类" class="headerlink" title="TreeSet类"></a>TreeSet类</h4><p><strong>TreeSet是SortedSet接口的唯一实现</strong>，正如SortedSet名字所暗示的，TreeSet可以确保集合元素处于排序状态。与前面HashSet集合相比，TreeSet还提供了如下几个额外的方法：</p>
 <ul>
 <li>Object first()：返回集合中的第一个元素。</li>
 <li>Object last()：返回集合中的最末一个元素。</li>
@@ -346,16 +346,16 @@
 <li>SortedSet headSet(toElement)：返回此Set的子集，由小于toElement的元素组成。</li>
 <li>SortedSet tailSet(fromElement)：返回此Set的子集，由大于或等于fromElement的元 素组成。</li>
 </ul>
-<p><strong>TreeSet的排序：</strong>TreeSet采用红黑树的数据结构对元素进行排序。TreeSet支持两种排序方法：自然排序和定制排序。</p>
+<p><strong>TreeSet的排序：</strong>TreeSet采用<strong>红黑树</strong>的数据结构对元素进行排序。TreeSet支持两种排序方法：自然排序和定制排序。</p>
 <p><strong>TreeSet的比较机制：</strong>实现Comparator接口或传入该对象（传入对象需要内部类重写comparaTo方法）。Comparator是一个比较器。</p>
-<p><strong>TreeSet的底层实现为treeMap</strong></p>
+<p><strong>TreeSet的底层实现为treeMap（使用红黑树）</strong></p>
 <h3 id="List接口"><a href="#List接口" class="headerlink" title="List接口"></a>List接口</h3><ul>
 <li>List集合代表一个有序集合，集合中每个元素都有其对应的顺序索引。List集合允许使用重复元素，可以通过索引来访问指定位置的集合元素。</li>
 <li>List作为Collection接口的子接口，当然可以使用Collection接口里全部方法。而且由于List是有序集合，因此List集合里包含了根据索引来操作集合元素的方法。</li>
 </ul>
 <h4 id="ArrayList与Vector"><a href="#ArrayList与Vector" class="headerlink" title="ArrayList与Vector"></a>ArrayList与Vector</h4><ul>
 <li>ArrayList和Vector类都是基于数组实现的List类，所以ArrayList和Vector类封装了一个动态再分配的<strong>Object[]数组</strong>。每个ArrayList或Vector对象有一个capacity属性，这个capacity表示它们所封装的Object[]数组的长度。当向ArrayList或Vector中添加元素时，它们的capacity会自动增加。</li>
-<li>ArrayList和Vector的显著区别是；<strong>ArrayList是线程不安全的</strong>，当多条线程访问同一个ArrayList集合时，如果有超过一条线程修改了ArrayList集合，则程序必须手动保证该集合的同步性。但<strong>Vector集合则是线程安全的</strong>，无需程序保证该集合的同步性。</li>
+<li>ArrayList和Vector的显著区别是；<strong>ArrayList是&#x3D;&#x3D;线程不安全&#x3D;&#x3D;的</strong>，当多条线程访问同一个ArrayList集合时，如果有超过一条线程修改了ArrayList集合，则程序必须手动保证该集合的同步性。但<strong>Vector集合则是&#x3D;&#x3D;线程安全&#x3D;&#x3D;的</strong>，无需程序保证该集合的同步性。</li>
 </ul>
 <p><strong>ArrayList扩容：</strong></p>
 <ul>
@@ -372,8 +372,46 @@
 <h3 id="Queue接口"><a href="#Queue接口" class="headerlink" title="Queue接口"></a>Queue接口</h3><p>Queue用于模拟了队列这种数据结构，队列通常是指“先进先出”（FIFO）的容器。队列的头部保存在队列中存放时间最长的元素。队列的尾部保存在队列中存放时间最短的元素。新元素插入（offer）到队列的尾部，访问元素（poll）操作会返回队列头部的元素。通常，队列不允许随机访问队列中的元素。</p>
 <h4 id="LinkedList类"><a href="#LinkedList类" class="headerlink" title="LinkedList类"></a>LinkedList类</h4><p>它是List接口的实现类——这意味着它是一个List集合，可以根据索引来随机访问集合中的元素。除此之外，LinkedList还实现了Deque接口，Deque接口是Queue接口的子接口，它代表一个双端队列。</p>
 <p>LinkedList不仅可以当成双端队列使用，也可以当成“栈”使用，因为该类里还包含了pop（出栈）和push（入栈）两个方法。除此之外，LinkedList实现了List接口，所以还被当成List使用。（与ArrayList与Vector实现机制不同，使用链表来存储元素）</p>
-<h2 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h2><h3 id="Hashtable接口"><a href="#Hashtable接口" class="headerlink" title="Hashtable接口"></a>Hashtable接口</h3><p>Hashtable是一个线程安全的Map实现，底层由拉链法实现，key与value都不能为空，</p>
-<p>Collections.synchronizedList(可以让集合线程安全)</p>
+<h2 id="Map接口"><a href="#Map接口" class="headerlink" title="Map接口"></a>Map接口</h2><h3 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h3><ul>
+<li><strong>Hashtable是一个&#x3D;&#x3D;线程安全&#x3D;&#x3D;的Map实现</strong>（线程安全会影响读取效率）</li>
+<li>底层由拉链法实现，key与value都不能为空（<strong>为空会抛空指针异常</strong>）。</li>
+<li>Hashtable中的映射不是有序的。底层实现与HashMap相同。</li>
+<li>Hashtable初始容量为11，加载因子为0.75</li>
+</ul>
+<h5 id="添加机制"><a href="#添加机制" class="headerlink" title="添加机制"></a>添加机制</h5><ol>
+<li>判断key是否为空，为空丢异常</li>
+<li>如key不为空，则对key进行散列值，也就是调用hashCode方法。</li>
+<li>经过对key的hash运算得出数组下标</li>
+<li>根据下标对获取Entry，如为空，直接添加，如不为空，则代表当前位置已有元素，会进行判断当前key的hash与位置已有元素key的hash值是否相同，如果不相同，走添加方法，如当前key的hash与位置已有元素key的hash相同并且equals也相同，则此时将key与value替代掉此位置原有元素 并返回原有key</li>
+<li>put方法为synchronized</li>
+</ol>
+<h5 id="比较机制（与HashMap相同）"><a href="#比较机制（与HashMap相同）" class="headerlink" title="比较机制（与HashMap相同）"></a>比较机制（与HashMap相同）</h5><h5 id="扩容机制"><a href="#扩容机制" class="headerlink" title="扩容机制"></a>扩容机制</h5><ul>
+<li>长度直接扩充到原有两倍加一 ，如果扩充完之后大于长度允许的最大值，则长度变为最大长度</li>
+<li>进行重新计算散列值添加</li>
+</ul>
+<h3 id="HashMap"><a href="#HashMap" class="headerlink" title="HashMap"></a>HashMap</h3><ul>
+<li><p><strong>HashMap是拉链法加红黑树结构，</strong>key可以为空，但value不能为空**（所以HashMap可以且最多有一个空key）</p>
+</li>
+<li><p><strong>HashMap是&#x3D;&#x3D;线程是不安全的&#x3D;&#x3D;的Map实现</strong>（效率高）</p>
+</li>
+<li><p>HashMap初始容量为16，加载因子为0.75</p>
+</li>
+</ul>
+<h5 id="添加机制-1"><a href="#添加机制-1" class="headerlink" title="添加机制"></a>添加机制</h5><p>当我们选择put一个key与value时，程序会首先对key进行hashCode，然后再对hashCode进行异或(^)变成hash，也就是经常说得扰乱，作用是减少hashCode相同产生的碰撞。</p>
+<p>当hash与桶的hash相同时进行qut,如有此桶里面有值，则将新值放到前一个值的next中，依次类推。但是桶下面的链表只能拥有最多8个元素，如超过8个元素将采用红黑树的方式进行表达元素顺序，采用红黑树的目的是为了防止链表太长，会影响获取key时间，当红黑树的长度小于8时，便将红黑树转换为链表，在元素8以下的时候，链表的效率高于红黑树。</p>
+<h5 id="比较机制"><a href="#比较机制" class="headerlink" title="比较机制"></a>比较机制</h5><p>首先是获取key的hash与map中的hash对比，如没有，返回null，如命中，则获取第一个元素，进行equlas，如不相同，判断元素中的next是否为空，如不为空继续判断，如不相同，继续判断，当有相同时进行返回，如无返回null。</p>
+<h3 id="TreeMap"><a href="#TreeMap" class="headerlink" title="TreeMap"></a>TreeMap</h3><ul>
+<li><p>与HashMap相比，TreeMap是一个能比较元素大小的Map集合，会对传入的key进行了大小排序。其中，可以使用元素的自然顺序，也可以使用集合中自定义的比较器来进行排序；</p>
+</li>
+<li><p>TreeMap底层实现为空黑树；</p>
+</li>
+<li><p>当未实现 Comparator 接口时，key 不可以为null，否则抛NullPointerException 异常；</p>
+<p>当实现 Comparator 接口时，若未对 null 情况进行判断，则可能抛 NullPointerException 异常。如果针对null情况实现了，可以存入，但是却不能正常使用get()访问，只能通过遍历去访问。</p>
+</li>
+<li><p>其余与HashMap相似。</p>
+</li>
+</ul>
+<p><strong>Collections.synchronizedList</strong>(可以让集合线程安全)</p>
 
     </div>
 
@@ -508,7 +546,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-number">1.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.</span> <span class="nav-text">Collection接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Set%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.1.</span> <span class="nav-text">Set接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashSet%E7%B1%BB"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">HashSet类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedHashSet%E7%B1%BB"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">LinkedHashSet类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TreeSet%E7%B1%BB"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">TreeSet类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.2.</span> <span class="nav-text">List接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList%E4%B8%8EVector"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">ArrayList与Vector</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Queue%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.3.</span> <span class="nav-text">Queue接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedList%E7%B1%BB"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">LinkedList类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.2.</span> <span class="nav-text">Map接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hashtable%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.2.1.</span> <span class="nav-text">Hashtable接口</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-number">1.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.</span> <span class="nav-text">Collection接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Iterator%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">Iterator接口</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.1.</span> <span class="nav-text">Set接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HashSet%E7%B1%BB"><span class="nav-number">1.1.1.1.</span> <span class="nav-text">HashSet类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedHashSet%E7%B1%BB"><span class="nav-number">1.1.1.2.</span> <span class="nav-text">LinkedHashSet类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TreeSet%E7%B1%BB"><span class="nav-number">1.1.1.3.</span> <span class="nav-text">TreeSet类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#List%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.2.</span> <span class="nav-text">List接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ArrayList%E4%B8%8EVector"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">ArrayList与Vector</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Queue%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.1.3.</span> <span class="nav-text">Queue接口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LinkedList%E7%B1%BB"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">LinkedList类</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.2.</span> <span class="nav-text">Map接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hashtable"><span class="nav-number">1.2.1.</span> <span class="nav-text">Hashtable</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%9C%BA%E5%88%B6"><span class="nav-number">1.2.1.0.1.</span> <span class="nav-text">添加机制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E6%9C%BA%E5%88%B6%EF%BC%88%E4%B8%8EHashMap%E7%9B%B8%E5%90%8C%EF%BC%89"><span class="nav-number">1.2.1.0.2.</span> <span class="nav-text">比较机制（与HashMap相同）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%89%A9%E5%AE%B9%E6%9C%BA%E5%88%B6"><span class="nav-number">1.2.1.0.3.</span> <span class="nav-text">扩容机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HashMap"><span class="nav-number">1.2.2.</span> <span class="nav-text">HashMap</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%9C%BA%E5%88%B6-1"><span class="nav-number">1.2.2.0.1.</span> <span class="nav-text">添加机制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E6%9C%BA%E5%88%B6"><span class="nav-number">1.2.2.0.2.</span> <span class="nav-text">比较机制</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TreeMap"><span class="nav-number">1.2.3.</span> <span class="nav-text">TreeMap</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -524,20 +562,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -590,13 +628,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">45k</span>
+    <span title="站点总字数">51k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">40 分钟</span>
+    <span title="站点阅读时长">46 分钟</span>
 </div>
 
 <!--

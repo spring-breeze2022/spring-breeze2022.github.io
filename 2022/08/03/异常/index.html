@@ -23,26 +23,23 @@
     var CONFIG = {"hostname":"li0424.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="例题一定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。 示例 12输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL  限制： 10 &lt;&#x3D; 节点个数 &lt;&#x3D; 5000">
+  <meta name="description" content="异常一、异常的概述 异常是指程序执行过程中可能出现的非正常情况 JAVA的异常机制提高程序健壮性和容错性 异常在JAVA中以类和对象的形式存在  二、异常的分类     编译时异常 Exception的直接子类    运行时异常 RuntimeException   受检异常 CheckException   非受检异常 UnCheckedException   异常的区别：  Error是指不可">
 <meta property="og:type" content="article">
-<meta property="og:title" content="链表">
-<meta property="og:url" content="http://li0424.com/2022/05/09/%E9%93%BE%E8%A1%A8/index.html">
+<meta property="og:title" content="异常">
+<meta property="og:url" content="http://li0424.com/2022/08/03/%E5%BC%82%E5%B8%B8/index.html">
 <meta property="og:site_name" content="春风过木">
-<meta property="og:description" content="例题一定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。 示例 12输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL  限制： 10 &lt;&#x3D; 节点个数 &lt;&#x3D; 5000">
+<meta property="og:description" content="异常一、异常的概述 异常是指程序执行过程中可能出现的非正常情况 JAVA的异常机制提高程序健壮性和容错性 异常在JAVA中以类和对象的形式存在  二、异常的分类     编译时异常 Exception的直接子类    运行时异常 RuntimeException   受检异常 CheckException   非受检异常 UnCheckedException   异常的区别：  Error是指不可">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://li0424.com/2022/05/09/%E9%93%BE%E8%A1%A8/e1.png">
-<meta property="og:image" content="http://li0424.com/2022/05/09/%E9%93%BE%E8%A1%A8/e2.png">
-<meta property="og:image" content="http://li0424.com/2022/05/09/%E9%93%BE%E8%A1%A8/e3.png">
-<meta property="article:published_time" content="2022-05-09T02:14:00.000Z">
-<meta property="article:modified_time" content="2022-05-20T03:48:42.634Z">
+<meta property="og:image" content="http://li0424.com/2022/08/03/%E5%BC%82%E5%B8%B8/1.png">
+<meta property="article:published_time" content="2022-08-03T11:11:16.726Z">
+<meta property="article:modified_time" content="2022-08-03T11:44:30.961Z">
 <meta property="article:author" content="木子">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="链表">
-<meta property="article:tag" content="哈希表">
+<meta property="article:tag" content="知识点">
+<meta property="article:tag" content="异常">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://li0424.com/2022/05/09/%E9%93%BE%E8%A1%A8/e1.png">
+<meta name="twitter:image" content="http://li0424.com/2022/08/03/%E5%BC%82%E5%B8%B8/1.png">
 
-<link rel="canonical" href="http://li0424.com/2022/05/09/%E9%93%BE%E8%A1%A8/">
+<link rel="canonical" href="http://li0424.com/2022/08/03/%E5%BC%82%E5%B8%B8/">
 
 
 <script id="page-configurations">
@@ -55,7 +52,7 @@
   };
 </script>
 
-  <title>链表 | 春风过木</title>
+  <title>异常 | 春风过木</title>
   
 
 
@@ -212,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/05/09/%E9%93%BE%E8%A1%A8/">
+    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/08/03/%E5%BC%82%E5%B8%B8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -225,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          链表
+          异常
         </h1>
 
         <div class="post-meta">
@@ -234,27 +231,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2022-05-09 10:14:00" itemprop="dateCreated datePublished" datetime="2022-05-09T10:14:00+08:00">2022-05-09</time>
+              <time title="创建时间：2022-08-03 19:11:16 / 修改时间：19:44:30" itemprop="dateCreated datePublished" datetime="2022-08-03T19:11:16+08:00">2022-08-03</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-20 11:48:42" itemprop="dateModified" datetime="2022-05-20T11:48:42+08:00">2022-05-20</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">LeetCode学习</span></a>
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">JAVA学习</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/%E9%93%BE%E8%A1%A8/" itemprop="url" rel="index"><span itemprop="name">链表</span></a>
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/%E5%BC%82%E5%B8%B8/" itemprop="url" rel="index"><span itemprop="name">异常</span></a>
                 </span>
             </span>
 
@@ -274,8 +265,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2022/05/09/%E9%93%BE%E8%A1%A8/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/09/%E9%93%BE%E8%A1%A8/" itemprop="commentCount"></span>
+    <a title="valine" href="/2022/08/03/%E5%BC%82%E5%B8%B8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/03/%E5%BC%82%E5%B8%B8/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -285,7 +276,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -304,64 +295,127 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="例题一"><a href="#例题一" class="headerlink" title="例题一"></a>例题一</h3><p>定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。</p>
-<p><strong>示例</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: <span class="number">1</span>-&gt;<span class="number">2</span>-&gt;<span class="number">3</span>-&gt;<span class="number">4</span>-&gt;<span class="number">5</span>-&gt;NULL</span><br><span class="line">输出: <span class="number">5</span>-&gt;<span class="number">4</span>-&gt;<span class="number">3</span>-&gt;<span class="number">2</span>-&gt;<span class="number">1</span>-&gt;NULL</span><br></pre></td></tr></table></figure>
+        <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h3 id="一、异常的概述"><a href="#一、异常的概述" class="headerlink" title="一、异常的概述"></a>一、异常的概述</h3><ol>
+<li>异常是指程序执行过程中可能出现的非正常情况</li>
+<li>JAVA的异常机制提高程序健壮性和容错性</li>
+<li>异常在JAVA中以类和对象的形式存在</li>
+</ol>
+<h3 id="二、异常的分类"><a href="#二、异常的分类" class="headerlink" title="二、异常的分类"></a>二、异常的分类</h3><img src="/img/loading.gif" data-original="/2022/08/03/%E5%BC%82%E5%B8%B8/1.png" alt="image-20220803191349152" style="zoom:80%;">
 
-<p><strong>限制：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0</span> &lt;= 节点个数 &lt;= <span class="number">5000</span></span><br></pre></td></tr></table></figure>
-
-<span id="more"></span>
-
-<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><h5 id="解题思路一：迭代"><a href="#解题思路一：迭代" class="headerlink" title="解题思路一：迭代"></a>解题思路一：迭代</h5><p>假设链表为 <code>1→2→3→∅</code>，我们想要把它改成<code>∅←1←2←3</code>。</p>
-<p>在遍历链表时，将当前节点的<code>next</code>指针改为指向前一个节点。由于该节点没有引用其前一个节点，因此需要事先准备一个空节点储存前一个节点，在更改引用之前还需要存储后一个节点。最后返回新的头节点。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">reverseList</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">p</span> <span class="operator">=</span> <span class="literal">null</span>;      <span class="comment">//用来储存倒叙</span></span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">c</span> <span class="operator">=</span> head;      </span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">n</span> <span class="operator">=</span> <span class="literal">null</span>;      </span><br><span class="line">        <span class="keyword">while</span>(c != <span class="literal">null</span>)&#123;</span><br><span class="line">            n = c.next;</span><br><span class="line">            c.next = p;</span><br><span class="line">            p = c;</span><br><span class="line">            c = n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> p;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h5 id="解题思路二：递归"><a href="#解题思路二：递归" class="headerlink" title="解题思路二：递归"></a>解题思路二：递归</h5><ul>
-<li>使用递归函数，一直递归到链表的最后一个结点，该结点就是反转后的头结点，记作 <code>newHead</code> .</li>
-<li>此后，每次函数在返回的过程中，让当前结点的下一个结点的 <code>next</code>指针指向当前节点。</li>
-<li>同时让当前结点的 <code>next</code> 指针指向 <code>null</code> ，从而实现从链表尾部开始的局部反转</li>
-<li>当递归函数全部出栈后，链表反转完成。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">reverseList</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span> || head.next == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">newHead</span> <span class="operator">=</span> reverseList(head.next);</span><br><span class="line">        head.next.next = head;</span><br><span class="line">        head.next = <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">return</span> newHead;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>递归较难理解，用笔演算一遍会好一点。</strong></p>
-<hr>
-<h3 id="例题二"><a href="#例题二" class="headerlink" title="例题二"></a>例题二</h3><p>请实现 <code>copyRandomList</code> 函数，复制一个复杂链表。在复杂链表中，每个节点除了有一个 <code>next</code> 指针指向下一个节点，还有一个 <code>random</code> 指针指向链表中的任意节点或者 <code>null</code>。</p>
-<p><strong>示例1</strong></p>
-<p><img src="/img/loading.gif" data-original="/2022/05/09/%E9%93%BE%E8%A1%A8/e1.png" alt="img"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [[<span class="number">7</span>,<span class="literal">null</span>],[<span class="number">13</span>,<span class="number">0</span>],[<span class="number">11</span>,<span class="number">4</span>],[<span class="number">10</span>,<span class="number">2</span>],[<span class="number">1</span>,<span class="number">0</span>]]</span><br><span class="line">输出：[[<span class="number">7</span>,<span class="literal">null</span>],[<span class="number">13</span>,<span class="number">0</span>],[<span class="number">11</span>,<span class="number">4</span>],[<span class="number">10</span>,<span class="number">2</span>],[<span class="number">1</span>,<span class="number">0</span>]]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p><strong>示例2</strong></p>
-<img src="/img/loading.gif" data-original="/2022/05/09/%E9%93%BE%E8%A1%A8/e2.png" alt="img" style="zoom:67%;">
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [[<span class="number">1</span>,<span class="number">1</span>],[<span class="number">2</span>,<span class="number">1</span>]]</span><br><span class="line">输出：[[<span class="number">1</span>,<span class="number">1</span>],[<span class="number">2</span>,<span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例3</strong></p>
-<img src="/img/loading.gif" data-original="/2022/05/09/%E9%93%BE%E8%A1%A8/e3.png" alt="img" style="zoom:67%;">
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：head = [[<span class="number">3</span>,<span class="literal">null</span>],[<span class="number">3</span>,<span class="number">0</span>],[<span class="number">3</span>,<span class="literal">null</span>]]</span><br><span class="line">输出：[[<span class="number">3</span>,<span class="literal">null</span>],[<span class="number">3</span>,<span class="number">0</span>],[<span class="number">3</span>,<span class="literal">null</span>]]</span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 4：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：head = []</span><br><span class="line">输出：[]</span><br><span class="line">解释：给定的链表为空（空指针），因此返回 <span class="literal">null</span>。</span><br></pre></td></tr></table></figure>
-
-<p> <strong>提示：</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>编译时异常</strong></th>
+<th>Exception的直接子类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>运行时异常</strong></td>
+<td><strong>RuntimeException</strong></td>
+</tr>
+<tr>
+<td><strong>受检异常</strong></td>
+<td><strong>CheckException</strong></td>
+</tr>
+<tr>
+<td><strong>非受检异常</strong></td>
+<td><strong>UnCheckedException</strong></td>
+</tr>
+</tbody></table>
+<p><strong>异常的区别：</strong></p>
+<ol>
+<li>Error是指不可处理的错误,直接退出JVM虚拟机；</li>
+<li>Exception是指可以处理的异常；</li>
+<li>编译时异常是指在编写程序阶段,必须预先处理异常否则编译不通过；</li>
+<li>运行时异常是指在编写程序阶段,即使不预先处理异常也可以编译通过。</li>
+</ol>
+<p><strong>&#x3D;&#x3D;常见的异常类：&#x3D;&#x3D;</strong></p>
 <ul>
-<li><code>-10000 &lt;= Node.val &lt;= 10000</code></li>
-<li><code>Node.random</code> 为空（null）或指向链表中的节点。</li>
-<li>节点数目不超过 1000 。</li>
+<li><strong>NullPointerException：</strong>当应用程序试图访问空对象时，则抛出该异常。</li>
+<li><strong>SQLException</strong>：提供关于数据库访问错误或其他错误信息的异常。</li>
+<li><strong>IndexOutOfBoundsException</strong>：指示某排序索引（例如对数组、字符串或向量的排序）超出范围时抛出。</li>
+<li><strong>NumberFormatException</strong>：当应用程序试图将字符串转换成一种数值类型，但该字符串不能转换为适当格式时，抛出该异常。</li>
+<li><strong>FileNotFoundException</strong>：当试图打开指定路径名表示的文件失败时，抛出此异常。</li>
+<li><strong>IOException</strong>：当发生某种I&#x2F;O异常时，抛出此异常。此类是失败或中断的I&#x2F;O操作生成的异常的通用类。</li>
+<li><strong>ClassCastException</strong>：当试图将对象强制转换为不是实例的子类时，抛出该异常。</li>
+<li><strong>ArrayStoreException</strong>：试图将错误类型的对象存储到一个对象数组时抛出的异常。</li>
+<li><strong>IllegalArgumentException</strong>：抛出的异常表明向方法传递了一个不合法或不正确的参数。</li>
+<li><strong>ArithmeticException</strong>：当出现异常的运算条件时，抛出此异常。例如，一个整数“除以零”时，抛出此类的一个实例。</li>
+<li><strong>NegativeArraySizeException</strong>：如果应用程序试图创建大小为负的数组，则抛出该异常。</li>
+<li><strong>NoSuchMethodException</strong>：无法找到某一特定方法时，抛出该异常。</li>
+<li><strong>SecurityException</strong>：由安全管理器抛出的异常，指示存在安全侵犯。</li>
+<li><strong>UnsupportedOperationException</strong>：当不支持请求的操作时，抛出该异常。</li>
+<li><strong>RuntimeException</strong>：是那些可能在Java虚拟机正常运行期间抛出的异常的超类。</li>
 </ul>
-<h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p><strong>回溯+哈希表</strong></p>
-<p>如果是普通链表，我们可以直接按照遍历的顺序创建链表节点。而本题中因为随机指针的存在，当我们拷贝节点时，「当前节点的随机指针指向的节点」可能还没创建，因此我们需要变换思路。一个可行方案是，我们利用回溯的方式，让每个节点的拷贝操作相互独立。对于当前节点，我们首先要进行拷贝，然后我们进行「当前节点的后继节点」和「当前节点的随机指针指向的节点」拷贝，拷贝完成后将创建的新节点的指针返回，即可完成当前节点的两指针的赋值。</p>
-<p>具体地，我们用哈希表记录每一个节点对应新节点的创建情况。遍历该链表的过程中，我们检查「当前节点的后继节点」和「当前节点的随机指针指向的节点」的创建情况。如果这两个节点中的任何一个节点的新节点没有被创建，我们都立刻递归地进行创建。当我们拷贝完成，回溯到当前层时，我们即可完成当前节点的指针赋值。注意一个节点可能被多个其他节点指向，因此我们可能递归地多次尝试拷贝某个节点，为了防止重复拷贝，我们需要首先检查当前节点是否被拷贝过，如果已经拷贝过，我们可以直接从哈希表中取出拷贝后的节点的指针并返回即可。</p>
-<p>在实际代码中，我们需要特别判断给定节点为空节点的情况。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    Map&lt;Node, Node&gt; cachedNode = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;Node, Node&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> Node <span class="title function_">copyRandomList</span><span class="params">(Node head)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (head == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!cachedNode.containsKey(head)) &#123;</span><br><span class="line">            <span class="type">Node</span> <span class="variable">headNew</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Node</span>(head.val);</span><br><span class="line">            cachedNode.put(head, headNew);</span><br><span class="line">            headNew.next = copyRandomList(head.next);</span><br><span class="line">            headNew.random = copyRandomList(head.random);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cachedNode.get(head);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<hr>
-<blockquote>
-<p>参考来源：力扣（LeetCode）</p>
-<p>作者：jyd</p>
-</blockquote>
+<h3 id="三、异常的处理机制"><a href="#三、异常的处理机制" class="headerlink" title="三、异常的处理机制"></a>三、异常的处理机制</h3><ol>
+<li><strong>异常上抛机制</strong><ul>
+<li>异常上抛机制是指发生异常时创建异常对象并将其上抛给其调用者；</li>
+<li>异常上抛机制需要在方法声明位置上使用throws关键字。</li>
+</ul>
+</li>
+<li><strong>异常捕获机制</strong><ul>
+<li>异常捕捉机制是指发生异常时创建异常对象并将其捕捉而不进行上抛；</li>
+<li>异常捕捉机制需要使用try&#x2F;catch语句块进行捕捉异常。</li>
+</ul>
+</li>
+<li><strong>&#x3D;&#x3D;注意事项&#x3D;&#x3D;</strong><ul>
+<li>如果异常一直上抛到JVM虚拟机,那么JVM会终止程序执行[main方法中不建议使用异常上抛]；</li>
+<li>异常上抛不允许后续代码执行,而异常捕捉允许后续代码执行</li>
+</ul>
+</li>
+</ol>
+<h3 id="四、异常对象的常用方法及异常机制的关键字"><a href="#四、异常对象的常用方法及异常机制的关键字" class="headerlink" title="四、异常对象的常用方法及异常机制的关键字"></a>四、异常对象的常用方法及异常机制的关键字</h3><h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
+<li><p>exception.getMessage()：获取异常简单的描述信息；</p>
+</li>
+<li><p>exception.printStackTrace()：打印异常追踪的堆栈信息。</p>
+</li>
+</ul>
+<h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><h5 id="异常上抛机制：throw-throws"><a href="#异常上抛机制：throw-throws" class="headerlink" title="异常上抛机制：throw,throws"></a>异常上抛机制：throw,throws</h5><ol>
+<li>throw表示在方法中手动抛出一个异常对象；</li>
+<li>throws在方法上声明,表示此方法在调用时必须处理异常。</li>
+</ol>
+<h5 id="异常捕获机制：try-catch-finally"><a href="#异常捕获机制：try-catch-finally" class="headerlink" title="异常捕获机制：try,catch,finally"></a>异常捕获机制：try,catch,finally</h5><ol>
+<li>关于try的注意事项<ul>
+<li>try语句块不能单独出现；</li>
+<li>try语句块需要和catch语句块或者finally语句块联合使用。</li>
+</ul>
+</li>
+<li>关于catch的注意事项<ul>
+<li>；catch语句块的类型既可以是确切类型,也可以是其父类</li>
+<li>catch语句块可以写多个[遵循异常类型从小到大的顺序编写catch语句块]；</li>
+<li>建议编写catch语句块时，精确到一个异常对应一个catch语句块[利于程序调试]。</li>
+</ul>
+</li>
+<li>关于finally的注意事项<ul>
+<li>finally语句块中的代码必定执行；</li>
+<li>finally语句块通常用于释放或者关闭资源。</li>
+</ul>
+</li>
+</ol>
+<h3 id="五、自定义异常"><a href="#五、自定义异常" class="headerlink" title="五、自定义异常"></a>五、自定义异常</h3><ol>
+<li>类继承Exception或者RuntimeException</li>
+<li>类提供无参构造器和带参构造器[形参为String类型]</li>
+</ol>
+<p><strong>&#x3D;&#x3D;注意&#x3D;&#x3D;</strong></p>
+<ol>
+<li><strong>final属于关键字</strong> <ul>
+<li>final修饰的变量不能重新赋值</li>
+<li>final修饰的类无法继承</li>
+<li>final修饰的方法无法覆盖</li>
+</ul>
+</li>
+<li>finally属于关键字<ul>
+<li>finally和try联合使用在异常捕捉机制中</li>
+<li>finally语句块中的代码必定执行</li>
+</ul>
+</li>
+<li>finalize属于标识符 <ul>
+<li>finalize()属于Object类中的一个方法</li>
+<li>finalize()在执行对象被销毁之前由GC[垃圾回收器]调用</li>
+<li>finalize()主要用于清理本地对象或者确保释放某些非内存资源的补充</li>
+</ul>
+</li>
+</ol>
 
     </div>
 
@@ -407,7 +461,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://li0424.com/2022/05/09/%E9%93%BE%E8%A1%A8/" title="链表">http://li0424.com/2022/05/09/链表/</a>
+    <a href="http://li0424.com/2022/08/03/%E5%BC%82%E5%B8%B8/" title="异常">http://li0424.com/2022/08/03/异常/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -419,9 +473,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
-              <a href="/tags/%E9%93%BE%E8%A1%A8/" rel="tag"><i class="fa fa-tag"></i> 链表</a>
-              <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/" rel="tag"><i class="fa fa-tag"></i> 哈希表</a>
+              <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag"><i class="fa fa-tag"></i> 知识点</a>
+              <a href="/tags/%E5%BC%82%E5%B8%B8/" rel="tag"><i class="fa fa-tag"></i> 异常</a>
           </div>
 
         
@@ -430,13 +483,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2022/05/04/%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97/" rel="prev" title="栈与队列">
-      <i class="fa fa-chevron-left"></i> 栈与队列
+    <a href="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="prev" title="多线程">
+      <i class="fa fa-chevron-left"></i> 多线程
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" rel="next" title="查找算法">
-      查找算法 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -496,7 +546,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E4%B8%80"><span class="nav-number">1.</span> <span class="nav-text">例题一</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">题解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E4%B8%80%EF%BC%9A%E8%BF%AD%E4%BB%A3"><span class="nav-number">1.1.1.</span> <span class="nav-text">解题思路一：迭代</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF%E4%BA%8C%EF%BC%9A%E9%80%92%E5%BD%92"><span class="nav-number">1.1.2.</span> <span class="nav-text">解题思路二：递归</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%8B%E9%A2%98%E4%BA%8C"><span class="nav-number">2.</span> <span class="nav-text">例题二</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF"><span class="nav-number">2.1.</span> <span class="nav-text">解题思路</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8"><span class="nav-number">1.</span> <span class="nav-text">异常</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%BC%82%E5%B8%B8%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、异常的概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%BC%82%E5%B8%B8%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、异常的分类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、异常的处理机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%BC%82%E5%B8%B8%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E5%8F%8A%E5%BC%82%E5%B8%B8%E6%9C%BA%E5%88%B6%E7%9A%84%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.0.4.</span> <span class="nav-text">四、异常对象的常用方法及异常机制的关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.0.4.2.</span> <span class="nav-text">关键字</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E4%B8%8A%E6%8A%9B%E6%9C%BA%E5%88%B6%EF%BC%9Athrow-throws"><span class="nav-number">1.0.4.2.1.</span> <span class="nav-text">异常上抛机制：throw,throws</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E6%8D%95%E8%8E%B7%E6%9C%BA%E5%88%B6%EF%BC%9Atry-catch-finally"><span class="nav-number">1.0.4.2.2.</span> <span class="nav-text">异常捕获机制：try,catch,finally</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E8%87%AA%E5%AE%9A%E4%B9%89%E5%BC%82%E5%B8%B8"><span class="nav-number">1.0.5.</span> <span class="nav-text">五、自定义异常</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

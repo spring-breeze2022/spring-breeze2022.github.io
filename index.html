@@ -130,17 +130,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">16</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">16</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-guestbook">
@@ -202,6 +202,230 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/08/03/%E5%BC%82%E5%B8%B8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风过木">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/08/03/%E5%BC%82%E5%B8%B8/" class="post-title-link" itemprop="url">异常</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-03 19:11:16 / 修改时间：19:44:30" itemprop="dateCreated datePublished" datetime="2022-08-03T19:11:16+08:00">2022-08-03</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">JAVA学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/%E5%BC%82%E5%B8%B8/" itemprop="url" rel="index"><span itemprop="name">异常</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/08/03/%E5%BC%82%E5%B8%B8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/03/%E5%BC%82%E5%B8%B8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><h3 id="一、异常的概述"><a href="#一、异常的概述" class="headerlink" title="一、异常的概述"></a>一、异常的概述</h3><ol>
+<li>异常是指程序执行过程中可能出现的非正常情况</li>
+<li>JAVA的异常机制提高程序健壮性和容错性</li>
+<li>异常在JAVA中以类和对象的形式存在</li>
+</ol>
+<h3 id="二、异常的分类"><a href="#二、异常的分类" class="headerlink" title="二、异常的分类"></a>二、异常的分类</h3><img src="/img/loading.gif" data-original="/2022/08/03/%E5%BC%82%E5%B8%B8/1.png" alt="image-20220803191349152" style="zoom:80%;">
+
+<table>
+<thead>
+<tr>
+<th><strong>编译时异常</strong></th>
+<th>Exception的直接子类</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>运行时异常</strong></td>
+<td><strong>RuntimeException</strong></td>
+</tr>
+<tr>
+<td><strong>受检异常</strong></td>
+<td><strong>CheckException</strong></td>
+</tr>
+<tr>
+<td><strong>非受检异常</strong></td>
+<td><strong>UnCheckedException</strong></td>
+</tr>
+</tbody></table>
+<p><strong>异常的区别：</strong></p>
+<ol>
+<li>Error是指不可处理的错误,直接退出JVM虚拟机；</li>
+<li>Exception是指可以处理的异常；</li>
+<li>编译时异常是指在编写程序阶段,必须预先处理异常否则编译不通过；</li>
+<li>运行时异常是指在编写程序阶段,即使不预先处理异常也可以编译通过。</li>
+</ol>
+<p><strong>&#x3D;&#x3D;常见的异常类：&#x3D;&#x3D;</strong></p>
+<ul>
+<li><strong>NullPointerException：</strong>当应用程序试图访问空对象时，则抛出该异常。</li>
+<li><strong>SQLException</strong>：提供关于数据库访问错误或其他错误信息的异常。</li>
+<li><strong>IndexOutOfBoundsException</strong>：指示某排序索引（例如对数组、字符串或向量的排序）超出范围时抛出。</li>
+<li><strong>NumberFormatException</strong>：当应用程序试图将字符串转换成一种数值类型，但该字符串不能转换为适当格式时，抛出该异常。</li>
+<li><strong>FileNotFoundException</strong>：当试图打开指定路径名表示的文件失败时，抛出此异常。</li>
+<li><strong>IOException</strong>：当发生某种I&#x2F;O异常时，抛出此异常。此类是失败或中断的I&#x2F;O操作生成的异常的通用类。</li>
+<li><strong>ClassCastException</strong>：当试图将对象强制转换为不是实例的子类时，抛出该异常。</li>
+<li><strong>ArrayStoreException</strong>：试图将错误类型的对象存储到一个对象数组时抛出的异常。</li>
+<li><strong>IllegalArgumentException</strong>：抛出的异常表明向方法传递了一个不合法或不正确的参数。</li>
+<li><strong>ArithmeticException</strong>：当出现异常的运算条件时，抛出此异常。例如，一个整数“除以零”时，抛出此类的一个实例。</li>
+<li><strong>NegativeArraySizeException</strong>：如果应用程序试图创建大小为负的数组，则抛出该异常。</li>
+<li><strong>NoSuchMethodException</strong>：无法找到某一特定方法时，抛出该异常。</li>
+<li><strong>SecurityException</strong>：由安全管理器抛出的异常，指示存在安全侵犯。</li>
+<li><strong>UnsupportedOperationException</strong>：当不支持请求的操作时，抛出该异常。</li>
+<li><strong>RuntimeException</strong>：是那些可能在Java虚拟机正常运行期间抛出的异常的超类。</li>
+</ul>
+<h3 id="三、异常的处理机制"><a href="#三、异常的处理机制" class="headerlink" title="三、异常的处理机制"></a>三、异常的处理机制</h3><ol>
+<li><strong>异常上抛机制</strong><ul>
+<li>异常上抛机制是指发生异常时创建异常对象并将其上抛给其调用者；</li>
+<li>异常上抛机制需要在方法声明位置上使用throws关键字。</li>
+</ul>
+</li>
+<li><strong>异常捕获机制</strong><ul>
+<li>异常捕捉机制是指发生异常时创建异常对象并将其捕捉而不进行上抛；</li>
+<li>异常捕捉机制需要使用try&#x2F;catch语句块进行捕捉异常。</li>
+</ul>
+</li>
+<li><strong>&#x3D;&#x3D;注意事项&#x3D;&#x3D;</strong><ul>
+<li>如果异常一直上抛到JVM虚拟机,那么JVM会终止程序执行[main方法中不建议使用异常上抛]；</li>
+<li>异常上抛不允许后续代码执行,而异常捕捉允许后续代码执行</li>
+</ul>
+</li>
+</ol>
+<h3 id="四、异常对象的常用方法及异常机制的关键字"><a href="#四、异常对象的常用方法及异常机制的关键字" class="headerlink" title="四、异常对象的常用方法及异常机制的关键字"></a>四、异常对象的常用方法及异常机制的关键字</h3><h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><ul>
+<li><p>exception.getMessage()：获取异常简单的描述信息；</p>
+</li>
+<li><p>exception.printStackTrace()：打印异常追踪的堆栈信息。</p>
+</li>
+</ul>
+<h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><h5 id="异常上抛机制：throw-throws"><a href="#异常上抛机制：throw-throws" class="headerlink" title="异常上抛机制：throw,throws"></a>异常上抛机制：throw,throws</h5><ol>
+<li>throw表示在方法中手动抛出一个异常对象；</li>
+<li>throws在方法上声明,表示此方法在调用时必须处理异常。</li>
+</ol>
+<h5 id="异常捕获机制：try-catch-finally"><a href="#异常捕获机制：try-catch-finally" class="headerlink" title="异常捕获机制：try,catch,finally"></a>异常捕获机制：try,catch,finally</h5><ol>
+<li>关于try的注意事项<ul>
+<li>try语句块不能单独出现；</li>
+<li>try语句块需要和catch语句块或者finally语句块联合使用。</li>
+</ul>
+</li>
+<li>关于catch的注意事项<ul>
+<li>；catch语句块的类型既可以是确切类型,也可以是其父类</li>
+<li>catch语句块可以写多个[遵循异常类型从小到大的顺序编写catch语句块]；</li>
+<li>建议编写catch语句块时，精确到一个异常对应一个catch语句块[利于程序调试]。</li>
+</ul>
+</li>
+<li>关于finally的注意事项<ul>
+<li>finally语句块中的代码必定执行；</li>
+<li>finally语句块通常用于释放或者关闭资源。</li>
+</ul>
+</li>
+</ol>
+<h3 id="五、自定义异常"><a href="#五、自定义异常" class="headerlink" title="五、自定义异常"></a>五、自定义异常</h3><ol>
+<li>类继承Exception或者RuntimeException</li>
+<li>类提供无参构造器和带参构造器[形参为String类型]</li>
+</ol>
+<p><strong>&#x3D;&#x3D;注意&#x3D;&#x3D;</strong></p>
+<ol>
+<li><strong>final属于关键字</strong> <ul>
+<li>final修饰的变量不能重新赋值</li>
+<li>final修饰的类无法继承</li>
+<li>final修饰的方法无法覆盖</li>
+</ul>
+</li>
+<li>finally属于关键字<ul>
+<li>finally和try联合使用在异常捕捉机制中</li>
+<li>finally语句块中的代码必定执行</li>
+</ul>
+</li>
+<li>finalize属于标识符 <ul>
+<li>finalize()属于Object类中的一个方法</li>
+<li>finalize()在执行对象被销毁之前由GC[垃圾回收器]调用</li>
+<li>finalize()主要用于清理本地对象或者确保释放某些非内存资源的补充</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -225,10 +449,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2022-08-02 18:53:00 / 修改时间：20:16:57" itemprop="dateCreated datePublished" datetime="2022-08-02T18:53:00+08:00">2022-08-02</time>
+              <time title="创建时间：2022-08-02 18:53:00" itemprop="dateCreated datePublished" datetime="2022-08-02T18:53:00+08:00">2022-08-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-03 15:56:50" itemprop="dateModified" datetime="2022-08-03T15:56:50+08:00">2022-08-03</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -263,7 +493,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -313,17 +543,17 @@
 </ol>
 <h3 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h3><ol>
 <li><p><strong>新建状态</strong></p>
-<p>​		当用new操作符创建一个线程时。此时程序还没有开始运行线程中的代码。</p>
+<p>当用new操作符创建一个线程时。此时程序还没有开始运行线程中的代码。</p>
 </li>
 <li><p><strong>就绪状态</strong></p>
-<p>​		一个新创建的线程并不自动开始运行，要执行线程，必须调用线程的**<code>start()</code>方法**。当线程对象调用<code>start()</code>方法即启动了线程，<code>start()</code>方法创建线程运行的系统资源，并调度线程运行<code>run()</code>方法。当<code>start()</code>方法返回后，线程就处于就绪状态。</p>
-<p>​		处于就绪状态的线程并不一定立即运行<code>run()</code>方法，线程还必须同其他线程竞争CPU时间，只有获得CPU时间才可以运行线程。因为在单CPU的计算机系统中，不可能同时运行多个线程，一个时刻仅有一个线程处于运行状态。因此此时可能有多个线程处于就绪状态。对多个处于就绪状态的线程是由Java运行时系统的线程调度程序来调度的。</p>
+<p>一个新创建的线程并不自动开始运行，要执行线程，必须调用线程的**<code>start()</code>方法**。当线程对象调用<code>start()</code>方法即启动了线程，<code>start()</code>方法创建线程运行的系统资源，并调度线程运行<code>run()</code>方法。当<code>start()</code>方法返回后，线程就处于就绪状态。</p>
+<p>处于就绪状态的线程并不一定立即运行<code>run()</code>方法，线程还必须同其他线程竞争CPU时间，只有获得CPU时间才可以运行线程。因为在单CPU的计算机系统中，不可能同时运行多个线程，一个时刻仅有一个线程处于运行状态。因此此时可能有多个线程处于就绪状态。对多个处于就绪状态的线程是由Java运行时系统的线程调度程序来调度的。</p>
 </li>
 <li><p><strong>运行状态（running）</strong></p>
-<p>​		当线程获得CPU时间后，它才进入运行状态，真正开始执行<code>run()</code>方法。</p>
+<p>当线程获得CPU时间后，它才进入运行状态，真正开始执行<code>run()</code>方法。</p>
 </li>
 <li><p><strong>阻塞状态（blocked）</strong></p>
-<p>​		所谓阻塞状态是正在运行的线程没有运行结束，暂时让出CPU，这时其他处于就绪状态的线程就可以获得CPU时间，进入运行状态。线程被堵塞可能是由下述五方面的原因造成的：</p>
+<p>所谓阻塞状态是正在运行的线程没有运行结束，暂时让出CPU，这时其他处于就绪状态的线程就可以获得CPU时间，进入运行状态。线程被堵塞可能是由下述五方面的原因造成的：</p>
 <p>(1) 调用<code>sleep</code>(毫秒数)，使线程进入”睡眠”状态。在规定的时间内，这个线程是不会运行的。</p>
 <p>(2) 用<code>suspend()</code>暂停了线程的执行。除非线程收到<code>resume()</code>消息，否则不会返回”可运行”状态。</p>
 <p>(3) 用<code>wait()</code>暂停了线程的执行。除非线程收到<code>nofify()</code>或者<code>notifyAll()</code>消息，否则不会变成”可运行”（是的，这看起来同原因2非常相象，但有一个明显的区别是我们马上要揭示的）。</p>
@@ -331,11 +561,13 @@
 <p>(5) 线程试图调用另一个对象的”同步”方法，但那个对象处于锁定状态，暂时无法使用。</p>
 </li>
 <li><p><strong>死亡状态（dead）</strong></p>
-<p>​		有三个原因会导致线程死亡：</p>
-<p>​			①<code>run</code>方法正常退出而自然死亡；</p>
-<p>​			②一个未捕获的异常终止了run方法而使线程猝死；</p>
-<p>​			③<code>stop()</code>方法。</p>
-<p>​		为了确定线程在当前是否存活着（就是要么是可运行的，要么是被阻塞了），需要使用<code>isAlive</code>方法，如果是可运行或被阻塞，这个方法返回<code>true</code>；如果线程仍旧是<code>new</code>状态且不是可运行的，或者线程死亡了，则返回<code>false</code>。</p>
+<p>有三个原因会导致线程死亡：</p>
+<ul>
+<li><code>run</code>方法正常退出而自然死亡；</li>
+<li>一个未捕获的异常终止了run方法而使线程猝死；</li>
+<li><code>stop()</code>方法。</li>
+</ul>
+<p>为了确定线程在当前是否存活着（就是要么是可运行的，要么是被阻塞了），需要使用<code>isAlive</code>方法，如果是可运行或被阻塞，这个方法返回<code>true</code>；如果线程仍旧是<code>new</code>状态且不是可运行的，或者线程死亡了，则返回<code>false</code>。</p>
 </li>
 </ol>
 <h3 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h3><p>​	<img src="/img/loading.gif" data-original="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/2.png" alt="image-20220802194148223"></p>
@@ -344,7 +576,7 @@
 <li><strong>线程同步：</strong>某个线程需要另一线程完成工作才能正常运行，称为线程同步。</li>
 </ul>
 <p><strong>由线程同步互斥问题引出线程的安全问题</strong></p>
-<h3 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h3><p>​		当多条线程访问同一共享资源时容易引发线程安全问题。</p>
+<h3 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h3><p>当多条线程访问同一共享资源时容易引发线程安全问题。</p>
 <ol>
 <li><p>同步代码块：用<code>synchronized</code>关键字括起来的是同步代码块，在线程执行这块代码时，需要获得同步监视器的锁定，而若已被锁定，则只能等待。从而阻止两条线程对同一共享资源的并发访问。</p>
 </li>
@@ -354,7 +586,22 @@
 <p><code>Java</code>提供了一种可重用锁<code>ReentranLock</code>，该锁对象会维持一个计数器来追踪<code>lock</code>方法的调用，从而可以对已经加锁的共享资源再次加锁。线程每次调用<code>lock</code>方法加锁后，必须显示调用<code>unlock</code>方法释放锁。</p>
 </li>
 </ol>
-<h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4><p>​		当两个线程互相需要对方线程锁住的资源才能继续运行时会发生死锁，因为两个线程都在等待对方释放同步监视器。一旦出现死锁，整个程序既不会发生异常，也不会有任何提示，而是所有线程处于阻塞状态无法继续。</p>
+<h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4><p>当两个线程互相需要对方线程锁住的资源才能继续运行时会发生死锁，因为两个线程都在等待对方释放同步监视器。一旦出现死锁，整个程序既不会发生异常，也不会有任何提示，而是所有线程处于阻塞状态无法继续。</p>
+<h3 id="守护线程-x2F-后台线程"><a href="#守护线程-x2F-后台线程" class="headerlink" title="守护线程&#x2F;后台线程"></a>守护线程&#x2F;后台线程</h3><ul>
+<li><strong>代表：</strong>垃圾回收线程；</li>
+<li><strong>特点：</strong>守护线程内部是一个死循环守护线程随着所有用户线程的结束而结束；</li>
+<li><strong>作用：</strong>数据自动备份,垃圾回收……</li>
+</ul>
+<h3 id="定时器机制"><a href="#定时器机制" class="headerlink" title="定时器机制"></a>定时器机制</h3><ul>
+<li><strong>特点：</strong>间隔特定时间执行特定程序；</li>
+<li><strong>定时器的实现 ：</strong><ul>
+<li>Thread.sleep()方法</li>
+<li>java.util.Timer类</li>
+<li>SpringTask框架</li>
+</ul>
+</li>
+<li><strong>作用：</strong>定时器和守护线程的联合使用实现数据自动备份</li>
+</ul>
 <h3 id="线程协调运行"><a href="#线程协调运行" class="headerlink" title="线程协调运行"></a>线程协调运行</h3><p><code>Object</code>类提供<code>wait()</code>、<code>notify()</code>、<code>notifyAll()</code>三个方法来实现线程协调，这三个方法必须同步监视器对象调用。</p>
 <ol>
 <li><code>wait()</code>：导致当前线程等待，直到其他线程调用<code>notify()</code>或<code>notifyAll()</code>来唤醒该线程。<code>Wait()</code>会释放对同步监视器的锁定。</li>
@@ -414,7 +661,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-29 09:23:25" itemprop="dateModified" datetime="2022-07-29T09:23:25+08:00">2022-07-29</time>
+                <time title="修改时间：2022-08-03 10:38:02" itemprop="dateModified" datetime="2022-08-03T10:38:02+08:00">2022-08-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -426,7 +673,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0/%E9%9B%86%E5%90%88/" itemprop="url" rel="index"><span itemprop="name">集合</span></a>
                 </span>
             </span>
 
@@ -450,14 +697,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>4.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -538,7 +785,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-15 09:09:13" itemprop="dateModified" datetime="2022-07-15T09:09:13+08:00">2022-07-15</time>
+                <time title="修改时间：2022-08-03 19:09:15" itemprop="dateModified" datetime="2022-08-03T19:09:15+08:00">2022-08-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -574,14 +821,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
+              <span>5.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -595,6 +842,22 @@
       
           <h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p>计算机网络：一些相互连接的计算机的集合。</p>
 <p>互联网：一些相互连接的计算机网络的集合（称为网络的网络）。</p>
+<h5 id="OSI七层模型："><a href="#OSI七层模型：" class="headerlink" title="OSI七层模型："></a>OSI七层模型：</h5><ol>
+<li>物理层</li>
+<li>数据链路层</li>
+<li>传输层</li>
+<li>网络层</li>
+<li>会话层</li>
+<li>表示层</li>
+<li>应用层</li>
+</ol>
+<h5 id="各个层的中间设备："><a href="#各个层的中间设备：" class="headerlink" title="各个层的中间设备："></a>各个层的中间设备：</h5><ul>
+<li>物理层中继系统：转发器</li>
+<li>数据链路层中继系统：网桥或桥接器</li>
+<li>网络层中继系统：路由器</li>
+<li>网桥和路由器的混合物：桥路器</li>
+<li>网络层以上的中继系统：网关</li>
+</ul>
 <h2 id="计算机网络的带宽"><a href="#计算机网络的带宽" class="headerlink" title="计算机网络的带宽"></a>计算机网络的带宽</h2><p>​		计算机网络的带宽是指网络可通过的最高数据率，即每秒多少比特。</p>
 <p><strong>什么是宽带？</strong></p>
 <p>宽带线路：可通过较高数据率的线路。<br>宽带是相对的概念，并没有绝对的标准。<br>在目前，对于用户接入到因特网的用户线来说，每秒传送几个兆比特就可以算是宽带速率。</p>
@@ -1426,138 +1689,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/05/19/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="木子">
-      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春风过木">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/19/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-title-link" itemprop="url">动态规划</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-19 10:03:00" itemprop="dateCreated datePublished" datetime="2022-05-19T10:03:00+08:00">2022-05-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-20 11:48:26" itemprop="dateModified" datetime="2022-05-20T11:48:26+08:00">2022-05-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">LeetCode学习</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/05/19/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/19/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="例题一"><a href="#例题一" class="headerlink" title="例题一"></a>例题一</h3><p>写一个函数，输入<code>n</code>，求斐波那契（Fibonacci）数列的第 <code>n</code> 项（即 <code>F(N)</code>）。斐波那契数列的定义如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">F(<span class="number">0</span>) = <span class="number">0</span>,   F(<span class="number">1</span>) = <span class="number">1</span></span><br><span class="line">F(N) = F(N - <span class="number">1</span>) + F(N - <span class="number">2</span>), 其中 N &gt; <span class="number">1.</span></span><br></pre></td></tr></table></figure>
-
-
-<p>斐波那契数列由 <code>0</code> 和 <code>1</code> 开始，之后的斐波那契数就是由之前的两数相加而得出。</p>
-<p>答案需要取模 <code>1e9+7(1000000007)</code>，如计算初始结果为：<code>1000000008</code>，请返回 <code>1</code>。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = <span class="number">2</span></span><br><span class="line">输出：<span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：n = <span class="number">5</span></span><br><span class="line">输出：<span class="number">5</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li><code>0 &lt;= n &lt;= 100</code></li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/19/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1629,20 +1760,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">17</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1695,13 +1826,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">45k</span>
+    <span title="站点总字数">51k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">40 分钟</span>
+    <span title="站点阅读时长">46 分钟</span>
 </div>
 
 <!--
