@@ -31,7 +31,7 @@
 <meta property="og:description" content="面向对象编程什么是面向过程 面向过程（Procedure-Oriented Programming，简称POP）是一种编程模型，由一系列要执行的计算步骤组成，通常采用自上而下、顺序执行的方式。 什么是面向对象 面向对象编程（Object-oriented programming，简写：OOP）是一种计算机编程模型，它围绕数据或对象而不是功能和逻辑来组织软件设计，更专注于对象与对象之间的交互，对象涉">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-26T13:55:00.000Z">
-<meta property="article:modified_time" content="2022-06-27T12:49:05.712Z">
+<meta property="article:modified_time" content="2022-07-29T07:08:11.740Z">
 <meta property="article:author" content="木子">
 <meta property="article:tag" content="类">
 <meta property="article:tag" content="面向对象">
@@ -134,17 +134,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">19</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">13</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">16</span></a>
 
   </li>
         <li class="menu-item menu-item-guestbook">
@@ -237,7 +237,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-27 20:49:05" itemprop="dateModified" datetime="2022-06-27T20:49:05+08:00">2022-06-27</time>
+                <time title="修改时间：2022-07-29 15:08:11" itemprop="dateModified" datetime="2022-07-29T15:08:11+08:00">2022-07-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,7 +280,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>969</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -303,22 +303,53 @@
 <p>面向过程（Procedure-Oriented Programming，简称POP）是一种编程模型，由一系列要执行的计算步骤组成，通常采用自上而下、顺序执行的方式。</p>
 <p><strong>什么是面向对象</strong></p>
 <p>面向对象编程（Object-oriented programming，简写：OOP）是一种计算机编程模型，它围绕数据或对象而不是功能和逻辑来组织软件设计，更专注于对象与对象之间的交互，对象涉及的方法和属性都在对象内部。说的更底层一点就是面向对象是一种依赖于类和对象概念的编程方式。</p>
+<p><strong>面向对象和面向过程的区别</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>面向过程</th>
+<th>面向对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>侧重点</td>
+<td>功能的实现步骤和因果关系</td>
+<td>对象之间的组合关系</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td><strong>耦合度高、扩展力低</strong></td>
+<td><strong>耦合度低、扩展力高</strong></td>
+</tr>
+<tr>
+<td>优点</td>
+<td>快速开发</td>
+<td>需要对象提取和模型建立</td>
+</tr>
+</tbody></table>
 <span id="more"></span>
 
 
 
-<h4 id="面向对象的三大特征"><a href="#面向对象的三大特征" class="headerlink" title="面向对象的三大特征"></a>面向对象的三大特征</h4><p><strong>封装</strong></p>
+<h4 id="面向对象的三大特性"><a href="#面向对象的三大特性" class="headerlink" title="面向对象的三大特性"></a>面向对象的三大特性</h4><p><strong>封装</strong></p>
 <p>封装是面向对象方法的核心思想之一。它有两个含义：</p>
 <ul>
 <li>一是指把对象的属性和行为看成为一个密不可分的整体，将这两者“<strong>封装</strong>”在一个不可分割的独立单位（即对象）中。</li>
 <li>另一层含义指“<strong>信息隐蔽</strong>”，把不需要让外界知道的信息隐藏起来，有些对象的属性及行为允许外界用户知道或使用，但不允许更改，而另一些属性或行为，则不允许外界知晓；或只允许使用对象的功能，而尽可能隐蔽对象的功能实现细节。</li>
 </ul>
 <p><strong>继承</strong></p>
-<p>子类可以继承父类的属性（数据）和功能（操作）。继承是面向<br>对象方法中的重要概念，并且是提高软件开发效率的重要手段。</p>
+<p>子类可以继承父类的属性（数据）和功能（操作）。继承是面向对象方法中的重要概念，并且是提高软件开发效率的重要手段。</p>
 <p><strong>多态</strong></p>
-<p>程序中允许出现重名现象。 Java 语言中具有操作名称的<br>多态 和继承有关的多态。</p>
+<ul>
+<li>多态:编译时是一种形态,运行时是另一种形态。</li>
+<li>多态是指父类型引用指向子类型对象，包括编译阶段和运行阶段。</li>
+<li>多态的作用:解耦合</li>
+<li>OCP原则:对扩展开放，对修改关闭</li>
+</ul>
+<p>程序中允许出现重名现象。 Java 语言中具有操作名称的多态和继承有关的多态。</p>
 <p><strong>类的四大特性：</strong>封装性，继承性，多态性，抽象性。</p>
-<h4 id><a href="#" class="headerlink" title></a></h4><h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><p>类是java程序设计的基本单位，java的源文件有若干个书写形式相互独立的类构成。</p>
+<h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><p>类是java程序设计的基本单位，java的源文件有若干个书写形式相互独立的类构成。</p>
 <p>类的两个基本成员：</p>
 <ul>
 <li>成员变量（属性）</li>
@@ -328,7 +359,53 @@
 <p><strong>修饰符 class 类名{</strong></p>
 <p>​		<strong>类体的内容</strong></p>
 <p><strong>}</strong></p>
-<h5 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h5><p><strong>final：常量修饰符</strong></p>
+<h4 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h4><p>抽象类的概述：抽象类是指一种将<strong>类与类之间的共同特征</strong>提取出来的类</p>
+<p>抽象类的实例化问题：</p>
+<ul>
+<li>抽象类无法实例化</li>
+<li>抽象类具有构造方法,子类通过关键字super调用父类构造方法用于初始化当前对象的父类特征</li>
+<li>非抽象子类继承抽象类,子类可以实例化</li>
+</ul>
+<p>抽象方法：</p>
+<ol>
+<li>抽象方法是指没有实现的方法,即没有方法体的方法</li>
+<li>抽象方法的作用[确保特定服务的提供]<ul>
+<li>所有类都期望提供某种特定服务,但是方法的实现方式会根据类的不同而不同。</li>
+<li>父类定义抽象方法强制所有子类实现,以此确保所有子类都能够提供特定服务。</li>
+</ul>
+</li>
+<li>语法机制<ul>
+<li>[修饰符列表] abstract [返回值类型] 方法名();</li>
+</ul>
+</li>
+<li>特点<ul>
+<li>抽象方法没有大括号,以分号结尾</li>
+<li>修饰符列表中有abstract关键字</li>
+<li>抽象类中不一定具有抽象方法</li>
+<li>抽象方法只会出现在抽象类或者接口中</li>
+<li>非抽象子类继承抽象类,子类必须实现抽象方法</li>
+</ul>
+</li>
+</ol>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><p>接口的概述</p>
+<ul>
+<li>接口是指类与类之间的所有行为动作的抽象集合</li>
+<li>接口属于特殊的抽象类[抽象类是半抽象的,而接口是完全抽象的]</li>
+</ul>
+<p>接口的作用**[解耦合]**</p>
+<ul>
+<li><p>面向接口编程的优点:降低耦合度,提高扩展力</p>
+</li>
+<li><p>接口和多态机制联合使用可以达到降低程序耦合度的效果</p>
+</li>
+<li><p>接口可以将调用者和实现者解耦合</p>
+<ul>
+<li>调用者面向接口调用</li>
+<li>实现者面向接口实现</li>
+</ul>
+</li>
+</ul>
+<h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p><strong>final：常量修饰符</strong></p>
 <p>如果一个成员变量修饰为final，就是常量，常量的名字习惯用大写字母</p>
 <p><strong>可修饰的对象：</strong></p>
 <ul>
@@ -417,8 +494,8 @@
       <i class="fa fa-chevron-left"></i> 搜索与回溯算法三
     </a></div>
       <div class="post-nav-item">
-    <a href="/2022/07/05/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/" rel="next" title="类加载与反射">
-      类加载与反射 <i class="fa fa-chevron-right"></i>
+    <a href="/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="next" title="数据库">
+      数据库 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -479,7 +556,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E5%BE%81"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象的三大特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link"><span class="nav-number">1.2.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BF%AE%E9%A5%B0%E7%AC%A6"><span class="nav-number">1.3.1.</span> <span class="nav-text">修饰符</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象的三大特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.4.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.5.</span> <span class="nav-text">关键字</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -495,20 +572,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -561,13 +638,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">34k</span>
+    <span title="站点总字数">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">31 分钟</span>
+    <span title="站点阅读时长">40 分钟</span>
 </div>
 
 <!--

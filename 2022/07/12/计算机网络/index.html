@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/icons8-%E5%A4%AA%E9%98%B3-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/icons8-%E5%A4%AA%E9%98%B3-16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="w_wYVv2-gE98UaQYJ2YNav-uJAQfUlhXW9YA8W7KPNU">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"li0424.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="计算机网络计算机网络：一些相互连接的计算机的集合。 互联网：一些相互连接的计算机网络的集合（称为网络的网络）。 计算机网络的带宽​		计算机网络的带宽是指网络可通过的最高数据率，即每秒多少比特。 什么是宽带？ 宽带线路：可通过较高数据率的线路。宽带是相对的概念，并没有绝对的标准。在目前，对于用户接入到因特网的用户线来说，每秒传送几个兆比特就可以算是宽带速率。 什么是分组交换 在发送端把要发送的报文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络">
+<meta property="og:url" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:site_name" content="春风过木">
+<meta property="og:description" content="计算机网络计算机网络：一些相互连接的计算机的集合。 互联网：一些相互连接的计算机网络的集合（称为网络的网络）。 计算机网络的带宽​		计算机网络的带宽是指网络可通过的最高数据率，即每秒多少比特。 什么是宽带？ 宽带线路：可通过较高数据率的线路。宽带是相对的概念，并没有绝对的标准。在目前，对于用户接入到因特网的用户线来说，每秒传送几个兆比特就可以算是宽带速率。 什么是分组交换 在发送端把要发送的报文">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4.png">
+<meta property="og:image" content="http://li0424.com/2022/07/编程学习/博客内容/image/image-20220712150545698.png">
+<meta property="og:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Blog/source_posts/计算机网络/1.png">
+<meta property="og:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Blog/source/_posts/计算机网络/2.png">
+<meta property="og:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Blog/source_posts/计算机网络/3.png">
+<meta property="og:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/7.png">
+<meta property="og:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/9.png">
+<meta property="og:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/8.png">
+<meta property="og:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/10.png">
+<meta property="og:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/9.png">
+<meta property="og:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/11.png">
+<meta property="og:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/12.png">
+<meta property="article:published_time" content="2022-07-12T06:24:00.000Z">
+<meta property="article:modified_time" content="2022-07-15T01:09:13.046Z">
+<meta property="article:author" content="木子">
+<meta property="article:tag" content="知识点">
+<meta property="article:tag" content="计算机网络">
+<meta property="article:tag" content="协议">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4.png">
+
+<link rel="canonical" href="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算机网络 | 春风过木</title>
+  
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="春风过木" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+	<a target="_blank" rel="noopener" href="https://github.com/spring-breeze2022" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">春风过木</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">我们要有最朴素的生活,与最遥远的梦想</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">16</span></a>
+
+  </li>
+        <li class="menu-item menu-item-guestbook">
+
+    <a href="/guestbook/" rel="section"><i class="fa fa-book fa-fw"></i>留言板</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风过木">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算机网络
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-12 14:24:00" itemprop="dateCreated datePublished" datetime="2022-07-12T14:24:00+08:00">2022-07-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-15 09:09:13" itemprop="dateModified" datetime="2022-07-15T09:09:13+08:00">2022-07-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">JAVA学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p>计算机网络：一些相互连接的计算机的集合。</p>
+<p>互联网：一些相互连接的计算机网络的集合（称为网络的网络）。</p>
+<h2 id="计算机网络的带宽"><a href="#计算机网络的带宽" class="headerlink" title="计算机网络的带宽"></a>计算机网络的带宽</h2><p>​		计算机网络的带宽是指网络可通过的最高数据率，即每秒多少比特。</p>
+<p><strong>什么是宽带？</strong></p>
+<p>宽带线路：可通过较高数据率的线路。<br>宽带是相对的概念，并没有绝对的标准。<br>在目前，对于用户接入到因特网的用户线来说，每秒传送几个兆比特就可以算是宽带速率。</p>
+<h3 id="什么是分组交换"><a href="#什么是分组交换" class="headerlink" title="什么是分组交换"></a>什么是分组交换</h3><ul>
+<li>在发送端把要发送的报文分隔为较短的数据块</li>
+<li>每个块增加带有控制信息的首部构成分组（包）</li>
+<li>依次把各分组发送到接收端</li>
+<li>接收端剥去首部，抽出数据部分，还原成报文</li>
+</ul>
+<p><img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4.png" alt="image-20220712144505982"></p>
+<p><strong>分组交换的有点：</strong></p>
+<ul>
+<li>高效    动态分配传输带宽，对通信链路是逐段占用。 </li>
+<li>灵活    以分组为传送单位和查找路由。</li>
+<li>迅速    不必先建立连接就能向其他主机发送分组；充分使用链路的带宽。</li>
+<li>可靠    完善的网络协议；自适应的路由选择协议使网络有很好的生存性。</li>
+</ul>
+<h2 id="网络互连"><a href="#网络互连" class="headerlink" title="网络互连"></a>网络互连</h2><ul>
+<li>当主机 A 要向另一个主机 B 发送数据报时，先要检查目的主机 B 是否与源主机 A 连接在同一个网络上。如果是，就将数据报<strong>直接交付</strong>给目的主机 B 而不需要通过路由器。</li>
+<li>但如果目的主机与源主机 A 不是连接在同一个网络上，则应将数据报发送给本网络上的某个路由器，由该路由器按照转发表指出的路由将数据报转发给下一个路由器。这就叫作<strong>间接交付</strong>。</li>
+</ul>
+<h3 id="典型的路由器的结构"><a href="#典型的路由器的结构" class="headerlink" title="典型的路由器的结构"></a>典型的路由器的结构</h3><img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/../../编程学习/博客内容/image/image-20220712150545698.png" alt="image-20220712150545698" style="zoom:67%;">
+
+
+
+<h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>​		在计算机网络中，协议(protocol)是通信双方必须严格遵守的规则。协议精确地规定在网络通信中使用的各种控制信息的格式、意义以及各种事件出现的先后顺序。协议在计算机网络中起着非常重要的作用。</p>
+<span id="more"></span>
+
+<h4 id="分层次的网络体系结构"><a href="#分层次的网络体系结构" class="headerlink" title="分层次的网络体系结构"></a>分层次的网络体系结构</h4><p><strong>五层原理体系结构：</strong></p>
+<p><img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Blog\source_posts\计算机网络\1.png" alt="image-20220712141744242"></p>
+<p><strong>TCP&#x2F;IP的体系结构</strong></p>
+<img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Blog\source\_posts\计算机网络\2.png" alt="image-20220712141927892" style="zoom:80%;">
+
+<p><strong>数据传输流程：</strong></p>
+<p><img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/Blog\source_posts\计算机网络\3.png" alt="image-20220712142038449"></p>
+<h4 id="IP协议（Internet-Protocol网际协议）（网络层）"><a href="#IP协议（Internet-Protocol网际协议）（网络层）" class="headerlink" title="IP协议（Internet Protocol网际协议）（网络层）"></a>IP协议（Internet Protocol网际协议）（网络层）</h4><p><strong>IPv4有32个bit位；</strong></p>
+<p><strong>IPv6有128个bit位；</strong></p>
+<p>​		因特网的 IP 协议最重要，它为分组在互连网中的发送、传输和接收制定了详尽的规则。与 IP 协议配套使用的还有四个协议：</p>
+<ul>
+<li>地址解析协议 ARP<br>   (Address Resolution Protocol)</li>
+<li>逆地址解析协议 RARP<br>(Reverse Address Resolution Protocol)</li>
+<li>因特网控制报文协议 ICMP<br>(Internet Control Message Protocol)</li>
+<li>因特网组管理协议 IGMP<br>(Internet Group Management Protocol)</li>
+</ul>
+<p><img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/7.png" alt="image-20220712151329556"></p>
+<p><strong>IP网络的重要特点</strong></p>
+<ul>
+<li>每一个分组独立选择路由。</li>
+<li>发往同一个目的地的分组，后发送的有可能先收到（即可能不按顺序接收）。</li>
+<li>当网络中的通信量过大时，路由器就来不及处理分组，于是要丢弃一些分组。</li>
+<li>因此， IP 网络不保证分组的可靠地交付。</li>
+<li>IP 网络提供的服务被称为：尽最大努力服务(best effort service)</li>
+</ul>
+<p>​		计算机通信是在计算机上运行的程序之间的通信。因为通信必须是可靠的，所以实现可靠通信最终应当是让计算机程序之间的通信可靠。因特网认为，IP 协议没有必要提供可靠服务（这样做可以使网络简单、灵活性好、价格便宜）。在计算机中增加 TCP 协议就可以实现计算机程序之间的可靠通信。因此引出TCP协议。</p>
+<h5 id="IP-数据报的格式"><a href="#IP-数据报的格式" class="headerlink" title="IP 数据报的格式"></a>IP 数据报的格式</h5><p><img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/9.png" alt="image-20220714193658752"></p>
+<p><strong>不存在粘包现象，只要确定报文前20个字节就可以确定报文长度</strong></p>
+<h5 id="IP-地址的编址方法"><a href="#IP-地址的编址方法" class="headerlink" title="IP 地址的编址方法"></a>IP 地址的编址方法</h5><ol>
+<li>分类的 IP 地址。这是最基本的编址方法.</li>
+</ol>
+<p>​		<img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/8.png" alt="image-20220712151944698"></p>
+<p>其中网络层及以上使用IP地址，链路层及以下使用硬件地址（及MAC地址）。IP地址可以屏蔽物理地址。</p>
+<ul>
+<li>子网的划分。这是对最基本的编址方法的改进，其标准[RFC 950]在 1985 年通过。</li>
+</ul>
+<p>$$<br>IP地址 &#x3D; {&lt;网络号&gt;, &lt;子网号&gt;, &lt;主机号&gt;}<br>$$<br>​	<img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/10.png" alt="image-20220714195408747"></p>
+<p><strong>IP地址与子网掩码取&amp;(与)可以得到网络地址</strong></p>
+<p><strong>主机位全为0的时候，此IP地址表示网络号代表网络段本身，也就是本网段的代表，常用在路由器的路由表中</strong></p>
+<p><strong>主机位全为1的时候，此IP地址表示广播地址，代表的是整个网段中的所有主机，即可以向该网段中所有的主机发送数据包</strong></p>
+<ul>
+<li>构成超网。这是比较新的无分类编址方法。1993 年提出后很快就得到推广应用。</li>
+</ul>
+<h5 id="IP-数据报的格式-1"><a href="#IP-数据报的格式-1" class="headerlink" title="IP 数据报的格式"></a>IP 数据报的格式</h5><p><img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/9.png" alt="image-20220714193658752"></p>
+<h5 id="网络互联："><a href="#网络互联：" class="headerlink" title="网络互联："></a>网络互联：</h5><ul>
+<li>专用地址网络：A类1个，B类16个，C类256个。专用地址不能与因特网连接，需要代理IP。</li>
+<li>内联网与外联网通信遇到代理IP，及网络地址转换NAT。</li>
+</ul>
+<h4 id="TCP协议（应用层）"><a href="#TCP协议（应用层）" class="headerlink" title="TCP协议（应用层）"></a>TCP协议（应用层）</h4><p>​		TCP 是 Transmission Control Protocol 的缩写，中文译名是传输控制协议。TCP 协议驻留在用户计算机中，它的作用是保证应用程序之间端到端的可靠通信。</p>
+<h5 id="端口的概念"><a href="#端口的概念" class="headerlink" title="端口的概念"></a>端口的概念</h5><ul>
+<li>端口就是运输层服务访问点 TSAP。</li>
+<li>端口的作用就是让应用层的各种应用进程都能将其数据通过端口向下交付给运输层，以及让运输层知道应当将其报文段中的数据向上通过端口交付给应用层相应的进程。</li>
+<li>从这个意义上讲，端口是用来标志应用层的进程。</li>
+</ul>
+<p>端口具有本地意义，其中1k以内为熟知端口（例如  web项目：80；mysql：3306；tomcat：8080等）</p>
+<h5 id="TCP协议数据报格式"><a href="#TCP协议数据报格式" class="headerlink" title="TCP协议数据报格式"></a>TCP协议数据报格式</h5><p><img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/11.png" alt="image-20220714204410504"></p>
+<p><img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/12.png" alt="image-20220714204525563"></p>
+<p><strong>TCP数据报文存在粘包现象，解决办法是在选项里添加报文总长度。</strong></p>
+<p><strong>TCP 协议的主要功能</strong></p>
+<ul>
+<li>TCP 给要传送的每一个字节的数据都进行编号。<ul>
+<li>接收端在收到数据后必须向发送端发送确认信息。</li>
+<li>若发送端在规定的时间内没有收到对方的确认，就重传这部分数据。</li>
+</ul>
+</li>
+<li>当网络中的通信量过大时，TCP 就告诉发送端要放慢发送数据。这叫做流量控制。<ul>
+<li>接收端窗口 rwnd     这是接收端根据其目前的接收缓存大小所许诺的最新的窗口值，是来自接收端的流量控制。接收端将此窗口值放在 TCP 报文的首部中的窗口字段，传送给发送端。</li>
+<li>拥塞窗口 cwnd (congestion window)    是发送端根据自己估计的网络拥塞程度而设置的窗口值，是来自发送端的流量控制。</li>
+</ul>
+</li>
+</ul>
+<p>​		TCP&#x2F;IP是因特网的核心协议，分组在因特网中传送要使用 IP 协议。计算机数据传输的可靠性由 TCP 协议来保证。通常用 TCP&#x2F;IP 这样的记法表示以 TCP 和 IP 为核心的协议族。</p>
+<p>TCP可靠通信的原理：</p>
+<ul>
+<li>超时重传</li>
+<li>按字节累加传输</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+    
+    </div>
+        <div class="reward-container">
+  <div>赏一包辣条~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/img/loading.gif" data-original="/images/wechatpay.png" alt="木子 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/img/loading.gif" data-original="/images/alipay.png" alt="木子 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>木子
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" title="计算机网络">http://li0424.com/2022/07/12/计算机网络/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag"><i class="fa fa-tag"></i> 知识点</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag"><i class="fa fa-tag"></i> 计算机网络</a>
+              <a href="/tags/%E5%8D%8F%E8%AE%AE/" rel="tag"><i class="fa fa-tag"></i> 协议</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/" rel="prev" title="类加载与反射">
+      <i class="fa fa-chevron-left"></i> 类加载与反射
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/26/%E9%9B%86%E5%90%88/" rel="next" title="集合">
+      集合 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text">计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%9A%84%E5%B8%A6%E5%AE%BD"><span class="nav-number">1.1.</span> <span class="nav-text">计算机网络的带宽</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%88%86%E7%BB%84%E4%BA%A4%E6%8D%A2"><span class="nav-number">1.1.1.</span> <span class="nav-text">什么是分组交换</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%BA%92%E8%BF%9E"><span class="nav-number">1.2.</span> <span class="nav-text">网络互连</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B8%E5%9E%8B%E7%9A%84%E8%B7%AF%E7%94%B1%E5%99%A8%E7%9A%84%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.1.</span> <span class="nav-text">典型的路由器的结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%8F%E8%AE%AE"><span class="nav-number">1.2.2.</span> <span class="nav-text">协议</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E5%B1%82%E6%AC%A1%E7%9A%84%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">分层次的网络体系结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP%E5%8D%8F%E8%AE%AE%EF%BC%88Internet-Protocol%E7%BD%91%E9%99%85%E5%8D%8F%E8%AE%AE%EF%BC%89%EF%BC%88%E7%BD%91%E7%BB%9C%E5%B1%82%EF%BC%89"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">IP协议（Internet Protocol网际协议）（网络层）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#IP-%E6%95%B0%E6%8D%AE%E6%8A%A5%E7%9A%84%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.2.2.2.1.</span> <span class="nav-text">IP 数据报的格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IP-%E5%9C%B0%E5%9D%80%E7%9A%84%E7%BC%96%E5%9D%80%E6%96%B9%E6%B3%95"><span class="nav-number">1.2.2.2.2.</span> <span class="nav-text">IP 地址的编址方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IP-%E6%95%B0%E6%8D%AE%E6%8A%A5%E7%9A%84%E6%A0%BC%E5%BC%8F-1"><span class="nav-number">1.2.2.2.3.</span> <span class="nav-text">IP 数据报的格式</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%BD%91%E7%BB%9C%E4%BA%92%E8%81%94%EF%BC%9A"><span class="nav-number">1.2.2.2.4.</span> <span class="nav-text">网络互联：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP%E5%8D%8F%E8%AE%AE%EF%BC%88%E5%BA%94%E7%94%A8%E5%B1%82%EF%BC%89"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">TCP协议（应用层）</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AB%AF%E5%8F%A3%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="nav-number">1.2.2.3.1.</span> <span class="nav-text">端口的概念</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#TCP%E5%8D%8F%E8%AE%AE%E6%95%B0%E6%8D%AE%E6%8A%A5%E6%A0%BC%E5%BC%8F"><span class="nav-number">1.2.2.3.2.</span> <span class="nav-text">TCP协议数据报格式</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="木子"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">木子</p>
+  <div class="site-description" itemprop="description">自能生羽翼 何必仰云梯</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="">
+    <a target="_blank" class="social-link" href="/atom.xml" style="color: burlywood;">
+      <span class="icon">
+        <i class="fa fa-rss"></i>
+      </span>
+      <span class="label">RSS</span>
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/spring-breeze2022/spring-breeze2022.github.io.git" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;spring-breeze2022&#x2F;spring-breeze2022.github.io.git" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:lim1831413@163.com" title="E-Mail → mailto:lim1831413@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">木子</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">45k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">40 分钟</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.18/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      app_id      : 'ammVa23Oo9KGT2R0i5qsjqBV-gzGzoHsz',
+      app_key     : '6Pxvy69xb8WvG16SOwxROqeW',
+      placeholder: "欢迎交流讨论...",
+      avatar     : 'monsterid',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var e=n.imageLazyLoadSetting.isSPA,i=n.imageLazyLoadSetting.preloadRatio||1,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight*i||document.documentElement.clientHeight*i)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>

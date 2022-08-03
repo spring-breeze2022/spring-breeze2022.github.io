@@ -130,17 +130,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">19</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">24</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">13</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">16</span></a>
 
   </li>
         <li class="menu-item menu-item-guestbook">
@@ -198,6 +198,585 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风过木">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" class="post-title-link" itemprop="url">多线程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-02 18:53:00 / 修改时间：20:16:57" itemprop="dateCreated datePublished" datetime="2022-08-02T18:53:00+08:00">2022-08-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">JAVA学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">多线程</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="多线程"><a href="#多线程" class="headerlink" title="多线程"></a>多线程</h1><h3 id="什么是线程？"><a href="#什么是线程？" class="headerlink" title="什么是线程？"></a>什么是线程？</h3><h4 id="程序、进程和线程之间的区别？"><a href="#程序、进程和线程之间的区别？" class="headerlink" title="程序、进程和线程之间的区别？"></a>程序、进程和线程之间的区别？</h4><ul>
+<li>程序是静态的，进程是被执行的程序，进程就是动态的。</li>
+<li>进程是能分配资源和独立运行的，线程不能独立运行。</li>
+<li>一个进程能有多个线程，但至少有一个线程。</li>
+<li>进程无法共享内存，但线程可以：因为每个线程都分配独立的栈空间，但堆空间共享。</li>
+</ul>
+<h4 id="为什么说Java本身支持多线程？"><a href="#为什么说Java本身支持多线程？" class="headerlink" title="为什么说Java本身支持多线程？"></a>为什么说Java本身支持多线程？</h4><p>​		因为java的线程由jvm管理，它如何映射到操作系统的线程由jvm实现决定。jvm采用一种轻量级线程，对内核线程做一层封装提供给用户线程调用，实现用户线程与操作系统线程形成一比一映射关系。</p>
+<h4 id="进程的三个特征"><a href="#进程的三个特征" class="headerlink" title="进程的三个特征"></a>进程的三个特征</h4><ol>
+<li><strong>独立性：</strong>进程是系统独立存在的实体，它可以拥有自己独立的资源。</li>
+<li><strong>动态性：</strong>进程是正在系统活动中的指令集合。</li>
+<li><strong>并发性：</strong>多个进程可以在单处理器上执行。</li>
+</ol>
+<h3 id="Java中创建线程的四种方法以及它们的区别"><a href="#Java中创建线程的四种方法以及它们的区别" class="headerlink" title="Java中创建线程的四种方法以及它们的区别"></a>Java中创建线程的四种方法以及它们的区别</h3><ol>
+<li><p><strong>继承<code>Thread</code>类重写<code>run()</code>方法：</strong>继承<code>Thread</code>类比较冗余，而且不支持多线程对同一全局变量进行访问。</p>
+</li>
+<li><p><strong>实现<code>Runnable</code>接口，重写<code>run()</code>方法：</strong>通过<code>Thread</code>含参构造函数创建对象。实现类也可以继承或实现其他类&#x2F;接口，提高代码的灵活性，也方便多线程对同一全局变量进行访问。</p>
+</li>
+<li><p><strong>实现<code>Callable</code>接口，重写<code>call()</code>方法：</strong>需要使用<code>FutureTask</code>类包装，因为<code>FutureTask</code>类实现了<code>Runnable</code>接口。实现<code>Callable</code>方法可以抛出异常，而且可以有返回值以及带参数。继承<code>Thread</code>和实现<code>Runnable</code>接口不能。</p>
+</li>
+<li><p><strong>当然也可以通过创建线程池来创建线程</strong></p>
+<ul>
+<li><p>在经常创建和销毁、使用量特别大的资源，比如并发情况下的线程<br>对性能影响很大。</p>
+</li>
+<li><p>JDK5.0提供了<strong>ExecutorService接口</strong>和<strong>Executors工具类</strong></p>
+<p><img src="/img/loading.gif" data-original="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/1.png" alt="image-20220802193905003"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="线程状态"><a href="#线程状态" class="headerlink" title="线程状态"></a>线程状态</h3><ol>
+<li><p><strong>新建状态</strong></p>
+<p>​		当用new操作符创建一个线程时。此时程序还没有开始运行线程中的代码。</p>
+</li>
+<li><p><strong>就绪状态</strong></p>
+<p>​		一个新创建的线程并不自动开始运行，要执行线程，必须调用线程的**<code>start()</code>方法**。当线程对象调用<code>start()</code>方法即启动了线程，<code>start()</code>方法创建线程运行的系统资源，并调度线程运行<code>run()</code>方法。当<code>start()</code>方法返回后，线程就处于就绪状态。</p>
+<p>​		处于就绪状态的线程并不一定立即运行<code>run()</code>方法，线程还必须同其他线程竞争CPU时间，只有获得CPU时间才可以运行线程。因为在单CPU的计算机系统中，不可能同时运行多个线程，一个时刻仅有一个线程处于运行状态。因此此时可能有多个线程处于就绪状态。对多个处于就绪状态的线程是由Java运行时系统的线程调度程序来调度的。</p>
+</li>
+<li><p><strong>运行状态（running）</strong></p>
+<p>​		当线程获得CPU时间后，它才进入运行状态，真正开始执行<code>run()</code>方法。</p>
+</li>
+<li><p><strong>阻塞状态（blocked）</strong></p>
+<p>​		所谓阻塞状态是正在运行的线程没有运行结束，暂时让出CPU，这时其他处于就绪状态的线程就可以获得CPU时间，进入运行状态。线程被堵塞可能是由下述五方面的原因造成的：</p>
+<p>(1) 调用<code>sleep</code>(毫秒数)，使线程进入”睡眠”状态。在规定的时间内，这个线程是不会运行的。</p>
+<p>(2) 用<code>suspend()</code>暂停了线程的执行。除非线程收到<code>resume()</code>消息，否则不会返回”可运行”状态。</p>
+<p>(3) 用<code>wait()</code>暂停了线程的执行。除非线程收到<code>nofify()</code>或者<code>notifyAll()</code>消息，否则不会变成”可运行”（是的，这看起来同原因2非常相象，但有一个明显的区别是我们马上要揭示的）。</p>
+<p>(4) 线程正在等候一些<code>IO</code>（输入输出）操作完成。</p>
+<p>(5) 线程试图调用另一个对象的”同步”方法，但那个对象处于锁定状态，暂时无法使用。</p>
+</li>
+<li><p><strong>死亡状态（dead）</strong></p>
+<p>​		有三个原因会导致线程死亡：</p>
+<p>​			①<code>run</code>方法正常退出而自然死亡；</p>
+<p>​			②一个未捕获的异常终止了run方法而使线程猝死；</p>
+<p>​			③<code>stop()</code>方法。</p>
+<p>​		为了确定线程在当前是否存活着（就是要么是可运行的，要么是被阻塞了），需要使用<code>isAlive</code>方法，如果是可运行或被阻塞，这个方法返回<code>true</code>；如果线程仍旧是<code>new</code>状态且不是可运行的，或者线程死亡了，则返回<code>false</code>。</p>
+</li>
+</ol>
+<h3 id="线程的生命周期"><a href="#线程的生命周期" class="headerlink" title="线程的生命周期"></a>线程的生命周期</h3><p>​	<img src="/img/loading.gif" data-original="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/2.png" alt="image-20220802194148223"></p>
+<h3 id="线程同步和线程互斥"><a href="#线程同步和线程互斥" class="headerlink" title="线程同步和线程互斥"></a>线程同步和线程互斥</h3><ul>
+<li><strong>线程互斥：</strong>多个线程之间共享同一资源时会发生线程互斥。</li>
+<li><strong>线程同步：</strong>某个线程需要另一线程完成工作才能正常运行，称为线程同步。</li>
+</ul>
+<p><strong>由线程同步互斥问题引出线程的安全问题</strong></p>
+<h3 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h3><p>​		当多条线程访问同一共享资源时容易引发线程安全问题。</p>
+<ol>
+<li><p>同步代码块：用<code>synchronized</code>关键字括起来的是同步代码块，在线程执行这块代码时，需要获得同步监视器的锁定，而若已被锁定，则只能等待。从而阻止两条线程对同一共享资源的并发访问。</p>
+</li>
+<li><p>同步方法：用<code>synchronized</code>关键字修饰的方法。原理与上相同。</p>
+</li>
+<li><p>同步锁（<code>Lock</code>）：<code>Lock</code>是控制多个线程对共享资源进行访问的工具。通常，锁提供了对共享资源的独占访问，每次只能有一个线程对<code>Lock</code>对象加锁，线程开始访问共享资源对象之前应先获得<code>Lock</code>对象。从而实现显式的加锁解锁。</p>
+<p><code>Java</code>提供了一种可重用锁<code>ReentranLock</code>，该锁对象会维持一个计数器来追踪<code>lock</code>方法的调用，从而可以对已经加锁的共享资源再次加锁。线程每次调用<code>lock</code>方法加锁后，必须显示调用<code>unlock</code>方法释放锁。</p>
+</li>
+</ol>
+<h4 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h4><p>​		当两个线程互相需要对方线程锁住的资源才能继续运行时会发生死锁，因为两个线程都在等待对方释放同步监视器。一旦出现死锁，整个程序既不会发生异常，也不会有任何提示，而是所有线程处于阻塞状态无法继续。</p>
+<h3 id="线程协调运行"><a href="#线程协调运行" class="headerlink" title="线程协调运行"></a>线程协调运行</h3><p><code>Object</code>类提供<code>wait()</code>、<code>notify()</code>、<code>notifyAll()</code>三个方法来实现线程协调，这三个方法必须同步监视器对象调用。</p>
+<ol>
+<li><code>wait()</code>：导致当前线程等待，直到其他线程调用<code>notify()</code>或<code>notifyAll()</code>来唤醒该线程。<code>Wait()</code>会释放对同步监视器的锁定。</li>
+<li><code>notify()</code>：唤醒在等待的单个线程。如果等待的线程有复数个，则只是随机选择其中一个唤醒。<br><code>notifyAll()</code>：唤醒所有在等待中的线程。</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/07/26/%E9%9B%86%E5%90%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风过木">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/26/%E9%9B%86%E5%90%88/" class="post-title-link" itemprop="url">集合</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-26 09:19:00" itemprop="dateCreated datePublished" datetime="2022-07-26T09:19:00+08:00">2022-07-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-29 09:23:25" itemprop="dateModified" datetime="2022-07-29T09:23:25+08:00">2022-07-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">Java学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0/Java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">Java基础</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/07/26/%E9%9B%86%E5%90%88/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/07/26/%E9%9B%86%E5%90%88/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h1><ul>
+<li>为了保存数量不确定的数据，以及保存具有映射关系的数据（也被称为关联数组）。Java提供集合类，集合类主要负责保存、盛装其他数据，因此集合类也被称为容器类。所有集合类 都位于java.util包下。 </li>
+<li>Java的集合类主要由两个接口派生而出：Collection和Map，Collection和Map是Java集合框架 的根接口，这两个接口又包含了一些子接口或实现类。</li>
+</ul>
+<p><strong>Collection集合</strong></p>
+<p><img src="/img/loading.gif" data-original="/2022/07/26/%E9%9B%86%E5%90%88/1.png" alt="image-20220726092647305"></p>
+<p><strong>Map集合</strong></p>
+<p><img src="/img/loading.gif" data-original="/2022/07/26/%E9%9B%86%E5%90%88/2.png" alt="image-20220726092816359"></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/07/26/%E9%9B%86%E5%90%88/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风过木">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">计算机网络</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-12 14:24:00" itemprop="dateCreated datePublished" datetime="2022-07-12T14:24:00+08:00">2022-07-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-15 09:09:13" itemprop="dateModified" datetime="2022-07-15T09:09:13+08:00">2022-07-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">JAVA学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p>计算机网络：一些相互连接的计算机的集合。</p>
+<p>互联网：一些相互连接的计算机网络的集合（称为网络的网络）。</p>
+<h2 id="计算机网络的带宽"><a href="#计算机网络的带宽" class="headerlink" title="计算机网络的带宽"></a>计算机网络的带宽</h2><p>​		计算机网络的带宽是指网络可通过的最高数据率，即每秒多少比特。</p>
+<p><strong>什么是宽带？</strong></p>
+<p>宽带线路：可通过较高数据率的线路。<br>宽带是相对的概念，并没有绝对的标准。<br>在目前，对于用户接入到因特网的用户线来说，每秒传送几个兆比特就可以算是宽带速率。</p>
+<h3 id="什么是分组交换"><a href="#什么是分组交换" class="headerlink" title="什么是分组交换"></a>什么是分组交换</h3><ul>
+<li>在发送端把要发送的报文分隔为较短的数据块</li>
+<li>每个块增加带有控制信息的首部构成分组（包）</li>
+<li>依次把各分组发送到接收端</li>
+<li>接收端剥去首部，抽出数据部分，还原成报文</li>
+</ul>
+<p><img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/4.png" alt="image-20220712144505982"></p>
+<p><strong>分组交换的有点：</strong></p>
+<ul>
+<li>高效    动态分配传输带宽，对通信链路是逐段占用。 </li>
+<li>灵活    以分组为传送单位和查找路由。</li>
+<li>迅速    不必先建立连接就能向其他主机发送分组；充分使用链路的带宽。</li>
+<li>可靠    完善的网络协议；自适应的路由选择协议使网络有很好的生存性。</li>
+</ul>
+<h2 id="网络互连"><a href="#网络互连" class="headerlink" title="网络互连"></a>网络互连</h2><ul>
+<li>当主机 A 要向另一个主机 B 发送数据报时，先要检查目的主机 B 是否与源主机 A 连接在同一个网络上。如果是，就将数据报<strong>直接交付</strong>给目的主机 B 而不需要通过路由器。</li>
+<li>但如果目的主机与源主机 A 不是连接在同一个网络上，则应将数据报发送给本网络上的某个路由器，由该路由器按照转发表指出的路由将数据报转发给下一个路由器。这就叫作<strong>间接交付</strong>。</li>
+</ul>
+<h3 id="典型的路由器的结构"><a href="#典型的路由器的结构" class="headerlink" title="典型的路由器的结构"></a>典型的路由器的结构</h3><img src="/img/loading.gif" data-original="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/../../编程学习/博客内容/image/image-20220712150545698.png" alt="image-20220712150545698" style="zoom:67%;">
+
+
+
+<h3 id="协议"><a href="#协议" class="headerlink" title="协议"></a>协议</h3><p>​		在计算机网络中，协议(protocol)是通信双方必须严格遵守的规则。协议精确地规定在网络通信中使用的各种控制信息的格式、意义以及各种事件出现的先后顺序。协议在计算机网络中起着非常重要的作用。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风过木">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/" class="post-title-link" itemprop="url">类加载与反射</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-07-08 17:12:00" itemprop="dateCreated datePublished" datetime="2022-07-08T17:12:00+08:00">2022-07-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-12 14:23:36" itemprop="dateModified" datetime="2022-07-12T14:23:36+08:00">2022-07-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">JAVA学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/" itemprop="url" rel="index"><span itemprop="name">类加载与反射</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h1><p>​		不管Java程序有多么复杂、该程序启动了多少个线程，它们都处于该Java虚拟机进程里。同一个JVM的所有线程、所有变量都处于同一个进程里，它们都使用该JVM进程的内存区。当系统出现以下几种情况时，JVM进程将被终止：</p>
+<ul>
+<li><p>程序运行到最后正常结束。</p>
+</li>
+<li><p>程序运行到使用System.exit()或Runtime.getRuntime().exit()代码结束程</p>
+</li>
+</ul>
+<p>序。</p>
+<ul>
+<li><p>程序执行过程中遇到未捕获的异常或错误而结束。</p>
+</li>
+<li><p>程序所在平台强制结束了JVM进程。</p>
+</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -332,136 +911,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/07/05/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="木子">
-      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春风过木">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/07/05/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/" class="post-title-link" itemprop="url">类加载与反射</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-07-05 15:14:00" itemprop="dateCreated datePublished" datetime="2022-07-05T15:14:00+08:00">2022-07-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-08 21:34:37" itemprop="dateModified" datetime="2022-07-08T21:34:37+08:00">2022-07-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">JAVA学习</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/" itemprop="url" rel="index"><span itemprop="name">类加载与反射</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/07/05/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/07/05/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h1><p>​		不管Java程序有多么复杂、该程序启动了多少个线程，它们都处于该Java虚拟机进程里。同一个JVM的所有线程、所有变量都处于同一个进程里，它们都使用该JVM进程的内存区。当系统出现以下几种情况时，JVM进程将被终止：</p>
-<ul>
-<li><p>程序运行到最后正常结束。</p>
-</li>
-<li><p>程序运行到使用System.exit()或Runtime.getRuntime().exit()代码结束程</p>
-</li>
-</ul>
-<p>序。</p>
-<ul>
-<li><p>程序执行过程中遇到未捕获的异常或错误而结束。</p>
-</li>
-<li><p>程序所在平台强制结束了JVM进程。</p>
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/07/05/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/06/26/%E7%B1%BB/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -493,7 +942,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-06-27 20:49:05" itemprop="dateModified" datetime="2022-06-27T20:49:05+08:00">2022-06-27</time>
+                <time title="修改时间：2022-07-29 15:08:11" itemprop="dateModified" datetime="2022-07-29T15:08:11+08:00">2022-07-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -529,7 +978,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>969</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -552,6 +1001,31 @@
 <p>面向过程（Procedure-Oriented Programming，简称POP）是一种编程模型，由一系列要执行的计算步骤组成，通常采用自上而下、顺序执行的方式。</p>
 <p><strong>什么是面向对象</strong></p>
 <p>面向对象编程（Object-oriented programming，简写：OOP）是一种计算机编程模型，它围绕数据或对象而不是功能和逻辑来组织软件设计，更专注于对象与对象之间的交互，对象涉及的方法和属性都在对象内部。说的更底层一点就是面向对象是一种依赖于类和对象概念的编程方式。</p>
+<p><strong>面向对象和面向过程的区别</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>面向过程</th>
+<th>面向对象</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>侧重点</td>
+<td>功能的实现步骤和因果关系</td>
+<td>对象之间的组合关系</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td><strong>耦合度高、扩展力低</strong></td>
+<td><strong>耦合度低、扩展力高</strong></td>
+</tr>
+<tr>
+<td>优点</td>
+<td>快速开发</td>
+<td>需要对象提取和模型建立</td>
+</tr>
+</tbody></table>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/06/26/%E7%B1%BB/#more" rel="contents">
@@ -1084,392 +1558,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="木子">
-      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春风过木">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/" class="post-title-link" itemprop="url">搜索与回溯算法二</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-16 16:26:00" itemprop="dateCreated datePublished" datetime="2022-05-16T16:26:00+08:00">2022-05-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-20 11:49:05" itemprop="dateModified" datetime="2022-05-20T11:49:05+08:00">2022-05-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">LeetCode学习</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">搜索与回溯算法</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="例题一"><a href="#例题一" class="headerlink" title="例题一"></a>例题一</h3><p>输入两棵二叉树<em>A</em>和<em>B</em>，判断<em>B</em>是不是<em>A</em>的子结构。(约定空树不是任意一个树的子结构)</p>
-<p><em>B</em>是<em>A</em>的子结构， 即 <em>A</em>中有出现和<em>B</em>相同的结构和节点值。</p>
-<p><strong>例如:</strong><br>给定的树 <em>A</em>:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    <span class="number">3</span></span><br><span class="line">   / \</span><br><span class="line">  <span class="number">4</span>   <span class="number">5</span></span><br><span class="line"> / \</span><br><span class="line"><span class="number">1</span>   <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>给定的树 <em>B</em>：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">4</span> </span><br><span class="line"> /</span><br><span class="line"><span class="number">1</span></span><br></pre></td></tr></table></figure>
-
-<p>返回 <code>true</code>，因为 <em>B</em> 与 <em>A</em> 的一个子树拥有相同的结构和节点值。</p>
-<p><strong>示例 1：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], B = [<span class="number">3</span>,<span class="number">1</span>]</span><br><span class="line">输出：<span class="literal">false</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>示例 2：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：A = [<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">2</span>], B = [<span class="number">4</span>,<span class="number">1</span>]</span><br><span class="line">输出：<span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>限制：</strong></p>
-<p><code>0 &lt;= 节点个数 &lt;= 10000</code></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/16/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BA%8C/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="木子">
-      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春风过木">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">搜索与回溯算法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-15 10:51:00" itemprop="dateCreated datePublished" datetime="2022-05-15T10:51:00+08:00">2022-05-15</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-20 11:48:53" itemprop="dateModified" datetime="2022-05-20T11:48:53+08:00">2022-05-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">LeetCode学习</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">搜索与回溯算法</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="例题一"><a href="#例题一" class="headerlink" title="例题一"></a>例题一</h3><p>从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。</p>
-<p><strong>例如:</strong><br>给定二叉树: <code>[3,9,20,null,null,15,7]</code>,</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">3</span></span><br><span class="line"> / \</span><br><span class="line"><span class="number">9</span>  <span class="number">20</span></span><br><span class="line">  /  \</span><br><span class="line"> <span class="number">15</span>   <span class="number">7</span></span><br></pre></td></tr></table></figure>
-<p><strong>返回：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">3</span>,<span class="number">9</span>,<span class="number">20</span>,<span class="number">15</span>,<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
-
-<p><strong>提示：</strong></p>
-<ul>
-<li>节点总数 &lt;&#x3D; 1000</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/15/%E6%90%9C%E7%B4%A2%E4%B8%8E%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="木子">
-      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春风过木">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">查找算法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-14 11:06:00" itemprop="dateCreated datePublished" datetime="2022-05-14T11:06:00+08:00">2022-05-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-20 11:48:16" itemprop="dateModified" datetime="2022-05-20T11:48:16+08:00">2022-05-20</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">LeetCode学习</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode%E5%AD%A6%E4%B9%A0/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">查找算法</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="例题一"><a href="#例题一" class="headerlink" title="例题一"></a>例题一</h3><p>在一个 <code>n * m</code> 的二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。请完成一个高效的函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
-<p><strong>示例:</strong></p>
-<p>现有矩阵 <code>matrix</code> 如下：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [<span class="number">1</span>,   <span class="number">4</span>,  <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>],</span><br><span class="line">  [<span class="number">2</span>,   <span class="number">5</span>,  <span class="number">8</span>, <span class="number">12</span>, <span class="number">19</span>],</span><br><span class="line">  [<span class="number">3</span>,   <span class="number">6</span>,  <span class="number">9</span>, <span class="number">16</span>, <span class="number">22</span>],</span><br><span class="line">  [<span class="number">10</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">17</span>, <span class="number">24</span>],</span><br><span class="line">  [<span class="number">18</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">26</span>, <span class="number">30</span>]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
-
-
-<p>给定 <code>target = 5</code>，返回 <code>true</code>。</p>
-<p>给定 <code>target = 20</code>，返回 <code>false</code>。</p>
-<p><strong>限制：</strong></p>
-<p><code>0 &lt;= n &lt;= 1000</code></p>
-<p><code>0 &lt;= m &lt;= 1000</code></p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/05/14/%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1541,20 +1629,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-count">24</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1607,13 +1695,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">34k</span>
+    <span title="站点总字数">45k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">31 分钟</span>
+    <span title="站点阅读时长">40 分钟</span>
 </div>
 
 <!--
