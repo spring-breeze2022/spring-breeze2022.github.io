@@ -32,11 +32,19 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/1.png">
 <meta property="og:image" content="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/2.png">
+<meta property="og:image" content="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/3.png">
+<meta property="og:image" content="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/4.png">
+<meta property="og:image" content="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/5.png">
+<meta property="og:image" content="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/6.png">
+<meta property="og:image" content="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/7.png">
+<meta property="og:image" content="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/8.png">
+<meta property="og:image" content="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/9.png">
+<meta property="og:image" content="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/10.png">
 <meta property="article:published_time" content="2022-08-02T10:53:00.000Z">
-<meta property="article:modified_time" content="2022-08-04T00:46:15.244Z">
+<meta property="article:modified_time" content="2022-08-11T02:08:38.760Z">
 <meta property="article:author" content="木子">
-<meta property="article:tag" content="多线程">
 <meta property="article:tag" content="知识点">
+<meta property="article:tag" content="多线程">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/1.png">
 
@@ -137,7 +145,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">25</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">26</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -147,7 +155,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">17</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-guestbook">
@@ -240,7 +248,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-04 08:46:15" itemprop="dateModified" datetime="2022-08-04T08:46:15+08:00">2022-08-04</time>
+                <time title="修改时间：2022-08-11 10:08:38" itemprop="dateModified" datetime="2022-08-11T10:08:38+08:00">2022-08-11</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,14 +291,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.6k</span>
+              <span>4.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -392,11 +400,42 @@
 </li>
 <li><strong>作用：</strong>定时器和守护线程的联合使用实现数据自动备份</li>
 </ul>
-<h3 id="线程协调运行"><a href="#线程协调运行" class="headerlink" title="线程协调运行"></a>线程协调运行</h3><p><code>Object</code>类提供<code>wait()</code>、<code>notify()</code>、<code>notifyAll()</code>三个方法来实现线程协调，这三个方法必须同步监视器对象调用。</p>
+<h3 id="线程协调运行（线程的通信）"><a href="#线程协调运行（线程的通信）" class="headerlink" title="线程协调运行（线程的通信）"></a>线程协调运行（线程的通信）</h3><p><code>Object</code>类提供<code>wait()</code>、<code>notify()</code>、<code>notifyAll()</code>三个方法来实现线程协调，这三个方法必须同步监视器对象调用。</p>
 <ol>
 <li><code>wait()</code>：导致当前线程等待，直到其他线程调用<code>notify()</code>或<code>notifyAll()</code>来唤醒该线程。<code>Wait()</code>会释放对同步监视器的锁定。</li>
 <li><code>notify()</code>：唤醒在等待的单个线程。如果等待的线程有复数个，则只是随机选择其中一个唤醒。<br><code>notifyAll()</code>：唤醒所有在等待中的线程。</li>
 </ol>
+<p>使用Condition类控制线程通信</p>
+<ul>
+<li>当使用Lock对象来保证同步时，Java提供了一个Condition类来保持协调，使用Condition可以让那些已经得到Lock对象却无法继续执行的线程释放Lock对象，Condition对象也可以唤醒其他处于等待的线程。</li>
+<li>Condition将同步监视器方法(wait(),notify()和notifyAll())分解成截然不同的对象，以便通过讲这些对象与Lock对象组合使用，为每个对象提供多个等待集(wait-set)。在这种情况下，Lock替代了同步方法或同步代码块，Condition替代了同步监视器的功能。</li>
+<li>await():类似于隐式同步监视器上的wait()方法，导致当前线程等待，知道其他线程调用Condition的signal()方法或signalAll()方法来唤醒该线程。该await()方法有更多变体，如long awaitNanos(long nanosTimeout)、void awaitUninterruptible()、awaitUnitl(Date deadline)等，可以完成更丰富的等待操作。</li>
+<li>signal():唤醒在此Lock对象上等待的单个线程，如果所有线程都在该Lock对象上等待，则会选择唤醒其中一个线程。选择是任意性的，只有当前线程放弃对该Lock对象的锁定后(使用await()方法),才可以执行被唤醒的线程。</li>
+<li>signalAll():唤醒在此Lock对象上等待的所有线程。只有当前线程房钱对该Lock对象的锁定后，才可以执行被唤醒的线程。</li>
+</ul>
+<h3 id="ThreadLock"><a href="#ThreadLock" class="headerlink" title="ThreadLock"></a>ThreadLock</h3><p>ThreadLock叫做**&#x3D;&#x3D;线程变量&#x3D;&#x3D;**，该变量是当前线程独有的变量。ThreadLock为每个线程创造一个副本，每个线程可以访问自己内部的副本变量。</p>
+<p><img src="/img/loading.gif" data-original="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/3.png" alt="image-20220811092913797"></p>
+<h3 id="JUC的三个辅助类"><a href="#JUC的三个辅助类" class="headerlink" title="JUC的三个辅助类"></a>JUC的三个辅助类</h3><h4 id="CountDownLatch：减少计数"><a href="#CountDownLatch：减少计数" class="headerlink" title="CountDownLatch：减少计数"></a>CountDownLatch：减少计数</h4><p>CountDownLatch是JUC包中线程提同步器的一种实现，又称为倒计数器，通过让一个或多个线程等待其他线程结束后再继续自己的操作，类似加强版<code>join()</code>；</p>
+<ul>
+<li>countDown：执行一次，计数器的数值-1。</li>
+<li>await：等待计数器的值为0，才进行后面的操作。</li>
+</ul>
+<h4 id="CyclicBarrier：循环栅栏"><a href="#CyclicBarrier：循环栅栏" class="headerlink" title="CyclicBarrier：循环栅栏"></a>CyclicBarrier：循环栅栏</h4><p>CyclicBarrier允许一组线程相互等待，直到达到某个<strong>公共屏障点</strong>，等待线程才继续执行。而且这个Barrier（栅栏）在释放等待线程后可以复用，所以被称为循环栅栏。</p>
+<p><img src="/img/loading.gif" data-original="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/4.png" alt="image-20220811095018033"></p>
+<p><img src="/img/loading.gif" data-original="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/5.png" alt="image-20220811095058528"></p>
+<p><img src="/img/loading.gif" data-original="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/6.png" alt="image-20220811095117263"></p>
+<h4 id="Semaphore：信号灯"><a href="#Semaphore：信号灯" class="headerlink" title="Semaphore：信号灯"></a>Semaphore：信号灯</h4><p><img src="/img/loading.gif" data-original="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/7.png" alt="image-20220811095220875"></p>
+<p><img src="/img/loading.gif" data-original="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/8.png" alt="image-20220811095258504"></p>
+<h3 id="悲观锁与乐观锁"><a href="#悲观锁与乐观锁" class="headerlink" title="悲观锁与乐观锁"></a>悲观锁与乐观锁</h3><p><strong>悲观锁：</strong></p>
+<p>悲观锁是基于一种悲观的态度类来防止一切数据冲突，它是以一种预防的姿态在修改数据之前把数据锁住，然后再对数据进行读写，在它释放锁之前任何人都不能对其数据进行操作，直到前面一个人把锁释放后下一个人数据加锁才可对数据进行加锁，然后才可以对数据进行操作，一般数据库本身锁的机制都是基于悲观锁的机制实现的;</p>
+<p>特点：可以完全保证数据的独占性和正确性，因为每次请求都会先对数据进行加锁， 然后进行数据操作，最后再解锁，而加锁释放锁的过程会造成消耗，所以性能不高;</p>
+<p><strong>乐观锁：</strong></p>
+<p>乐观锁是对于数据冲突保持一种乐观态度，操作数据时不会对操作的数据进行加锁（这使得多个任务可以并行的对数据进行操作），只有到数据提交的时候才通过一种机制来验证数据是否存在冲突(一般实现方式是通过加版本号然后进行版本号的对比方式实现);</p>
+<p>特点：乐观锁是一种并发类型的锁，其本身不对数据进行加锁通而是通过业务实现锁的功能，不对数据进行加锁就意味着允许多个请求同时访问数据，同时也省掉了对数据加锁和解锁的过程，这种方式因为节省了悲观锁加锁的操作，所以可以一定程度的的提高操作的性能，不过在并发非常高的情况下，会导致大量的请求冲突，冲突导致大部分操作无功而返而浪费资源，所以在高并发的场景下，乐观锁的性能却反而不如悲观锁。</p>
+<h3 id="读写锁"><a href="#读写锁" class="headerlink" title="读写锁"></a>读写锁</h3><p>读锁和写锁都会出现死锁的情况</p>
+<p><img src="/img/loading.gif" data-original="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/9.png" alt="image-20220811100240242"></p>
+<h3 id="阻塞队列-BlockingQueue-控制线程通信"><a href="#阻塞队列-BlockingQueue-控制线程通信" class="headerlink" title="阻塞队列(BlockingQueue)控制线程通信"></a>阻塞队列(BlockingQueue)控制线程通信</h3><p>Java5提供了一个BlockingQueue接口，虽然BlockingQueue也是Queue的子接口，但它的主要用途并不是作为容器，而是作为线程同步的工具。BlockingQueue具有一个特性：当生产者线程试图想BlockingQueue中放入元素时，如果该队列已满，则该线程被阻塞；当消费者线程试图从BlockingQueue中取出元素时，如果该队列已空，则该线程被阻塞。程序的两个线程通过交替想BlockingQueue中放入元素、取出元素，既可很好地控制线程的通信。</p>
+<p><img src="/img/loading.gif" data-original="/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/10.png" alt="image-20220811100442724"></p>
 
     </div>
 
@@ -454,8 +493,8 @@
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 多线程</a>
               <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag"><i class="fa fa-tag"></i> 知识点</a>
+              <a href="/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/" rel="tag"><i class="fa fa-tag"></i> 多线程</a>
           </div>
 
         
@@ -530,7 +569,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BA%BF%E7%A8%8B%EF%BC%9F"><span class="nav-number">1.0.1.</span> <span class="nav-text">什么是线程？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E3%80%81%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">程序、进程和线程之间的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4Java%E6%9C%AC%E8%BA%AB%E6%94%AF%E6%8C%81%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%9F"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">为什么说Java本身支持多线程？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E4%B8%89%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">进程的三个特征</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E4%B8%AD%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E5%AE%83%E4%BB%AC%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.0.2.</span> <span class="nav-text">Java中创建线程的四种方法以及它们的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="nav-number">1.0.3.</span> <span class="nav-text">线程状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.0.4.</span> <span class="nav-text">线程的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%BA%92%E6%96%A5"><span class="nav-number">1.0.5.</span> <span class="nav-text">线程同步和线程互斥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="nav-number">1.0.6.</span> <span class="nav-text">线程安全</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%BB%E9%94%81"><span class="nav-number">1.0.6.1.</span> <span class="nav-text">死锁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%88%E6%8A%A4%E7%BA%BF%E7%A8%8B-x2F-%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.0.7.</span> <span class="nav-text">守护线程&#x2F;后台线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8%E6%9C%BA%E5%88%B6"><span class="nav-number">1.0.8.</span> <span class="nav-text">定时器机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%8D%8F%E8%B0%83%E8%BF%90%E8%A1%8C"><span class="nav-number">1.0.9.</span> <span class="nav-text">线程协调运行</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A4%9A%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">多线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%BA%BF%E7%A8%8B%EF%BC%9F"><span class="nav-number">1.0.1.</span> <span class="nav-text">什么是线程？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E3%80%81%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">程序、进程和线程之间的区别？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4Java%E6%9C%AC%E8%BA%AB%E6%94%AF%E6%8C%81%E5%A4%9A%E7%BA%BF%E7%A8%8B%EF%BC%9F"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">为什么说Java本身支持多线程？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E7%A8%8B%E7%9A%84%E4%B8%89%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">进程的三个特征</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java%E4%B8%AD%E5%88%9B%E5%BB%BA%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E5%AE%83%E4%BB%AC%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.0.2.</span> <span class="nav-text">Java中创建线程的四种方法以及它们的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="nav-number">1.0.3.</span> <span class="nav-text">线程状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.0.4.</span> <span class="nav-text">线程的生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%90%8C%E6%AD%A5%E5%92%8C%E7%BA%BF%E7%A8%8B%E4%BA%92%E6%96%A5"><span class="nav-number">1.0.5.</span> <span class="nav-text">线程同步和线程互斥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8"><span class="nav-number">1.0.6.</span> <span class="nav-text">线程安全</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AD%BB%E9%94%81"><span class="nav-number">1.0.6.1.</span> <span class="nav-text">死锁</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%88%E6%8A%A4%E7%BA%BF%E7%A8%8B-x2F-%E5%90%8E%E5%8F%B0%E7%BA%BF%E7%A8%8B"><span class="nav-number">1.0.7.</span> <span class="nav-text">守护线程&#x2F;后台线程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8%E6%9C%BA%E5%88%B6"><span class="nav-number">1.0.8.</span> <span class="nav-text">定时器机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E7%A8%8B%E5%8D%8F%E8%B0%83%E8%BF%90%E8%A1%8C%EF%BC%88%E7%BA%BF%E7%A8%8B%E7%9A%84%E9%80%9A%E4%BF%A1%EF%BC%89"><span class="nav-number">1.0.9.</span> <span class="nav-text">线程协调运行（线程的通信）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ThreadLock"><span class="nav-number">1.0.10.</span> <span class="nav-text">ThreadLock</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JUC%E7%9A%84%E4%B8%89%E4%B8%AA%E8%BE%85%E5%8A%A9%E7%B1%BB"><span class="nav-number">1.0.11.</span> <span class="nav-text">JUC的三个辅助类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CountDownLatch%EF%BC%9A%E5%87%8F%E5%B0%91%E8%AE%A1%E6%95%B0"><span class="nav-number">1.0.11.1.</span> <span class="nav-text">CountDownLatch：减少计数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CyclicBarrier%EF%BC%9A%E5%BE%AA%E7%8E%AF%E6%A0%85%E6%A0%8F"><span class="nav-number">1.0.11.2.</span> <span class="nav-text">CyclicBarrier：循环栅栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Semaphore%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%81%AF"><span class="nav-number">1.0.11.3.</span> <span class="nav-text">Semaphore：信号灯</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%82%B2%E8%A7%82%E9%94%81%E4%B8%8E%E4%B9%90%E8%A7%82%E9%94%81"><span class="nav-number">1.0.12.</span> <span class="nav-text">悲观锁与乐观锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E5%86%99%E9%94%81"><span class="nav-number">1.0.13.</span> <span class="nav-text">读写锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97-BlockingQueue-%E6%8E%A7%E5%88%B6%E7%BA%BF%E7%A8%8B%E9%80%9A%E4%BF%A1"><span class="nav-number">1.0.14.</span> <span class="nav-text">阻塞队列(BlockingQueue)控制线程通信</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -546,7 +585,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -559,7 +598,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">26</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -612,13 +651,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">51k</span>
+    <span title="站点总字数">53k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">46 分钟</span>
+    <span title="站点阅读时长">48 分钟</span>
 </div>
 
 <!--
