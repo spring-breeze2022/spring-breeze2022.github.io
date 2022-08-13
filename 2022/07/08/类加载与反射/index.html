@@ -30,16 +30,16 @@
 <meta property="og:site_name" content="春风过木">
 <meta property="og:description" content="类加载​		不管Java程序有多么复杂、该程序启动了多少个线程，它们都处于该Java虚拟机进程里。同一个JVM的所有线程、所有变量都处于同一个进程里，它们都使用该JVM进程的内存区。当系统出现以下几种情况时，JVM进程将被终止：  程序运行到最后正常结束。  程序运行到使用System.exit()或Runtime.getRuntime().exit()代码结束程   序。  程序执行过程中遇到未">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://li0424.com/2022/07/编程学习/博客内容/image/image-20220708204706434.png">
-<meta property="og:image" content="http://li0424.com/2022/07/编程学习/博客内容/image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xjZHhzaGVuZ3Blbmc=,size_16,color_FFFFFF,t_70.png">
+<meta property="og:image" content="http://li0424.com/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/1.png">
+<meta property="og:image" content="http://li0424.com/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/2.png">
 <meta property="article:published_time" content="2022-07-08T09:12:00.000Z">
-<meta property="article:modified_time" content="2022-08-04T00:46:49.337Z">
+<meta property="article:modified_time" content="2022-08-13T02:33:52.602Z">
 <meta property="article:author" content="木子">
 <meta property="article:tag" content="知识点">
 <meta property="article:tag" content="类加载">
 <meta property="article:tag" content="反射">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://li0424.com/2022/07/编程学习/博客内容/image/image-20220708204706434.png">
+<meta name="twitter:image" content="http://li0424.com/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/1.png">
 
 <link rel="canonical" href="http://li0424.com/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/">
 
@@ -143,12 +143,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">19</span></a>
 
   </li>
         <li class="menu-item menu-item-guestbook">
@@ -241,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-04 08:46:49" itemprop="dateModified" datetime="2022-08-04T08:46:49+08:00">2022-08-04</time>
+                <time title="修改时间：2022-08-13 10:33:52" itemprop="dateModified" datetime="2022-08-13T10:33:52+08:00">2022-08-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,14 +284,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.6k</span>
+              <span>4.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -321,36 +321,55 @@
 
 
 
-<h3 id="类加载-1"><a href="#类加载-1" class="headerlink" title="类加载"></a>类加载</h3><ul>
-<li>当程序主动使用某个类时，如果该类还未被加载到内存中，系统会通过<strong>加载、连接、初始化</strong>三个步骤来对该类进行初始化，如果没有意外，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或类初始化。</li>
-<li>类加载指的是将类的class文件读入内存，并为之创建一java.lang.Class对象，也就是说当程序使用任何类时，系统都会为之建立一个java.lang.Class对象。</li>
-</ul>
-<img src="/img/loading.gif" data-original="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/../../编程学习/博客内容/image/image-20220708204706434.png" alt="image-20220708204706434" style="zoom: 80%;">
+<h3 id="类的加载过程"><a href="#类的加载过程" class="headerlink" title="类的加载过程"></a>类的加载过程</h3><p>当程序主动使用某个类时，如果该类还未被加载到内存中，系统会通过<strong>加载、连接、初始化</strong>三个步骤来对该类进行初始化，如果没有意外，JVM将会连续完成这三个步骤，所以有时也把这三个步骤统称为类加载或类初始化。</p>
+<h4 id="加载"><a href="#加载" class="headerlink" title="加载"></a>加载</h4><p>类加载指的是将类的class文件读入内存。首先通过一个类的全限定名来获取此类的二进制字节流；其次将这个字节流所代表的静态存储结构转化为方法区的运行时数据结构；最后在java堆中生成一个代表这个类的Class对象，作为方法区这些数据的访问入口。总的来说就是查找并加载类的二进制数据，并为之创建一java.lang.Class对象，也就是说当程序使用任何类时，系统都会为之建立一个java.lang.Class对象。</p>
+<img src="/img/loading.gif" data-original="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/1.png" alt="image-20220708204706434" style="zoom: 80%;">
 
-<p>注解：</p>
+<p><strong>注解：</strong></p>
 <ul>
 <li>方法区：方法区用来存储被虚拟机类加载器加载的类的信息、常量、静态变量、编译后的字节码等数据。</li>
 </ul>
-<p>​			                                            <img src="/img/loading.gif" data-original="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/../../编程学习/博客内容/image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2xjZHhzaGVuZ3Blbmc=,size_16,color_FFFFFF,t_70.png" alt="img" style="zoom:80%;"></p>
+<p>​			                                            <img src="/img/loading.gif" data-original="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/2.png" alt="img" style="zoom:80%;"></p>
 <ul>
 <li>堆：堆主要是用来存放java对象的，栈主要是用来存放对象引用的。在堆中产生了一个数组或对象后，还可以在栈中定义一个特殊的变量，让栈中这个变量的取值等于数组或对象在堆内存中的首地址，栈中的这个变量就成了数组或对象的引用变量。引用变量就相当于是为数组或对象起的一个名称，以后就可以在程序中使用栈中的引用变量来访问堆中的数组或对象。引用变量就相当于是为数组或者对象起的一个名称。</li>
 <li>栈：存放的是基本数据类型和堆中对象的引用。</li>
 <li>PC寄存器：pc寄存器是用来存储指向下一条要执行指令的地址，即下一条要执行的代码，由执行引擎来读取下一条指令。</li>
 <li>本地方法栈：本地方法栈英文全称 Native Method Stack 是存放本地方法的地方。(本地方法由native修饰，由c或c++编写)</li>
 </ul>
-<h3 id="类的连接"><a href="#类的连接" class="headerlink" title="类的连接"></a>类的连接</h3><p>​		当类被加载之后，系统为之生成一个对应的Class对象，接着将会进入连接阶段，连接阶段将会负责把类的二进制数据合并到JRE中。类连接又可分为如下三个阶段：</p>
+<h4 id="类的连接"><a href="#类的连接" class="headerlink" title="类的连接"></a>类的连接</h4><p>​		当类被加载之后，系统为之生成一个对应的Class对象，接着将会进入连接阶段，连接阶段将会负责把类的二进制数据合并到JRE中。类连接又可分为如下三个阶段：</p>
 <ul>
 <li>验证：验证阶段用于检验被加载的类是否有正确的内部结构，并和其他类协调一致。</li>
 <li>准备：类准备阶段则负责为类的静态属性分配内存，并设置默认初始值。</li>
 <li>解析：将类的二进制数据中的符号引用替换成直接引用。</li>
 </ul>
 <p><strong>其中静态代码块在准备阶段执行，而不是类的初始化时执行。</strong></p>
-<h3 id="类的初始化"><a href="#类的初始化" class="headerlink" title="类的初始化"></a>类的初始化</h3><p>​		在类的初始化阶段，虚拟机负责对类进行初始化，主要就是对静态属性进行初始化。在Java类中对静态属性指定初始值有两种方式：</p>
+<h4 id="类的初始化"><a href="#类的初始化" class="headerlink" title="类的初始化"></a>类的初始化</h4><p>​		在类的初始化阶段，虚拟机负责对类进行初始化；类初始化阶段是类加载过程的最后一步，是执行类构造器 <code>&lt;clinit&gt;() </code>方法的过程。</p>
+<ol>
+<li>类<strong>什么时候</strong>才被初始化 <ul>
+<li>创建类的实例，也就是new一个对象 </li>
+<li>访问某个类或接口的静态变量，或者对该静态变量赋值 </li>
+<li>调用类的静态方法 </li>
+<li>反射（Class.forName(“com.lyj.load”)） </li>
+<li>初始化一个类的子类（会首先初始化子类的父类） </li>
+<li>JVM启动时标明的启动类，即文件名和类名相同的那个类</li>
+</ul>
+</li>
+<li>类的初始化顺序 <ul>
+<li>如果这个类还没有被加载和链接，那先进行加载和链接 </li>
+<li>假如这个类存在直接父类，并且这个类还没有被初始化（注意：在一个类加载器中，类只能初始化一次），那就初始化直接的父类（不适用于接口） </li>
+<li>加入类中存在初始化语句（如static变量和static块），那就依次执行这些初始化语句。 </li>
+<li>总的来说，初始化顺序依次是：（静态变量、静态初始化块）–&gt;（变量、初始化块）–&gt; 构造器</li>
+<li><strong>如果有父类，则顺序是：父类static方法 –&gt; 子类static方法 –&gt; 父类构造方法- -&gt; 子类构造方法</strong></li>
+</ul>
+</li>
+</ol>
+<p><strong>难点</strong></p>
+<p><strong>静态属性进行初始化</strong>。在Java类中对静态属性指定初始值有两种方式：</p>
 <ul>
 <li>声明静态属性时指定初始值；</li>
 <li>使用静态初始化块为静态属性指定初始值。</li>
 </ul>
-<p>步骤：</p>
+<p><strong>步骤：</strong></p>
 <ul>
 <li>假如这个类还没有被加载和连接，程序先加载并连接该类。</li>
 <li>假如该类的直接父类还没有被初始化，则先初始化其直接父<br>类。</li>
@@ -361,16 +380,47 @@
 </li>
 <li><p>当JVM启动时，会形成由三个类加载器组成的初始类加载器层次结构：</p>
 <ul>
-<li><p>Bootstrap ClassLoader：根类加载器。</p>
+<li><p>Bootstrap ClassLoader：根类加载器：</p>
+<p>负责加载<code>$JAVA_HOME中jre/lib/rt.jar</code>里所有的class，加载System.getProperty(“sun.boot.class.path”)所指定的路径或jar。 </p>
 </li>
-<li><p>Extension ClassLoader：扩展类加载器。</p>
+<li><p>Extension ClassLoader：扩展类加载器：</p>
+<p>负责加载java平台中扩展功能的一些jar包，包括$JAVA_HOME中jre&#x2F;lib&#x2F;*.jar或-Djava.ext.dirs指定目录下的jar包。载System.getProperty(“java.ext.dirs”)所指定的路径或jar。</p>
 </li>
-<li><p>System ClassLoader：系统类加载器</p>
+<li><p>System ClassLoader：系统类加载器：</p>
+<p>负责记载classpath中指定的jar包及目录中class </p>
 </li>
+<li><p>CustomClassLoader：自定义加载器</p>
+</li>
+</ul>
+</li>
+<li><p>类加载器的顺序 </p>
+<ul>
+<li>加载过程中会先检查类是否被已加载，<strong>检查顺序是自底向上</strong>，从Custom ClassLoader到BootStrap ClassLoader逐层检查，只要某个classloader已加载就视为已加载此类，保证此类只所有ClassLoader加载一次。而<strong>加载的顺序是自顶向下</strong>，也就是由上层来逐层尝试加载此类。 </li>
+<li>在加载类时，每个类加载器会将加载任务上交给其父，如果其父找不到，再由自己去加载。</li>
+<li>Bootstrap Loader（启动类加载器）是最顶级的类加载器了，其父加载器为null。</li>
+</ul>
+</li>
+<li><p>类的加载机制</p>
+<ul>
+<li>父类委托（类加载器会将加载任务上交给其父，如果其父找不到，再由自己去加载）</li>
+<li>全盘加载（这个类所有依赖均有该加载器加载）</li>
+<li>缓存（已加载的类存入缓存【方法区】，不用二次加载）</li>
 </ul>
 </li>
 </ul>
 <h1 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h1><p>​		在 Java 运行时环境中，对于任意一个类，任意一个对象。可以通过反射机制，动态获取动态获取类的信息，以及动态调用对象的方法。</p>
+<h3 id="反射机制的概述"><a href="#反射机制的概述" class="headerlink" title="反射机制的概述"></a>反射机制的概述</h3><ol>
+<li><p>反射是指间接操作目标对象</p>
+</li>
+<li><p>反射机制的作用:通过反射机制操作(读&#x2F;写)字节码文件</p>
+</li>
+<li><p>反射机制的优缺点</p>
+<ul>
+<li>优点：反射机制可以增加程序的灵活性[在不改变程序的基础上在运行阶段实例化不同类型的对象]</li>
+<li>缺点：反射机制可以打破封装从而访问类的私有属性</li>
+</ul>
+</li>
+</ol>
 <h3 id="通过反射获取Class对象"><a href="#通过反射获取Class对象" class="headerlink" title="通过反射获取Class对象"></a>通过反射获取Class对象</h3><ul>
 <li>使用Class类的forName()静态方法。该方法需要传入字符串参数，该字符串参数的值是某个类的全限定类名（必须添加完整包名）。</li>
 <li>调用某个类的class属性来获取该类对应的Class对象。例Person.class将会返回Person类对应的Class对象。</li>
@@ -561,7 +611,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD"><span class="nav-number">1.</span> <span class="nav-text">类加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD-1"><span class="nav-number">1.0.1.</span> <span class="nav-text">类加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.0.2.</span> <span class="nav-text">类的连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.0.3.</span> <span class="nav-text">类的初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8"><span class="nav-number">1.0.4.</span> <span class="nav-text">类加载器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84"><span class="nav-number">2.</span> <span class="nav-text">反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96Class%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.0.1.</span> <span class="nav-text">通过反射获取Class对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8EClass%E4%B8%AD%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF"><span class="nav-number">2.0.2.</span> <span class="nav-text">从Class中获取信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84Fields"><span class="nav-number">2.0.2.1.</span> <span class="nav-text">获取类的Fields</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84Method"><span class="nav-number">2.0.2.2.</span> <span class="nav-text">获取类的Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84Constructor"><span class="nav-number">2.0.2.3.</span> <span class="nav-text">获取类的Constructor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.0.2.4.</span> <span class="nav-text">新建类的实例</span></a></li></ol></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD"><span class="nav-number">1.</span> <span class="nav-text">类加载</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="nav-number">1.0.1.</span> <span class="nav-text">类的加载过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E8%BD%BD"><span class="nav-number">1.0.1.1.</span> <span class="nav-text">加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="nav-number">1.0.1.2.</span> <span class="nav-text">类的连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="nav-number">1.0.1.3.</span> <span class="nav-text">类的初始化</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8"><span class="nav-number">1.0.2.</span> <span class="nav-text">类加载器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84"><span class="nav-number">2.</span> <span class="nav-text">反射</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84%E6%9C%BA%E5%88%B6%E7%9A%84%E6%A6%82%E8%BF%B0"><span class="nav-number">2.0.1.</span> <span class="nav-text">反射机制的概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E8%BF%87%E5%8F%8D%E5%B0%84%E8%8E%B7%E5%8F%96Class%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.0.2.</span> <span class="nav-text">通过反射获取Class对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8EClass%E4%B8%AD%E8%8E%B7%E5%8F%96%E4%BF%A1%E6%81%AF"><span class="nav-number">2.0.3.</span> <span class="nav-text">从Class中获取信息</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84Fields"><span class="nav-number">2.0.3.1.</span> <span class="nav-text">获取类的Fields</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84Method"><span class="nav-number">2.0.3.2.</span> <span class="nav-text">获取类的Method</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E7%B1%BB%E7%9A%84Constructor"><span class="nav-number">2.0.3.3.</span> <span class="nav-text">获取类的Constructor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B"><span class="nav-number">2.0.3.4.</span> <span class="nav-text">新建类的实例</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -577,14 +627,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -643,13 +693,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">53k</span>
+    <span title="站点总字数">59k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">48 分钟</span>
+    <span title="站点阅读时长">54 分钟</span>
 </div>
 
 <!--

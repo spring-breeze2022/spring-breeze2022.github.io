@@ -31,7 +31,7 @@
 <meta property="og:description" content="面向对象编程什么是面向过程 面向过程（Procedure-Oriented Programming，简称POP）是一种编程模型，由一系列要执行的计算步骤组成，通常采用自上而下、顺序执行的方式。 什么是面向对象 面向对象编程（Object-oriented programming，简写：OOP）是一种计算机编程模型，它围绕数据或对象而不是功能和逻辑来组织软件设计，更专注于对象与对象之间的交互，对象涉">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-06-26T13:55:00.000Z">
-<meta property="article:modified_time" content="2022-07-29T07:08:11.740Z">
+<meta property="article:modified_time" content="2022-08-13T02:47:06.792Z">
 <meta property="article:author" content="木子">
 <meta property="article:tag" content="类">
 <meta property="article:tag" content="面向对象">
@@ -139,12 +139,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">11</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">19</span></a>
 
   </li>
         <li class="menu-item menu-item-guestbook">
@@ -237,7 +237,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-29 15:08:11" itemprop="dateModified" datetime="2022-07-29T15:08:11+08:00">2022-07-29</time>
+                <time title="修改时间：2022-08-13 10:47:06" itemprop="dateModified" datetime="2022-08-13T10:47:06+08:00">2022-08-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,14 +280,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>3.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -404,8 +404,77 @@
 <li>实现者面向接口实现</li>
 </ul>
 </li>
+<li><p>接口今典面试题</p>
+<ul>
+<li><p>接口与抽象类的区别？<br>（1）修饰符<br>抽象类是用abstract class声明的，接口使用interface 声明的<br>（2）成员不同<br>  抽象类可以拥有非常量的属性、构造器、非抽象的普通方法、代码块等<br> 接口中只能有常量，抽象方法，内部接口，JDK1.8之后增加静态方法和默认方法。<br>（3）使用不同<br>抽象类：用来被继承的，有单继承的限制<br>​    接口：用来被实现的，一个类可以同时实现多个接口，接口还可以继承多个接口。</p>
+</li>
+<li><p>接口与抽象类的相同点？<br>（1）不能实例化<br>（2）它俩都可以有抽象方法<br>（3）使用时都是与子类或实现类的对象之间构成多态引用</p>
+</li>
 </ul>
-<h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p><strong>final：常量修饰符</strong></p>
+</li>
+</ul>
+<h4 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h4><p>要访问内部类，可以通过创建外部类的对象，然后创建内部类的对象来实现。</p>
+<p>嵌套类有两种类型：</p>
+<ul>
+<li>非静态内部类</li>
+<li>静态内部类</li>
+</ul>
+<h5 id="非静态内部类"><a href="#非静态内部类" class="headerlink" title="非静态内部类"></a>非静态内部类</h5><p>非静态内部类是一个类中嵌套着另外一个类。 它有访问外部类成员的权限， 通常被称为内部类。</p>
+<p>由于内部类嵌套在外部类中，因此必须首先实例化外部类，然后创建内部类的对象来实现。</p>
+<p><strong>私有的内部类</strong></p>
+<p>内部类可以使用 private 或 protected 来修饰，如果你不希望内部类被外部类访问可以使用 private 修饰符：</p>
+<h5 id="静态内部类"><a href="#静态内部类" class="headerlink" title="静态内部类"></a>静态内部类</h5><p>静态内部类可以使用 static 关键字定义，静态内部类我们不需要创建外部类来访问，可以直接访问它</p>
+<h4 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h4><p>关键字：在Java中被赋予特定含义的单词。</p>
+<ul>
+<li><p>基本数据类型相关（8个）：byte、short、int、long、float、double、char、boolea</p>
+</li>
+<li><p>流程控制语句相关（10个）：if、else、for、while、do、switch、case、break、continue</p>
+</li>
+<li><p>判断某个对象是否是某个类型的实例对象运算符：instanceof</p>
+</li>
+<li><p>定义类：class</p>
+</li>
+<li><p>创建类的对象：new</p>
+</li>
+<li><p>包：package、import</p>
+</li>
+<li><p>权限修饰符：publick（最大权限）、protected（仅限暴以内使用）、private（仅限类以内使用）、（缺省）</p>
+</li>
+<li><p>继承类：extends</p>
+</li>
+<li><p>定义接口：interface</p>
+</li>
+<li><p>实现接口：implements</p>
+</li>
+<li><p>当前对象：this</p>
+</li>
+<li><p>父类引用：super</p>
+</li>
+<li><p>返回值类型：基础数据类型、void</p>
+</li>
+<li><p>结束方法：return</p>
+</li>
+<li><p>定义枚举：enum</p>
+</li>
+<li><p>定义其他修饰符：sbstract、static、final、native</p>
+</li>
+<li><p>异常处理：throws、throw、try、catch、finally</p>
+</li>
+<li><p>多线程同步安全：synchronized、volatile</p>
+</li>
+<li><p>IO序列化相关：transient</p>
+</li>
+<li><p>单元测试相关：assert</p>
+</li>
+<li><p>保留字：goto、const</p>
+</li>
+<li><p>特殊值：true、false、null</p>
+</li>
+<li><p>其他：strictdp（strictfp 关键字可应用于类、接口或方法。如果你想让你的浮点运算更加精确，严格遵守FP-strict的限制,符合IEEE-754规范，而且不会因为不同的硬件平台所执行的结果不一致的话，可以用关键字strictfp.</p>
+<p>）</p>
+</li>
+</ul>
+<p><strong>final：常量修饰符</strong></p>
 <p>如果一个成员变量修饰为final，就是常量，常量的名字习惯用大写字母</p>
 <p><strong>可修饰的对象：</strong></p>
 <ul>
@@ -423,6 +492,101 @@
 </ul>
 <p><strong>一个类中的方法可以互相调用：实例方法可以调用该类中实例方法或类方法；类方法只能调用该类的类方法，不能调用实例方法；</strong></p>
 <p>如：main函数为静态函数，只能调用静态函数。</p>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ul>
+<li>基本数据类型<br>byte（1个字节、-128~127）、short（2个字节）、int（4个字节）、long（8个字节）、float（4个字节）、double（8个字节）、char（2个字节）、boolean（只有两个值：true、false）</li>
+<li>引用数据类型<br>类、接口、数组、枚举…<br>string属于类，引用数据类型</li>
+<li>数据类型转换<br>byte，short、char–&gt;int–&gt;long–&gt;float–&gt;double（自动转换）<br>double–&gt;float–&gt;long–&gt;int–&gt;char、short、byte（强制转换）</li>
+</ul>
+<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><p>运算符的优先级（从高到低）</p>
+<table>
+<thead>
+<tr>
+<th>优先级</th>
+<th>描述</th>
+<th>运算符</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>括号</td>
+<td>()  []</td>
+</tr>
+<tr>
+<td>2</td>
+<td>正负号</td>
+<td>+  -</td>
+</tr>
+<tr>
+<td>3</td>
+<td>自增自减</td>
+<td>++  –  ！</td>
+</tr>
+<tr>
+<td>4</td>
+<td>乘除，取余</td>
+<td>*  &#x2F;  %</td>
+</tr>
+<tr>
+<td>5</td>
+<td>加减</td>
+<td>+  -</td>
+</tr>
+<tr>
+<td>6</td>
+<td>位移运算</td>
+<td>&lt;&lt;  &gt;&gt;  &gt;&gt;&gt;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>大小关系</td>
+<td>&lt;  &lt;&#x3D;  &gt;  &gt;&#x3D;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>相等关系</td>
+<td>&#x3D;&#x3D;  !&#x3D;</td>
+</tr>
+<tr>
+<td>9</td>
+<td>按位与</td>
+<td>&amp;</td>
+</tr>
+<tr>
+<td>10</td>
+<td>按位异或</td>
+<td>^</td>
+</tr>
+<tr>
+<td>11</td>
+<td>按位或</td>
+<td>|</td>
+</tr>
+<tr>
+<td>12</td>
+<td>逻辑与</td>
+<td>&amp;&amp;</td>
+</tr>
+<tr>
+<td>13</td>
+<td>逻辑或</td>
+<td>||</td>
+</tr>
+<tr>
+<td>14</td>
+<td>条件运算</td>
+<td>?:</td>
+</tr>
+<tr>
+<td>15</td>
+<td>赋值运算</td>
+<td>&#x3D;  +&#x3D;  -&#x3D;  *&#x3D;  &#x2F;&#x3D;  %&#x3D;</td>
+</tr>
+<tr>
+<td>16</td>
+<td>位赋值运算</td>
+<td>&amp;&#x3D;  |&#x3D;  &lt;&lt;&#x3D;  &gt;&gt;&#x3D;  &gt;&gt;&gt;&#x3D;</td>
+</tr>
+</tbody></table>
 
     </div>
 
@@ -556,7 +720,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象的三大特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.4.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.5.</span> <span class="nav-text">关键字</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B"><span class="nav-number">1.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%9A%84%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7"><span class="nav-number">1.1.</span> <span class="nav-text">面向对象的三大特性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">1.2.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">1.3.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.4.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">1.5.</span> <span class="nav-text">内部类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9D%9E%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">1.5.1.</span> <span class="nav-text">非静态内部类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%86%85%E9%83%A8%E7%B1%BB"><span class="nav-number">1.5.2.</span> <span class="nav-text">静态内部类</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E9%94%AE%E5%AD%97"><span class="nav-number">1.6.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.7.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.8.</span> <span class="nav-text">运算符</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -572,14 +736,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -638,13 +802,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">53k</span>
+    <span title="站点总字数">59k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">48 分钟</span>
+    <span title="站点阅读时长">54 分钟</span>
 </div>
 
 <!--
