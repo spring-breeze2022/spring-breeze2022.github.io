@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://li0424.com/2022/08/14/JDK1.8%E6%96%B0%E7%89%B9%E6%80%A7/</loc>
+    <lastmod>2022-08-14</lastmod>
+  </url>
+  <url>
+    <loc>http://li0424.com/2022/08/11/Redis/</loc>
+    <lastmod>2022-08-13</lastmod>
+  </url>
+  <url>
+    <loc>http://li0424.com/2022/07/05/JDBC/</loc>
+    <lastmod>2022-08-13</lastmod>
+  </url>
+  <url>
+    <loc>http://li0424.com/2022/08/03/%E5%BC%82%E5%B8%B8/</loc>
+    <lastmod>2022-08-13</lastmod>
+  </url>
+  <url>
     <loc>http://li0424.com/2022/07/05/%E6%95%B0%E6%8D%AE%E5%BA%93/</loc>
     <lastmod>2022-08-13</lastmod>
   </url>
@@ -21,15 +37,7 @@
     <lastmod>2022-08-13</lastmod>
   </url>
   <url>
-    <loc>http://li0424.com/2022/08/03/%E5%BC%82%E5%B8%B8/</loc>
-    <lastmod>2022-08-12</lastmod>
-  </url>
-  <url>
     <loc>http://li0424.com/2022/08/02/%E5%A4%9A%E7%BA%BF%E7%A8%8B/</loc>
-    <lastmod>2022-08-12</lastmod>
-  </url>
-  <url>
-    <loc>http://li0424.com/2022/08/11/Redis/</loc>
     <lastmod>2022-08-12</lastmod>
   </url>
   <url>
