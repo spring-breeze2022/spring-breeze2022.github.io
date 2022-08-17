@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://li0424.com/2022/07/26/%E9%9B%86%E5%90%88/1.png">
 <meta property="og:image" content="http://li0424.com/2022/07/26/%E9%9B%86%E5%90%88/2.png">
 <meta property="article:published_time" content="2022-07-26T01:19:00.000Z">
-<meta property="article:modified_time" content="2022-08-11T13:03:40.425Z">
+<meta property="article:modified_time" content="2022-08-17T00:52:22.916Z">
 <meta property="article:author" content="木子">
 <meta property="article:tag" content="知识点">
 <meta property="article:tag" content="集合">
@@ -138,7 +138,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">30</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -148,7 +148,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">22</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-guestbook">
@@ -241,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-11 21:03:40" itemprop="dateModified" datetime="2022-08-11T21:03:40+08:00">2022-08-11</time>
+                <time title="修改时间：2022-08-17 08:52:22" itemprop="dateModified" datetime="2022-08-17T08:52:22+08:00">2022-08-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -326,7 +326,7 @@
 <li><strong>void remove()</strong> ：删除集合里上一次next方法返回的元素</li>
 </ol>
 <h3 id="Set接口"><a href="#Set接口" class="headerlink" title="Set接口"></a>Set接口</h3><h4 id="HashSet类"><a href="#HashSet类" class="headerlink" title="HashSet类"></a>HashSet类</h4><p>HashSet是Set接口的典型实现，大多数时候使用Set集合就是使用这个实现类。HashSet按 Hash算法来存储集合中的元素，因此具有很好的存取和查找性能。</p>
-<p><strong>HashSet的比较机制：</strong>当向HashSet集合中存入一个元素时，HashSet会调用该对象的hashCode()方法来得到该对象 的hashCode值，然后根据该HashCode值取异或（^）获得hash值，由hash来决定该对象在HashSet中存储位置。如果有两个元素通过equals方法比较返回true，但它们的hashCode()方法返回值不相等，HashSet将会把它们存储在不同位置，也就可以添加成功。</p>
+<p><strong>HashSet的比较机制：</strong>当向HashSet集合中存入一个元素时，HashSet会调用该对象的hashCode()方法来得到该对象 的hashCode值，然后根据该HashCode做hash()运算（HashCode值取模）获得hash值，由hash来决定该对象在HashSet中存储位置。如果有两个元素通过equals方法比较返回true，但它们的hashCode()方法返回值不相等，HashSet将会把它们存储在不同位置，也就可以添加成功。</p>
 <p><strong>HashSet的特征：</strong></p>
 <ul>
 <li>不能保证元素的排列顺序，顺序可能与元素的添加顺序不同，元素的顺序可能变化。</li>
@@ -562,7 +562,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-count">23</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -575,7 +575,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">30</span>
+        <span class="site-state-item-count">31</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -628,13 +628,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">67k</span>
+    <span title="站点总字数">70k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:01</span>
+    <span title="站点阅读时长">1:03</span>
 </div>
 
 <!--
