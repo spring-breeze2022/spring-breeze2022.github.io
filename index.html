@@ -130,7 +130,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">31</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">33</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -140,7 +140,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">23</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">25</span></a>
 
   </li>
         <li class="menu-item menu-item-guestbook">
@@ -198,6 +198,391 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/08/18/JVM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风过木">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/08/18/JVM/" class="post-title-link" itemprop="url">JVM</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-18 14:34:00 / 修改时间：16:20:11" itemprop="dateCreated datePublished" datetime="2022-08-18T14:34:00+08:00">2022-08-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">JAVA学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/08/18/JVM/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/18/JVM/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="JVM-Java-Virtual-Machine，Java虚拟机"><a href="#JVM-Java-Virtual-Machine，Java虚拟机" class="headerlink" title="JVM(Java Virtual Machine，Java虚拟机)"></a>JVM(Java Virtual Machine，Java虚拟机)</h1><h3 id="JVM内存划分"><a href="#JVM内存划分" class="headerlink" title="JVM内存划分"></a>JVM内存划分</h3><p><img src="/img/loading.gif" data-original="/2022/08/18/JVM/1.png" alt="image-20220818144055196"></p>
+<h4 id="方法区"><a href="#方法区" class="headerlink" title="方法区"></a>方法区</h4><ul>
+<li>是所有线程共享的区域 ；</li>
+<li>用于存储已经被虚拟机加载的类的信息，常量以及静态变量等 ；</li>
+<li>运行时的常量池也是方法区的一部分（比如字符串常量池和整数型常量池）。</li>
+</ul>
+<h4 id="堆区"><a href="#堆区" class="headerlink" title="堆区"></a>堆区</h4><ul>
+<li>是所有线程共享的区域；</li>
+<li>是程序员可以管理的区域，在虚拟机启动时创建；</li>
+<li>Java世界中基本所有的对象实例都是放在堆区的，是JVM所管理的内存区域中最大的一块，也是垃圾回收器（GC）主要管理的内存区域；</li>
+</ul>
+<h4 id="Java栈区（虚拟机栈）"><a href="#Java栈区（虚拟机栈）" class="headerlink" title="Java栈区（虚拟机栈）"></a>Java栈区（虚拟机栈）</h4><ul>
+<li>是线程私有的，生命周期与线程相同；</li>
+<li>一个线程在执行每一个方法的时候，都会创建一个对应的栈帧，栈帧中存储了方法的局部变量、方法出口等，当方法被调用时，与之对应的栈帧入栈，方法执行结束后，栈帧出栈；</li>
+</ul>
+<h4 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h4><ul>
+<li>是线程私有的；</li>
+<li>用于存储和执行native方法的。</li>
+</ul>
+<h4 id="PC寄存器"><a href="#PC寄存器" class="headerlink" title="PC寄存器"></a>PC寄存器</h4><ul>
+<li>程序计数器是线程私有的；</li>
+<li>如果线程正在执行的是Java方法，程序计数器记录的是正在执行的虚拟机字节码指令的地址；</li>
+<li>如果线程执行的是native方法，则程序计数器值为空（Undefined）。</li>
+</ul>
+<h3 id="垃圾回收机制（GC）"><a href="#垃圾回收机制（GC）" class="headerlink" title="垃圾回收机制（GC）"></a>垃圾回收机制（GC）</h3><p>垃圾回收器在对堆进行回收前，需要先判断堆里面的对象有哪些是存活着的，哪些是已经不能再被使用的；那么怎么判断哪些对象是存活的，哪些是死的呢？就需要使用垃圾回收算法了。</p>
+<p><strong>详细对象引用见Java的引用</strong></p>
+<h4 id="内存是怎样分配的"><a href="#内存是怎样分配的" class="headerlink" title="内存是怎样分配的"></a>内存是怎样分配的</h4><p><img src="/img/loading.gif" data-original="/2022/08/18/JVM/2.png" alt="image-20220818150518944"></p>
+<h5 id="对象分配"><a href="#对象分配" class="headerlink" title="对象分配"></a>对象分配</h5><p>优先在 Eden 区分配。当 Eden 区没有足够空间分配时, VM 发起一次 Minor GC，将 Eden 区和其中一块 Survivor 区内尚存活的对象放入另一块 Survivor 区域。如MinorGC 时 survivor 空间不够，对象提前进入老年代，老年代空间不够时进行 Full GC；</p>
+<p>大对象直接进入老年代，避免在 Eden 区和 Survivor 区之间产生大量的内存复制, 此外大对象容易导致还有不少空闲内存就提前触发 GC 以获取足够的连续空间.</p>
+<h5 id="对象晋级"><a href="#对象晋级" class="headerlink" title="对象晋级"></a>对象晋级</h5><p>年龄阈值：VM 为每个对象定义了一个对象年龄(Age)计数器, 经第一次 Minor GC 后仍然存活, 被移动到 Survivor 空间中, 并将年龄设为 1. 以后对象在 Survivor 区中每熬过一次 Minor GC 年龄就+1. 当增加到一定程度 (-XX:MaxTenuringThreshold, 默认 15), 将会晋升到老年代。</p>
+<p>提前晋升: 动态年龄判定；如果在 Survivor 空间中相同年龄所有对象大小的总和大于 Survivor 空间的一半, 年龄大于或等于该年龄的对象就可以直接进入老年代, 而无须等到晋升年龄.</p>
+<h4 id="GC判断对象是否死亡的算法"><a href="#GC判断对象是否死亡的算法" class="headerlink" title="GC判断对象是否死亡的算法"></a>GC判断对象是否死亡的算法</h4><ol>
+<li><strong>引用计数法</strong><ul>
+<li>创建对象的时候给对象添加一个引用计数器；</li>
+<li>每有一个地方引用这个对象时，计数器就加1，当引用失效时，计数器就减1；</li>
+<li>任何时刻，当计数器值为0时，这个对象就是不会再被使用的，也就是可以被垃圾回收器回收的；</li>
+<li>但是主流的JVM没有使用这个算法来管理内存的，因为这个方法没法解决循环引用的问题；</li>
+</ul>
+</li>
+<li><strong>可达性分析算法</strong><ul>
+<li>通过一系列的称为“GC Roots”的对象作为起始点，从这些结点开始往下搜索，搜索所走过的路径就称为引用链，当一个对象到GC Roots没有引用链时，就证明这个对象是不可用的；</li>
+<li>在Java中，能作为GC Roots的对象包括以下几种：<ul>
+<li>虚拟机栈中引用的对象；</li>
+<li>方法区中类的静态属性引用的变量；</li>
+<li>方法区中常量引用的对象；</li>
+<li>本地方法栈中native方法引用的对象。</li>
+</ul>
+</li>
+<li>对象的生存和死亡的判定<ol>
+<li>即使一个对象在可达性分析算法中不可达，这个对象并不是“非死不可”，还处于缓刑阶段；</li>
+<li>要宣告一个对象的死亡，至少需要经过两次标记过程；</li>
+<li>如果一个对象在可达性分析算法中不可达，就会对这个对象进行一次标记并筛选，就是判断此对象是否有必要执行finalize（），如果没有重写finalize方法或者finalize方法已经被执行过了，那么就被视为“没有必要执行”； </li>
+<li>如果有必要执行，就会把这个对象放置到F-Queue的队列当中；</li>
+<li>JVM会创建一个线程来执行这个F-Queue里面的对象的finalize方法；</li>
+<li>在这个方法里面对象可以对自己进行最后一次拯救。</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>回收方法区（永久代）</strong><ul>
+<li>永久代的垃圾回收主要回收两部分内容：废弃的常量和无用的类；</li>
+<li>回收废弃常量的操作和回收堆中的对象类似，会判断该常量是否还有引用指向它，要是没有，那么这个常量就会被清出常量池；</li>
+<li>怎么判定一个类是不是无用的类呢？ <ul>
+<li>该类的所有实例都已经被回收，也就是堆区不存在这个类的实例 ；</li>
+<li>加载该类的ClassLoader已经被回收；</li>
+<li>该类对应的Class对象没有在任何地方被引用，无法在任何地方通过反射访问该类的方法 ；</li>
+<li>无用的类并不是一定就会被回收，只是可以被回收。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="GC回收算法"><a href="#GC回收算法" class="headerlink" title="GC回收算法"></a>GC回收算法</h4><h5 id="一、新生代-标记清除算法"><a href="#一、新生代-标记清除算法" class="headerlink" title="一、新生代-标记清除算法"></a>一、新生代-标记清除算法</h5><p>该算法分为“标记”和“清除”两个阶段: 首先标记出所有需要回收的对象(可达性分析), 在标记完成后统一清理掉所有被标记的对象.</p>
+<p><img src="/img/loading.gif" data-original="/2022/08/18/JVM/3.png" alt="image-20220818155737989"></p>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>效率问题: 标记和清除过程的效率都不高;</li>
+<li>空间问题: 标记清除后会产生大量不连续的内存碎片, 空间碎片太多可能会导致在运行过程中需要分配较大对象时无法找到足够的连续内存而不得不提前触发另一次垃圾收集.</li>
+</ul>
+<h5 id="二、新生代-复制算法"><a href="#二、新生代-复制算法" class="headerlink" title="二、新生代-复制算法"></a>二、新生代-复制算法</h5><p>该算法的核心是将可用内存按容量划分为大小相等的两块, 每次只用其中一块, 当这一块的内存用完, 就将还存活的对象复制到另外一块上面, 然后把已使用过的内存空间一次清理掉.</p>
+<p><img src="/img/loading.gif" data-original="/2022/08/18/JVM/4.png" alt="image-20220818160024102"></p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>由于是每次都对整个半区进行内存回收，内存分配时不必考虑内存碎片问题。 </li>
+<li>垃圾回收后空间连续，只要移动堆顶指针，按顺序分配内存即可； </li>
+<li>特别适合 java 朝生夕死的对象特点；</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>对象存活率较高的时候就要执行较多的复制操作，效率变低；</li>
+<li>内存缩小为原来的一半 了，代价太高。</li>
+</ul>
+<h5 id="x3D-x3D-现在的虚拟机基本都采用复制算法来回收新生代，但是我们没必要把内存按照1-1的比例进行分配，我们可以把内存按照8-1-1的比例分为Edge空间和两块较小的Survivor-空间，每次只使用Edge空间和其中一个Survivor空间。-x3D-x3D"><a href="#x3D-x3D-现在的虚拟机基本都采用复制算法来回收新生代，但是我们没必要把内存按照1-1的比例进行分配，我们可以把内存按照8-1-1的比例分为Edge空间和两块较小的Survivor-空间，每次只使用Edge空间和其中一个Survivor空间。-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;现在的虚拟机基本都采用复制算法来回收新生代，但是我们没必要把内存按照1:1的比例进行分配，我们可以把内存按照8:1:1的比例分为Edge空间和两块较小的Survivor 空间，每次只使用Edge空间和其中一个Survivor空间。&#x3D;&#x3D;"></a>&#x3D;&#x3D;现在的虚拟机基本都采用复制算法来回收新生代，但是我们没必要把内存按照1:1的比例进行分配，我们可以把内存按照8:1:1的比例分为Edge空间和两块较小的Survivor 空间，每次只使用Edge空间和其中一个Survivor空间。&#x3D;&#x3D;</h5><h5 id="x3D-x3D-回收时把Edge和Survivor中存活的对象复制到另外一块Survivor空间中，再清理掉Edge和用过的Survivor空间-x3D-x3D"><a href="#x3D-x3D-回收时把Edge和Survivor中存活的对象复制到另外一块Survivor空间中，再清理掉Edge和用过的Survivor空间-x3D-x3D" class="headerlink" title="&#x3D;&#x3D;回收时把Edge和Survivor中存活的对象复制到另外一块Survivor空间中，再清理掉Edge和用过的Survivor空间&#x3D;&#x3D;"></a>&#x3D;&#x3D;回收时把Edge和Survivor中存活的对象复制到另外一块Survivor空间中，再清理掉Edge和用过的Survivor空间&#x3D;&#x3D;</h5><h5 id="三、老年代-标记整理算法"><a href="#三、老年代-标记整理算法" class="headerlink" title="三、老年代- 标记整理算法"></a>三、老年代- 标记整理算法</h5><p>该算法分为“标记”和“清除”两个阶段: 首先标记出所有需要回收的对象 (可达性分析), 在标记完成后让所有存活的对象都向一端移动,然后清理掉端边界以外的内存；</p>
+<p><img src="/img/loading.gif" data-original="/2022/08/18/JVM/5.png" alt="image-20220818160840028"></p>
+<p><strong>优点：</strong></p>
+<ul>
+<li>不会损失 50%的空间；</li>
+<li>垃圾回收后空间连续，只要移动堆顶指针，按顺序分配内存即可；</li>
+<li>比较适合有大量存活对象的垃圾回收；</li>
+</ul>
+<p><strong>缺点：</strong></p>
+<ul>
+<li>标记&#x2F;整理算法唯一的缺点就是效率也不高，不仅要标记所有存活对象，还要 整理所有存活对象的引用地址。</li>
+<li>从效率上来说，标记&#x2F;整理算法要低于复制算法。</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/08/17/Java%E7%9A%84%E5%BC%95%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风过木">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/08/17/Java%E7%9A%84%E5%BC%95%E7%94%A8/" class="post-title-link" itemprop="url">Java的引用类型</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-17 10:09:00" itemprop="dateCreated datePublished" datetime="2022-08-17T10:09:00+08:00">2022-08-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-18 14:50:23" itemprop="dateModified" datetime="2022-08-18T14:50:23+08:00">2022-08-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">JAVA学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/08/17/Java%E7%9A%84%E5%BC%95%E7%94%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/17/Java%E7%9A%84%E5%BC%95%E7%94%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Java的引用类型"><a href="#Java的引用类型" class="headerlink" title="Java的引用类型"></a>Java的引用类型</h1><p>java提供了四种类型的引用：<strong>强引用、弱引用、软引用、虚引用</strong>。Java中提供这四种引用类型主要有两个目的：第一是可以让程序员通过代码的方式决定某些对象的生命周期；第二是有利于JVM进行垃圾回收。</p>
+<h3 id="强引用"><a href="#强引用" class="headerlink" title="强引用"></a>强引用</h3><p>java中使用最多的引用是强引用，这是使用最普遍的引用。比如下面这段代码中的object和str都是强引用：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Object</span> <span class="variable">object</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Object</span>();</span><br><span class="line"><span class="type">String</span> <span class="variable">str</span> <span class="operator">=</span> <span class="string">&quot;StrongReference&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>如果一个对象具有强引用，那就类似于<strong>必不可少的</strong>物品，不会被垃圾回收器回收。&#x3D;&#x3D;当内存空间不足，Java虚拟机宁愿抛出OutOfMemoryError错误，使程序异常终止，也不回收这种对象。&#x3D;&#x3D;</p>
+<p>如果想中断强引用和某个对象之间的关联，可以显示地将引用赋值为null，这样一来的话，JVM在合适的时间就会回收该对象。</p>
+<p>比如ArraryList类的clear方法中就是通过将引用赋值为null来实现清理工作的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">clear</span><span class="params">()</span> &#123;</span><br><span class="line">      modCount++;</span><br><span class="line"> </span><br><span class="line">      <span class="comment">// Let gc do its work</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; size; i++)</span><br><span class="line">          elementData[i] = <span class="literal">null</span>;</span><br><span class="line"> </span><br><span class="line">      size = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="软引用"><a href="#软引用" class="headerlink" title="软引用"></a>软引用</h3><p>软引用是用来描述一些<strong>有用但并不是必需</strong>的对象，在Java中用java.lang.ref.SoftReference类来表示。</p>
+<p>对于软引用关联着的对象，&#x3D;&#x3D;只有在内存不足的时候JVM才会回收该对象。&#x3D;&#x3D;因此，这一点可以很好地用来解决OOM的问题，并且这个特性很适合用来实现缓存：比如网页缓存、图片缓存等。</p>
+<p>软引用可以和一个引用队列（ReferenceQueue）联合使用，如果软引用所引用的对象被JVM回收，这个软引用就会被加入到与之关联的引用队列中。</p>
+<p><strong>创建：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SoftReference&lt;Obj&gt; sr = <span class="keyword">new</span> <span class="title class_">SoftReference</span>&lt;Obj&gt;(obj); </span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="弱引用"><a href="#弱引用" class="headerlink" title="弱引用"></a>弱引用</h3><p>弱引用也是用来描述<code>非必需对象</code>的，当JVM进行垃圾回收时，无论内存是否充足，都会回收被弱引用关联的对象。在java中，用java.lang.ref.WeakReference类来表示。</p>
+<p>弱引用与软引用的区别在于：只具有弱引用的对象拥有更短暂的生命周期。在垃圾回收器线程扫描它所管辖的内存区域的过程中，一旦发现了只具有弱引用的对象，不管当前内存空间足够与否，都会回收它的内存。不过，由于垃圾回收器是一个优先级很低的线程， 因此不一定会很快发现那些只具有弱引用的对象。所以被&#x3D;&#x3D;软引用关联的对象只有在内存不足时才会被回收，而被弱引用关联的对象在JVM进行垃圾回收时总会被回收。&#x3D;&#x3D;</p>
+<p><strong>创建：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">WeakReference&lt;String&gt; sr = <span class="keyword">new</span> <span class="title class_">WeakReference</span>&lt;String&gt;(<span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>));</span><br></pre></td></tr></table></figure>
+
+<p>在使用软引用和弱引用的时候，我们可以显示地通过System.gc()来通知JVM进行垃圾回收，但是要注意的是，虽然发出了通知，JVM不一定会立刻执行，也就是说这句是无法确保此时JVM一定会进行垃圾回收的。</p>
+<p>弱引用还可以和一个引用队列（ReferenceQueue）联合使用，如果弱引用所引用的对象被垃圾回收，Java虚拟机就会把这个弱引用加入到与之关联的引用队列中。</p>
+<h3 id="虚引用"><a href="#虚引用" class="headerlink" title="虚引用"></a>虚引用</h3><p>虚引用和前面的软引用、弱引用不同，它并&#x3D;&#x3D;不影响对象的生命周期&#x3D;&#x3D;。在java中用java.lang.ref.PhantomReference类表示。如果一个对象与虚引用关联，则跟没有引用与之关联一样，&#x3D;&#x3D;在任何时候都可能被垃圾回收器回收&#x3D;&#x3D;。虚引用主要用来跟踪对象被垃圾回收的活动。</p>
+<p>&#x3D;&#x3D;虚引用必须和引用队列关联使用&#x3D;&#x3D;，当垃圾回收器准备回收一个对象时，如果发现它还有虚引用，就会把这个虚引用加入到与之 关联的引用队列中。程序可以通过判断引用队列中是否已经加入了虚引用，来了解被引用的对象是否将要被垃圾回收。如果程序发现某个虚引用已经被加入到引用队列，那么就可以在所引用的对象的内存被回收之前采取必要的行动。</p>
+<p><strong>创建：</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.ref.PhantomReference;</span><br><span class="line"><span class="keyword">import</span> java.lang.ref.ReferenceQueue;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">PhantomRef</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        ReferenceQueue&lt;String&gt; queue = <span class="keyword">new</span> <span class="title class_">ReferenceQueue</span>&lt;String&gt;();</span><br><span class="line">        PhantomReference&lt;String&gt; pr = <span class="keyword">new</span> <span class="title class_">PhantomReference</span>&lt;String&gt;(<span class="keyword">new</span> <span class="title class_">String</span>(<span class="string">&quot;hello&quot;</span>), queue);</span><br><span class="line">        System.out.println(pr.get());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><table>
+<thead>
+<tr>
+<th>引用类型</th>
+<th>被回收时间</th>
+<th>用途</th>
+<th>生存时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>强引用</td>
+<td>从来不会</td>
+<td>对象的一般状态</td>
+<td>JVM停止运行时</td>
+</tr>
+<tr>
+<td>软引用</td>
+<td>内存不足时</td>
+<td>对象缓存</td>
+<td>内存不足时</td>
+</tr>
+<tr>
+<td>弱引用</td>
+<td>jvm垃圾回收时</td>
+<td>对象缓存</td>
+<td>gc运行后</td>
+</tr>
+<tr>
+<td>虚引用</td>
+<td>未知</td>
+<td>未知</td>
+<td>未知</td>
+</tr>
+</tbody></table>
+<p>在实际程序设计中一般很少使用弱引用与虚引用，使用软引用的情况较多，这是因为软引用可以加速JVM对垃圾内存的回收速度，可以维护系统的运行安全，防止内存溢出（OutOfMemory）等问题的产生。</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    </div>
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -368,7 +753,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-17 20:22:38" itemprop="dateModified" datetime="2022-08-17T20:22:38+08:00">2022-08-17</time>
+                <time title="修改时间：2022-08-18 09:51:52" itemprop="dateModified" datetime="2022-08-18T09:51:52+08:00">2022-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1015,7 +1400,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-16 18:49:50" itemprop="dateModified" datetime="2022-08-16T18:49:50+08:00">2022-08-16</time>
+                <time title="修改时间：2022-08-18 10:16:10" itemprop="dateModified" datetime="2022-08-18T10:16:10+08:00">2022-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1051,7 +1436,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.3k</span>
+              <span>5.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1232,270 +1617,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="木子">
-      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春风过木">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">计算机网络</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-07-12 14:24:00" itemprop="dateCreated datePublished" datetime="2022-07-12T14:24:00+08:00">2022-07-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-17 09:41:45" itemprop="dateModified" datetime="2022-08-17T09:41:45+08:00">2022-08-17</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">JAVA学习</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>5.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p>计算机网络：一些相互连接的计算机的集合。</p>
-<p>互联网：一些相互连接的计算机网络的集合（称为网络的网络）。</p>
-<h5 id="OSI七层模型："><a href="#OSI七层模型：" class="headerlink" title="OSI七层模型："></a>OSI七层模型：</h5><ol>
-<li>物理层</li>
-<li>数据链路层</li>
-<li>网络层</li>
-<li>传输层</li>
-<li>会话层</li>
-<li>表示层</li>
-<li>应用层</li>
-</ol>
-<h5 id="各个层的中间设备："><a href="#各个层的中间设备：" class="headerlink" title="各个层的中间设备："></a>各个层的中间设备：</h5><ul>
-<li>物理层中继系统：转发器</li>
-<li>数据链路层中继系统：网桥或桥接器</li>
-<li>网络层中继系统：路由器</li>
-<li>网桥和路由器的混合物：桥路器</li>
-<li>网络层以上的中继系统：网关</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/07/12/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="木子">
-      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="春风过木">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/" class="post-title-link" itemprop="url">类加载与反射</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-07-08 17:12:00" itemprop="dateCreated datePublished" datetime="2022-07-08T17:12:00+08:00">2022-07-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-13 10:33:52" itemprop="dateModified" datetime="2022-08-13T10:33:52+08:00">2022-08-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">JAVA学习</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JAVA%E5%AD%A6%E4%B9%A0/java%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">java基础</span></a>
-                </span>
-            </span>
-
-          
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4.9k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="类加载"><a href="#类加载" class="headerlink" title="类加载"></a>类加载</h1><p>​		不管Java程序有多么复杂、该程序启动了多少个线程，它们都处于该Java虚拟机进程里。同一个JVM的所有线程、所有变量都处于同一个进程里，它们都使用该JVM进程的内存区。当系统出现以下几种情况时，JVM进程将被终止：</p>
-<ul>
-<li><p>程序运行到最后正常结束。</p>
-</li>
-<li><p>程序运行到使用System.exit()或Runtime.getRuntime().exit()代码结束程</p>
-</li>
-</ul>
-<p>序。</p>
-<ul>
-<li><p>程序执行过程中遇到未捕获的异常或错误而结束。</p>
-</li>
-<li><p>程序所在平台强制结束了JVM进程。</p>
-</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/07/08/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E4%B8%8E%E5%8F%8D%E5%B0%84/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <div>
-    
-    </div>
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1567,7 +1688,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">25</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1580,7 +1701,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1633,13 +1754,13 @@
       <i class="fa fa-chart-area"></i>
     </span>
       <span class="post-meta-item-text">站点总字数：</span>
-    <span title="站点总字数">70k</span>
+    <span title="站点总字数">75k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
       <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
-    <span title="站点阅读时长">1:03</span>
+    <span title="站点阅读时长">1:08</span>
 </div>
 
 <!--
