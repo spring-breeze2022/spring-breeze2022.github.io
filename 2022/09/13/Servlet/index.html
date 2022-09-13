@@ -23,19 +23,21 @@
     var CONFIG = {"hostname":"li0424.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="介绍你好，我是木子~ 现居住地南京 本人擅长Ai、Fw、Fl、Br、Ae、Pr、Id、PS等软件的安装与卸载； 精通HTML、CSS、JavaScript、PHP、C、C＋＋、C#、java、Ruby、Perl、Lisp、python、Objective-C、ActionScript、TypeScript、jQuery、Vue等单词的拼写； 熟悉windows、Linux、Mac、Android、">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我_">
-<meta property="og:url" content="http://li0424.com/about/index.html">
+  <meta name="description" content="ServletServlet介绍 是Java编写的服务器端程序，具有独立于平台和协议的特性，主要功能是用于交互的浏览和生成数据，生成动态web内容；  狭义的servlet是指Java语言实现的一个接口，广义的servlet是指任何实现了Servlet这个接口的类； servlet主要用于逻辑处理，处理完后将处理的结果交给jsp，由jsp向客户端做出响应。  Servlet生命周期 加载和初始化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Servlet">
+<meta property="og:url" content="http://li0424.com/2022/09/13/Servlet/index.html">
 <meta property="og:site_name" content="春风过木">
-<meta property="og:description" content="介绍你好，我是木子~ 现居住地南京 本人擅长Ai、Fw、Fl、Br、Ae、Pr、Id、PS等软件的安装与卸载； 精通HTML、CSS、JavaScript、PHP、C、C＋＋、C#、java、Ruby、Perl、Lisp、python、Objective-C、ActionScript、TypeScript、jQuery、Vue等单词的拼写； 熟悉windows、Linux、Mac、Android、">
+<meta property="og:description" content="ServletServlet介绍 是Java编写的服务器端程序，具有独立于平台和协议的特性，主要功能是用于交互的浏览和生成数据，生成动态web内容；  狭义的servlet是指Java语言实现的一个接口，广义的servlet是指任何实现了Servlet这个接口的类； servlet主要用于逻辑处理，处理完后将处理的结果交给jsp，由jsp向客户端做出响应。  Servlet生命周期 加载和初始化">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-05-02T15:15:09.000Z">
-<meta property="article:modified_time" content="2022-05-04T11:25:50.710Z">
+<meta property="article:published_time" content="2022-09-13T02:04:00.000Z">
+<meta property="article:modified_time" content="2022-09-13T02:47:48.029Z">
 <meta property="article:author" content="木子">
+<meta property="article:tag" content="知识点">
+<meta property="article:tag" content="Redis">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://li0424.com/about/">
+<link rel="canonical" href="http://li0424.com/2022/09/13/Servlet/">
 
 
 <script id="page-configurations">
@@ -43,13 +45,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>关于我_ | 春风过木
-</title>
+  <title>Servlet | 春风过木</title>
   
 
 
@@ -198,61 +199,231 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
-      <header class="post-header">
-
-<h1 class="post-title" itemprop="name headline">关于我_
-</h1>
-
-<div class="post-meta">
   
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://li0424.com/2022/09/13/Servlet/">
 
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="木子">
+      <meta itemprop="description" content="自能生羽翼 何必仰云梯">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="春风过木">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Servlet
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-09-13 10:04:00 / 修改时间：10:47:48" itemprop="dateCreated datePublished" datetime="2022-09-13T10:04:00+08:00">2022-09-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">Java学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java%E5%AD%A6%E4%B9%A0/Java%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">Java后端学习</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/09/13/Servlet/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/09/13/Servlet/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><h3 id="Servlet介绍"><a href="#Servlet介绍" class="headerlink" title="Servlet介绍"></a>Servlet介绍</h3><ul>
+<li>是Java编写的服务器端程序，具有独立于平台和协议的特性，主要功能是用于交互的浏览和生成数据，生成动态web内容； </li>
+<li>狭义的servlet是指Java语言实现的一个接口，广义的servlet是指任何实现了Servlet这个接口的类；</li>
+<li>servlet主要用于逻辑处理，处理完后将处理的结果交给jsp，由jsp向客户端做出响应。</li>
+</ul>
+<h3 id="Servlet生命周期"><a href="#Servlet生命周期" class="headerlink" title="Servlet生命周期"></a>Servlet生命周期</h3><ul>
+<li><strong>加载和初始化</strong></li>
+</ul>
+<p>服务器第一次访问 Servlet 时会创建 Servlet 的实例（一个 Servlet 类只有一个实例）。之后服务器调用 <code>init</code> 方法初始化 Servlet 对象，创建或加载初始化数据。</p>
+<ul>
+<li><strong>处理服务</strong></li>
+</ul>
+<p>每接收到一个 Http 请求时，服务器会产生一个新的线程并调用 <code>service</code> 方法处理请求。</p>
+<ul>
+<li><strong>销毁和垃圾回收</strong></li>
+</ul>
+<p>当 Servlet 被销毁时，服务器调用 <code>destroy</code> 方法释放 Servlet 对象所占的资源。最后由 JVM 对 Servlet 实例进行垃圾回收。</p>
+<h3 id="HttpServlet-类"><a href="#HttpServlet-类" class="headerlink" title="HttpServlet 类"></a>HttpServlet 类</h3><p>在 Java EE 中， HttpServlet 类已经实现了 Servlet 接口。实际开发中我们可以直接使用。</p>
+<p>HttpServlet 类中 service 方法会根据 HTTP 请求类型，选择调用 <code>doGet</code>、<code>doPost</code>、<code>doPut</code>，<code>doDelete</code> 等方法。</p>
+<ul>
+<li><strong>HttpServletRequest 类</strong>：用户请求</li>
+<li><strong>HttpServletResponse 类</strong>：服务器响应</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ServletDemo2</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="comment">// 接收 GET 请求</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span>  <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Get&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 接收 POST 请求</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doPost</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span>  <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Post&quot;</span>);</span><br><span class="line">        doGet(req,resp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>HttpServletRequest&#x2F;HttpServletResponse</strong> 对象封装了 HTTP 请求头&#x2F;响应头中的所有信息，可以通过对象提供的方法获取。</p>
+<p>通过 request 对象提供的 getRequestDispatche(String path)方法返回一个 <strong>RequestDispatcher</strong> 对象，调用这个对象的 <strong>forward</strong> 方法可以实现请求转发。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 拦截器</span></span><br><span class="line"><span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        <span class="type">HttpSession</span> <span class="variable">session</span> <span class="operator">=</span> request.getSession();</span><br><span class="line">        <span class="keyword">if</span> (session.getAttribute(SESSION_KEY) != <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="comment">// 通过 ruquest 对象传递一个值</span></span><br><span class="line">        request.setAttribute(<span class="string">&quot;message&quot;</span>,<span class="string">&quot;登录失败，请先输入用户名和密码。&quot;</span>);</span><br><span class="line">        <span class="comment">// 跳转登录页面（重定向）</span></span><br><span class="line">        request.getRequestDispatcher(<span class="string">&quot;login&quot;</span>).forward(request,response);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="请求转发和重定向的区别"><a href="#请求转发和重定向的区别" class="headerlink" title="请求转发和重定向的区别"></a>请求转发和重定向的区别</h4><ol>
+<li>地址方面：<ul>
+<li>请求转发：获得请求转发对象，告诉对象转发的地址；</li>
+<li>重定向：重新指定浏览器的地址；</li>
+</ul>
+</li>
+<li>地址栏显示信息方面：<ul>
+<li>请求转发方式：地址栏显示的是原来的地址，因为请求转发方式是服务器请求资源，直接访问访问目标地址的url，并读取响应内容，然后将内容发送给浏览器，浏览器并不知道目标地址 。</li>
+<li>重定向方式：地址栏显示的是新的url，因为重定向方式 是服务端根据逻辑，发送一个状态码，告诉浏览器重新去请求那个地址 。</li>
+</ul>
+</li>
+<li>数据共享方面：<ul>
+<li>请求转发方式：转发页面和目标页面可以共享request里面的数据；</li>
+<li>重定向方式：不能共享数据。</li>
+</ul>
+</li>
+<li>请求转发方式效率高，重定向方式效率低。</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <div>
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
 </div>
-
-</header>
-
+    
+    </div>
+        <div class="reward-container">
+  <div>赏一包辣条~</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
       
-      
-      
-      <div class="post-body">
-          <h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>你好，我是木子~</p>
-<p>现居住地南京</p>
-<p>本人擅长Ai、Fw、Fl、Br、Ae、Pr、Id、PS等软件的安装与卸载；</p>
-<p>精通HTML、CSS、JavaScript、PHP、C、C＋＋、C#、java、Ruby、Perl、Lisp、python、Objective-C、ActionScript、TypeScript、jQuery、Vue等单词的拼写；</p>
-<p>熟悉windows、Linux、Mac、Android、IOS等系统的开关机。</p>
-<p>曾获2006年时代周刊年度人物、2008年感动中国特别大奖！</p>
-<h4 id="联系我"><a href="#联系我" class="headerlink" title="联系我"></a>联系我</h4><p>QQ 2580203441</p>
-<p>邮箱 <a href="mailto:&#108;&#109;&#x79;&#49;&#x38;&#x33;&#49;&#52;&#49;&#x33;&#x40;&#49;&#x36;&#x33;&#46;&#x63;&#x6f;&#109;">&#108;&#109;&#x79;&#49;&#x38;&#x33;&#49;&#52;&#49;&#x33;&#x40;&#49;&#x36;&#x33;&#46;&#x63;&#x6f;&#109;</a></p>
-<h4 id="文章板块"><a href="#文章板块" class="headerlink" title="文章板块"></a>文章板块</h4><p>博客主要记录我学习时记录的笔记！</p>
-<p>所有原创文章<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。你可以分享、修改文章内容，但必须署名，并且不能用于商业目的，除此之外没有任何限制。</p>
-<p>所有转载文章保留原作者链接，继承与原作者相同的知识创作协议。</p>
-<h4 id="本站信息"><a href="#本站信息" class="headerlink" title="本站信息"></a>本站信息</h4><p>网站入口：<a target="_blank" rel="noopener" href="https://li0424.xyz/">春风过木</a></p>
-<p>网站程序：hexo</p>
-<p>网站模板：next</p>
-
+      <div style="display: inline-block;">
+        <img src="/img/loading.gif" data-original="/images/wechatpay.png" alt="木子 微信支付">
+        <p>微信支付</p>
       </div>
       
-      
-      
-    </div>
-    
+      <div style="display: inline-block;">
+        <img src="/img/loading.gif" data-original="/images/alipay.png" alt="木子 支付宝">
+        <p>支付宝</p>
+      </div>
 
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>木子
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://li0424.com/2022/09/13/Servlet/" title="Servlet">http://li0424.com/2022/09/13/Servlet/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/" rel="tag"><i class="fa fa-tag"></i> 知识点</a>
+              <a href="/tags/Redis/" rel="tag"><i class="fa fa-tag"></i> Redis</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/18/JVM/" rel="prev" title="JVM">
+      <i class="fa fa-chevron-left"></i> JVM
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
     
-    
-    
+  </article>
+  
+  
+  
+
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -299,7 +470,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%81%94%E7%B3%BB%E6%88%91"><span class="nav-number">2.</span> <span class="nav-text">联系我</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E6%9D%BF%E5%9D%97"><span class="nav-number">3.</span> <span class="nav-text">文章板块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%AC%E7%AB%99%E4%BF%A1%E6%81%AF"><span class="nav-number">4.</span> <span class="nav-text">本站信息</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Servlet"><span class="nav-number">1.</span> <span class="nav-text">Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.0.1.</span> <span class="nav-text">Servlet介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Servlet%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="nav-number">1.0.2.</span> <span class="nav-text">Servlet生命周期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HttpServlet-%E7%B1%BB"><span class="nav-number">1.0.3.</span> <span class="nav-text">HttpServlet 类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%B7%E6%B1%82%E8%BD%AC%E5%8F%91%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">请求转发和重定向的区别</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
