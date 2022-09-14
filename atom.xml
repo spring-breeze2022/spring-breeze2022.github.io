@@ -209,9 +209,9 @@
     <category term="Java基础" scheme="http://li0424.com/categories/Java%E5%AD%A6%E4%B9%A0/Java%E5%9F%BA%E7%A1%80/"/>
     
     
-    <category term="知识点" scheme="http://li0424.com/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
-    
     <category term="JDK" scheme="http://li0424.com/tags/JDK/"/>
+    
+    <category term="知识点" scheme="http://li0424.com/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     
   </entry>
   
@@ -519,11 +519,11 @@
     <category term="数据库" scheme="http://li0424.com/categories/Java%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
+    <category term="知识点" scheme="http://li0424.com/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
     <category term="数据库" scheme="http://li0424.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     <category term="JDBC" scheme="http://li0424.com/tags/JDBC/"/>
-    
-    <category term="知识点" scheme="http://li0424.com/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
     
   </entry>
   
@@ -559,9 +559,9 @@
     <category term="数据库" scheme="http://li0424.com/categories/Java%E5%AD%A6%E4%B9%A0/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-    <category term="数据库" scheme="http://li0424.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="知识点" scheme="http://li0424.com/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/"/>
+    
+    <category term="数据库" scheme="http://li0424.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
